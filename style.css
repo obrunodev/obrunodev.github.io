@@ -1,82 +1,58 @@
-:root {
---bg: #0f1720;
---card: #0b1220;
---muted: #9aa4b2;
---accent: #7c5cff;
---radius: 12px;
-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-}
-
-
-* {
-box-sizing: border-box;
-}
-
-
+/* Fonte limpa e moderna */
 body {
-margin: 0;
-background: linear-gradient(180deg,#071022 0%, #081423 100%);
-color: #e6eef8;
-line-height: 1.55;
-font-size: 16px;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-
+/* Centralizar conteúdo */
 .container {
-max-width: 980px;
-margin: 0 auto;
-padding: 32px;
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
 }
 
-
-/* Header */
-.site-header {
-position: sticky;
-top: 0;
-backdrop-filter: blur(6px);
-padding: 14px 0;
-z-index: 10;
+/* Nome destacado */
+.name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-
-.header-inner {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-
-.brand h1 {
-margin: 0;
-font-size: 20px;
-}
-
-
-.brand .muted {
-color: var(--muted);
-font-weight: 300;
-}
-
-
+/* Cargo */
 .role {
-margin: 4px 0 0;
-font-size: 13px;
-color: var(--muted);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555;
+  margin-top: 5px;
 }
 
-
-.nav a {
-margin-left: 18px;
-color: var(--muted);
-text-decoration: none;
-font-weight: 600;
+/* Descrição */
+.description {
+  font-size: 1rem;
+  margin: 20px 0;
+  color: #444;
+  line-height: 1.5;
 }
 
-
-.nav a.cta {
-padding: 8px 12px;
-border-radius: 10px;
-background: linear-gradient(90deg,var(--accent),#5e8bff);
-color: #fff;
+/* Links minimalistas */
+.links {
+  margin-top: 20px;
 }
+
+.links a {
+  text-decoration: none;
+  color: #222;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: #0073e6;
 }
