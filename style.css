@@ -1,8 +1,8 @@
-/* Fonte limpa e moderna */
+/* Fonte moderna e reset */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #f9f9f9;
+  background-color: #f5f5f5;
   color: #222;
   display: flex;
   justify-content: center;
@@ -10,23 +10,36 @@ body {
   height: 100vh;
 }
 
-/* Centralizar conteúdo */
-.container {
+/* Card central */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 30px;
   text-align: center;
-  max-width: 600px;
-  padding: 20px;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Nome destacado */
+/* Imagem de perfil */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #eee;
+  margin-bottom: 20px;
+}
+
+/* Nome */
 .name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin: 0;
 }
 
 /* Cargo */
 .role {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400;
   color: #555;
   margin-top: 5px;
@@ -40,7 +53,7 @@ body {
   line-height: 1.5;
 }
 
-/* Links minimalistas */
+/* Links */
 .links {
   margin-top: 20px;
 }
