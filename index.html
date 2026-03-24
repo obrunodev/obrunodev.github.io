@@ -57,6 +57,78 @@
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition-duration: 300ms;
         }
+
+        /* Desktop Specific Styles */
+        @media (min-width: 1024px) {
+            .desktop-hero {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .desktop-hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('https://www.transparenttextures.com/patterns/cubes.png');
+                opacity: 0.1;
+                z-index: 1;
+            }
+            
+            .desktop-hero > div {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .skill-progress {
+                background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+                height: 4px;
+                border-radius: 2px;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .skill-progress::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+                animation: shimmer 2s infinite;
+            }
+            
+            @keyframes shimmer {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100%); }
+            }
+            
+            .portfolio-card {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .portfolio-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+        }
+
+        /* Mobile First - Hide Desktop Elements */
+        .desktop-only { display: none !important; }
+        
+        @media (min-width: 1024px) {
+            .mobile-only { display: none !important; }
+            .desktop-only { display: block !important; }
+        }
     </style>
 
     <script>
@@ -108,9 +180,38 @@
     }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-brand-500 selection:text-white pb-24">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
 
-    <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-md">
+    <!-- Desktop Navigation -->
+    <nav class="desktop-only fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-white/20 dark:border-slate-700/50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-8">
+                    <span class="font-bold text-xl text-slate-800 dark:text-white tracking-wide">&lt;BRP/&gt;</span>
+                    <div class="flex gap-6">
+                        <a href="#sobre-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Sobre</a>
+                        <a href="#servicos-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Serviços</a>
+                        <a href="#portfolio-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Portfolio</a>
+                        <a href="#depoimentos-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Depoimentos</a>
+                        <a href="#contato-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Contato</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle-desktop" class="relative inline-flex items-center justify-center w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none">
+                        <i class="ri-sun-line text-xl absolute scale-0 dark:scale-100 transition-transform duration-300 rotate-90 dark:rotate-0"></i>
+                        <i class="ri-moon-line text-xl absolute scale-100 dark:scale-0 transition-transform duration-300 rotate-0 dark:-rotate-90"></i>
+                    </button>
+                    <a href="https://wa.me/5511937183232" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-medium transition flex items-center gap-2" target="_blank">
+                        <i class="ri-whatsapp-line"></i>
+                        <span>Fale Comigo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-only fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-md">
         <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/40 dark:border-slate-700/50 shadow-lg dark:shadow-black/20 rounded-xl px-5 py-3 flex justify-between items-center">
             
             <span class="font-bold text-slate-800 dark:text-white text-sm tracking-wide">&lt;BRP/&gt;</span>
@@ -129,7 +230,64 @@
         </div>
     </nav>
 
-    <main class="max-w-md mx-auto pt-24 px-4 sm:px-6">
+    <!-- Desktop Hero Section -->
+    <section class="desktop-only desktop-hero">
+        <div class="max-w-7xl mx-auto px-6 w-full h-full flex items-center">
+            <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
+                <div class="text-white space-y-6">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                            Bruno R. Pianca
+                        </h1>
+                        <p class="text-2xl text-blue-100 font-medium">
+                            Sistemas & Automações Inteligentes
+                        </p>
+                        <p class="text-lg text-blue-50 leading-relaxed max-w-lg">
+                            Desenvolvedor Python especializado em eliminar processos manuais. 
+                            Transformo fluxos de trabalho complexos em APIs robustas e sistemas 
+                            automatizados de alta performance.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://wa.me/5511937183232" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition flex items-center gap-2" target="_blank">
+                            <i class="ri-rocket-2-line"></i>
+                            <span>Iniciar Projeto</span>
+                        </a>
+                        <a href="cv-bruno-pianca-1.pdf" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition flex items-center gap-2" target="_blank">
+                            <i class="ri-file-download-line"></i>
+                            <span>Baixar CV</span>
+                        </a>
+                    </div>
+                    
+                    <div class="flex gap-4 pt-4">
+                        <a href="mailto:brunorpdev@gmail.com" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition">
+                            <i class="ri-mail-send-line text-xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/brunorpdev/" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition" target="_blank">
+                            <i class="ri-linkedin-fill text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/5511937183232" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition" target="_blank">
+                            <i class="ri-whatsapp-line text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <img src="img/perfil.jpeg" 
+                            alt="Foto de Perfil - Bruno R. Pianca" 
+                            loading="lazy"
+                            class="w-80 h-80 rounded-3xl object-cover shadow-2xl border-4 border-white">
+                        <div class="absolute -bottom-4 -right-4 bg-green-500 w-8 h-8 rounded-full border-4 border-white"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Content -->
+    <main class="mobile-only max-w-md mx-auto pt-24 px-4 sm:px-6">
 
         <div class="fade-in-up bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden border border-slate-100 dark:border-slate-700 relative">
             
@@ -360,8 +518,782 @@
 
     </main>
 
+    <!-- Desktop Content -->
+    <div class="desktop-only">
+        <!-- Sobre Section -->
+        <section id="sobre-desktop" class="py-20 bg-white dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Sobre Mim</h2>
+                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                        Desenvolvedor Python apaixonado por transformar problemas complexos em soluções elegantes e automatizadas
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold text-slate-900 dark:text-white">
+                                Especialista em Automação e Sistemas Inteligentes
+                            </h3>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Com mais de 5 anos de experiência em desenvolvimento Python, foco em criar 
+                                sistemas que eliminam trabalho repetitivo e otimizam processos de negócio. 
+                                Minha especialidade é transformar necessidades complexas em APIs robustas, 
+                                dashboards intuitivos e automações que geram resultados reais.
+                            </p>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Atendo empresas de todos os portes, desde startups que precisam escalar 
+                                rapidamente até grandes corporações buscando modernizar sua infraestrutura. 
+                                Cada projeto é uma oportunidade de aprender e entregar soluções que fazem 
+                                a diferença no dia a dia das pessoas.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl">
+                                <div class="text-3xl font-bold text-brand-600 dark:text-brand-400 mb-2">50+</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-300">Projetos Entregues</div>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl">
+                                <div class="text-3xl font-bold text-brand-600 dark:text-brand-400 mb-2">30+</div>
+                                <div class="text-sm text-slate-600 dark:text-slate-300">Clientes Satisfeitos</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl">
+                        <h4 class="text-xl font-semibold text-slate-900 dark:text-white mb-6">Minha Metodologia</h4>
+                        <div class="space-y-4">
+                            <div class="flex gap-4">
+                                <div class="bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 p-3 rounded-lg h-fit">
+                                    <i class="ri-search-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-900 dark:text-white mb-1">01. Diagnóstico Profundo</h5>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        Análise completa do seu processo atual para identificar gargalos e oportunidades de automação
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-3 rounded-lg h-fit">
+                                    <i class="ri-code-s-slash-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-900 dark:text-white mb-1">02. Desenvolvimento Ágil</h5>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        Construção iterativa com entregas frequentes e feedback constante
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-3 rounded-lg h-fit">
+                                    <i class="ri-rocket-2-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-slate-900 dark:text-white mb-1">03. Entrega e Escala</h5>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        Sistema em produção com documentação completa e suporte para crescimento
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Section -->
+        <section id="servicos-desktop" class="py-20 bg-slate-50 dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Serviços</h2>
+                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                        Soluções completas para digitalizar e automatizar seu negócio
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
+                        <div class="bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 p-4 rounded-xl w-fit h-fit mb-6">
+                            <i class="ri-code-box-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">APIs e Backend</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-4">
+                            APIs RESTful robustas com FastAPI e Django, documentação automática e alta performance
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-brand-600 dark:text-brand-400"></i>
+                                <span>FastAPI com OpenAPI automática</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-brand-600 dark:text-brand-400"></i>
+                                <span>Django Ninja para APIs híbridas</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-brand-600 dark:text-brand-400"></i>
+                                <span>Autenticação JWT e OAuth2</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
+                        <div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-4 rounded-xl w-fit h-fit mb-6">
+                            <i class="ri-dashboard-3-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Dashboards e SaaS</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-4">
+                            Sistemas web completos com dashboards em tempo real e interfaces intuitivas
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-purple-600 dark:text-purple-400"></i>
+                                <span>React + Tailwind CSS</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-purple-600 dark:text-purple-400"></i>
+                                <span>Gráficos interativos com D3.js</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-purple-600 dark:text-purple-400"></i>
+                                <span>WebSocket para tempo real</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
+                        <div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-4 rounded-xl w-fit h-fit mb-6">
+                            <i class="ri-cpu-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Automação e Scripts</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-4">
+                            Scripts personalizados para automatizar tarefas repetitivas e processos manuais
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
+                                <span>Web scraping com BeautifulSoup</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
+                                <span>Integração com APIs terceiras</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
+                                <span>Processamento de dados com Pandas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
+                        <div class="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 p-4 rounded-xl w-fit h-fit mb-6">
+                            <i class="ri-database-2-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Banco de Dados</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-4">
+                            Modelagem eficiente e otimização de performance para PostgreSQL e Redis
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-indigo-600 dark:text-indigo-400"></i>
+                                <span>PostgreSQL avançado</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-indigo-600 dark:text-indigo-400"></i>
+                                <span>Redis para cache e filas</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-indigo-600 dark:text-indigo-400"></i>
+                                <span>Migrações e otimização</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
+                        <div class="bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 p-4 rounded-xl w-fit h-fit mb-6">
+                            <i class="ri-git-branch-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">DevOps e Deploy</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-4">
+                            Configuração completa de CI/CD, Docker e infraestrutura na nuvem
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-orange-600 dark:text-orange-400"></i>
+                                <span>Docker e Docker Compose</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-orange-600 dark:text-orange-400"></i>
+                                <span>GitHub Actions CI/CD</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-orange-600 dark:text-orange-400"></i>
+                                <span>Deploy em VPS e Cloud</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
+                        <div class="bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 p-4 rounded-xl w-fit h-fit mb-6">
+                            <i class="ri-customer-service-2-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Consultoria</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-4">
+                            Análise técnica e arquitetura para guiar suas decisões de tecnologia
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-pink-600 dark:text-pink-400"></i>
+                                <span>Revisão de código</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-pink-600 dark:text-pink-400"></i>
+                                <span>Planejamento arquitetural</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-check-line text-pink-600 dark:text-pink-400"></i>
+                                <span>Treinamento técnico</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Desktop -->
+        <section id="portfolio-desktop" class="py-20 bg-white dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Portfolio</h2>
+                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                        Projetos reais que entregaram valor e resultados mensuráveis
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <a href="https://app.epigene.com.br/" class="portfolio-card group block" target="_blank">
+                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
+                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Epigene SaaS" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="px-2 py-1 bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 text-xs font-semibold rounded">SaaS</span>
+                                    <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-semibold rounded">Saúde</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Epigene</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-4">
+                                    Plataforma completa para gestão de dados genéticos com dashboards interativos e relatórios personalizados
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">Django</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">React</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">PostgreSQL</span>
+                                    </div>
+                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="portfolio-card group block">
+                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
+                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img src="img/portfolio/onda-nerd.png" alt="Onda Nerd Tech" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-semibold rounded">Web App</span>
+                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-semibold rounded">Financeiro</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Onda Nerd Tech</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-4">
+                                    Sistema financeiro automatizado para e-commerce com integração Shopee e dashboards de vendas
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">FastAPI</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">HTMX</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">Redis</span>
+                                    </div>
+                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://mecanicasilveiracruz.com.br/" class="portfolio-card group block" target="_blank">
+                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
+                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img src="img/portfolio/silveira-cruz.png" alt="Oficina Silveira Cruz" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs font-semibold rounded">Landing</span>
+                                    <span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs font-semibold rounded">Automotivo</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Oficina Silveira Cruz</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-4">
+                                    Landing page profissional com sistema de agendamento integrado e otimização SEO
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">Django</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">Tailwind</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">SQLite</span>
+                                    </div>
+                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="portfolio-card group block">
+                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
+                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img src="img/portfolio/habittari-v1.png" alt="Habittari Decor" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 text-xs font-semibold rounded">E-commerce</span>
+                                    <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-semibold rounded">Decoração</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Habittari Decor</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-4">
+                                    Loja virtual completa com catálogo dinâmico, carrinho de compras e integração de pagamento
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">Django</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">Stripe</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">PostgreSQL</span>
+                                    </div>
+                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card group block">
+                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
+                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img src="img/portfolio/esteio.png" alt="Esteio Distribuidora" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded">E-commerce</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-900/30 text-gray-600 dark:text-gray-400 text-xs font-semibold rounded">Autopeças</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Esteio Distribuidora</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-4">
+                                    Plataforma B2B para distribuidora automotiva com controle de estoque e pedidos em lote
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">FastAPI</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">React</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">MySQL</span>
+                                    </div>
+                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card group block">
+                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
+                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="API Project" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-semibold rounded">API</span>
+                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-semibold rounded">Fintech</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">API Financeira</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-4">
+                                    API RESTful para processamento de transações com validação em tempo real e dashboards administrativos
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">FastAPI</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">Celery</span>
+                                        <span class="text-xs text-slate-500 dark:text-slate-400">Redis</span>
+                                    </div>
+                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section class="py-20 bg-slate-50 dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Expertise Técnica</h2>
+                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                        Stack moderno e completo para desenvolver soluções escaláveis
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Backend & APIs</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 p-2 rounded-lg">
+                                            <i class="ri-code-s-slash-line text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900 dark:text-white">Python</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">Linguagem principal</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-semibold text-brand-600 dark:text-brand-400">Expert</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="skill-progress w-[95%]"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-2 rounded-lg">
+                                            <i class="ri-javascript-line text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900 dark:text-white">Django & Ninja</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">Framework web completo</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-semibold text-green-600 dark:text-green-400">Avançado</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="skill-progress w-[90%]"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-2 rounded-lg">
+                                            <i class="ri-flashlight-line text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900 dark:text-white">FastAPI & Pydantic</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">APIs modernas e rápidas</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-semibold text-purple-600 dark:text-purple-400">Expert</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="skill-progress w-[92%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Frontend & Tools</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 p-2 rounded-lg">
+                                            <i class="ri-database-2-line text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900 dark:text-white">PostgreSQL</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">Banco de dados principal</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">Avançado</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="skill-progress w-[85%]"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-lg">
+                                            <i class="ri-bolt-line text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900 dark:text-white">Redis & Celery</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">Cache e filas assíncronas</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-semibold text-red-600 dark:text-red-400">Avançado</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="skill-progress w-[80%]"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 p-2 rounded-lg">
+                                            <i class="ri-ship-line text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900 dark:text-white">Docker & DevOps</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">Containerização e deploy</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm font-semibold text-cyan-600 dark:text-cyan-400">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="skill-progress w-[75%]"></div>
+                                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos Desktop -->
+        <section id="depoimentos-desktop" class="py-20 bg-white dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Depoimentos de Clientes</h2>
+                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                        O que dizem quem já transformou o negócio com minhas soluções
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 italic leading-relaxed">
+                            "Com o sistema personalizado, centralizamos todas as informações da nossa operação da Shopee. Isso simplificou drasticamente nosso dia a dia, permitindo que focássemos no crescimento do negócio."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900/30 rounded-full flex items-center justify-center">
+                                <i class="ri-user-3-line text-brand-600 dark:text-brand-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900 dark:text-white">Carol e Andrey</p>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Onda Nerd Tech</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 italic leading-relaxed">
+                            "O projeto bem estruturado e o rápido atendimento às demandas foram fundamentais. Conquistamos nosso investidor nos primeiros 2 meses e decolamos a partir daí."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                                <i class="ri-building-line text-purple-600 dark:text-purple-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900 dark:text-white">Epigene</p>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">SaaS de Saúde</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+                        <div class="flex items-center gap-1 mb-4">
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                            <i class="ri-star-fill text-yellow-500"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 italic leading-relaxed">
+                            "Nosso processo era muito específico e nenhum ERP do mercado atendia 100%. O Bruno desenvolveu uma solução integrada que cobriu todas as brechas da operação."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                                <i class="ri-store-line text-green-600 dark:text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900 dark:text-white">Esteio Distribuidora</p>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">E-commerce Automotivo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Desktop -->
+        <section id="contato-desktop" class="py-20 bg-slate-50 dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Vamos Conversar?</h2>
+                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                        Transforme sua ideia em realidade. Agende uma consultoria gratuita e vamos discutir como posso ajudar seu negócio a escalar.
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Iniciar Projeto</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6">
+                            Resposta em até 2 horas. Vamos analisar sua necessidade e desenhar a melhor solução técnica.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <a href="https://wa.me/5511937183232" class="w-full flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold py-4 px-6 rounded-xl transition" target="_blank">
+                                <i class="ri-whatsapp-line text-xl"></i>
+                                <span>WhatsApp - Falar Agora</span>
+                            </a>
+                            
+                            <a href="mailto:brunorpdev@gmail.com" class="w-full flex items-center justify-center gap-3 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold py-4 px-6 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
+                                <i class="ri-mail-send-line text-xl"></i>
+                                <span>Enviar E-mail</span>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
+                                <span>Disponível para projetos</span>
+                                <span class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                    Online agora
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
+                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Informações de Contato</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg h-fit">
+                                    <i class="ri-mail-line text-brand-600 dark:text-brand-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900 dark:text-white mb-1">E-mail</p>
+                                    <p class="text-slate-600 dark:text-slate-300">brunorpdev@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg h-fit">
+                                    <i class="ri-phone-line text-brand-600 dark:text-brand-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900 dark:text-white mb-1">Telefone/WhatsApp</p>
+                                    <p class="text-slate-600 dark:text-slate-300">+55 11 93718-3232</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg h-fit">
+                                    <i class="ri-map-pin-line text-brand-600 dark:text-brand-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900 dark:text-white mb-1">Localização</p>
+                                    <p class="text-slate-600 dark:text-slate-300">Jundiaí - SP, Brasil</p>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Atendimento remoto para todo Brasil</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg h-fit">
+                                    <i class="ri-linkedin-box-line text-brand-600 dark:text-brand-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-900 dark:text-white mb-1">LinkedIn</p>
+                                    <a href="https://linkedin.com/in/brunorpdev/" class="text-brand-600 dark:text-brand-400 hover:underline" target="_blank">linkedin.com/in/brunorpdev</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Desktop -->
+        <footer class="bg-slate-900 dark:bg-slate-950 text-white py-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="font-bold text-xl mb-4">&lt;BRP/&gt;</h4>
+                        <p class="text-slate-400 text-sm">
+                            Desenvolvedor Python especializado em sistemas inteligentes e automação de processos.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-semibold mb-4">Serviços</h5>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li><a href="#servicos-desktop" class="hover:text-white transition">APIs e Backend</a></li>
+                            <li><a href="#servicos-desktop" class="hover:text-white transition">Dashboards e SaaS</a></li>
+                            <li><a href="#servicos-desktop" class="hover:text-white transition">Automação</a></li>
+                            <li><a href="#servicos-desktop" class="hover:text-white transition">Consultoria</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-semibold mb-4">Links Úteis</h5>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li><a href="#portfolio-desktop" class="hover:text-white transition">Portfolio</a></li>
+                            <li><a href="cv-bruno-pianca-1.pdf" class="hover:text-white transition" target="_blank">Baixar CV</a></li>
+                            <li><a href="#depoimentos-desktop" class="hover:text-white transition">Depoimentos</a></li>
+                            <li><a href="#contato-desktop" class="hover:text-white transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-semibold mb-4">Conecte-se</h5>
+                        <div class="flex gap-3 mb-4">
+                            <a href="https://linkedin.com/in/brunorpdev/" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition" target="_blank">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="https://wa.me/5511937183232" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition" target="_blank">
+                                <i class="ri-whatsapp-fill"></i>
+                            </a>
+                            <a href="mailto:brunorpdev@gmail.com" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition">
+                                <i class="ri-mail-fill"></i>
+                            </a>
+                        </div>
+                        <p class="text-sm text-slate-400">
+                            Resposta em até 2 horas
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-400">
+                    <p>&copy; 2026 Bruno R. Pianca. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleBtnDesktop = document.getElementById('theme-toggle-desktop');
         const htmlElement = document.documentElement;
 
         function initializeTheme() {
@@ -381,14 +1313,22 @@
         }
         initializeTheme();
 
-        themeToggleBtn.addEventListener('click', () => {
+        function toggleTheme() {
             htmlElement.classList.toggle('dark');
             if (htmlElement.classList.contains('dark')) {
                 localStorage.theme = 'dark';
             } else {
                 localStorage.theme = 'light';
             }
-        });
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', toggleTheme);
+        }
+        
+        if (themeToggleBtnDesktop) {
+            themeToggleBtnDesktop.addEventListener('click', toggleTheme);
+        }
     </script>
 </body>
 </html>
