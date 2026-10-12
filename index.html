@@ -1,148 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="dark h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bruno R. Pianca | Desenvolvedor | Criação de Sites e Aplicativos Web</title>
-
-    <meta name="description" content="Bruno R. Pianca - Desenvolvedor Python especializado em Django, FastAPI e soluções web completas. Transformo ideias em aplicações robustas, APIs e sistemas SaaS. Confira projetos de sucesso e entre em contato para sua próxima solução.">
-    <meta name="keywords" content="Bruno R. Pianca, Desenvolvedor Python, Django, FastAPI, desenvolvedor web, API, SaaS, portfólio, projetos, consultoria, developer, Jundiai - SP, Brasil, desenvolvimento de software">
+    <title>Bruno R. Pianca // AGENT_ORCHESTRATOR & INFRA DASHBOARD</title>
+    
+    <meta name="description" content="Dashboard de Orquestração de Agentes e Filas - Portfólio de Bruno R. Pianca. Desenvolvedor Backend (6+ anos), Python, FastAPI, Django, G30, LangGraph, Azure Cosmos DB e AI Agents.">
+    <meta name="keywords" content="Bruno Pianca, Backend Developer, Python, FastAPI, Django, G30, LangGraph, Tool Calling, Azure Cosmos DB, GCP, Redis Queue, Agent Orchestrator, DevOps">
     <meta name="author" content="Bruno R. Pianca">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://obruno.github.io/">
-    <link rel="alternate" hreflang="pt-br" href="https://obruno.github.io/">
-    <link rel="alternate" hreflang="en" href="https://obruno.github.io/">
     
-    <meta name="theme-color" content="#3b82f6">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://obruno.github.io/">
-    <meta property="og:title" content="Bruno R. Pianca | Desenvolvedor">
-    <meta property="og:description" content="Desenvolvedor Python especializado em Django e FastAPI. Transformo ideias complexas em soluções web robustas e escaláveis.">
-    <meta property="og:image" content="https://obruno.github.io/perfil.jpeg">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://obruno.github.io/">
-    <meta name="twitter:title" content="Bruno R. Pianca | Desenvolvedor">
-    <meta name="twitter:description" content="Desenvolvedor Python | Django | FastAPI | Soluções web completas e APIs robustas.">
-    <meta name="twitter:image" content="https://obruno.github.io/perfil.jpeg">
-
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
+
+    <!-- Google Fonts: JetBrains Mono & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
-        body { font-family: 'Inter', sans-serif; }
-        
-        /* Utilitários de Scroll */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Animações de Entrada */
-        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-
-        /* Transição suave de Cores (Dark/Light) */
-        body, div, nav, a, button, span, section {
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 300ms;
-        }
-
-        /* Desktop Specific Styles */
-        @media (min-width: 1024px) {
-            .desktop-hero {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                position: relative;
-                overflow: hidden;
-                width: 100%;
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .desktop-hero::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: url('https://www.transparenttextures.com/patterns/cubes.png');
-                opacity: 0.1;
-                z-index: 1;
-            }
-            
-            .desktop-hero > div {
-                position: relative;
-                z-index: 2;
-            }
-            
-            .skill-progress {
-                background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
-                height: 4px;
-                border-radius: 2px;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .skill-progress::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-                animation: shimmer 2s infinite;
-            }
-            
-            @keyframes shimmer {
-                0% { transform: translateX(-100%); }
-                100% { transform: translateX(100%); }
-            }
-            
-            .portfolio-card {
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            
-            .portfolio-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            }
-        }
-
-        /* Mobile First - Hide Desktop Elements */
-        .desktop-only { display: none !important; }
-        
-        @media (min-width: 1024px) {
-            .mobile-only { display: none !important; }
-            .desktop-only { display: block !important; }
-        }
-    </style>
-
     <script>
         tailwind.config = {
-            darkMode: 'class', 
+            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
                     colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6', 
-                            600: '#2563eb',
-                            900: '#1e3a8a',
+                        obs: {
+                            bg: '#07090e',
+                            surface: '#0d1117',
+                            panel: '#111622',
+                            panelLight: '#161c2b',
+                            border: '#1f293d',
+                            borderBright: '#2d3a54',
+                            textMuted: '#64748b',
+                            terminal: '#05070a',
                         }
                     }
                 }
@@ -150,1184 +45,1393 @@
         }
     </script>
 
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Bruno R. Pianca",
-        "jobTitle": "Desenvolvedor Python",
-        "description": "Desenvolvedor Python especializado em Django, FastAPI e soluções web completas",
-        "url": "https://obruno.github.io/",
-        "email": "brunorpdev@gmail.com",
-        "telephone": "+5511937183232",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jundiaí",
-            "addressRegion": "SP",
-            "addressCountry": "BR"
-        },
-        "sameAs": [
-            "https://linkedin.com/in/brunorpdev/",
-            "https://wa.me/5511937183232"
-        ],
-        "knowsAbout": ["Python", "Django", "FastAPI", "Desenvolvimento Web", "API", "SaaS"],
-        "offers": {
-            "@type": "Offer",
-            "serviceType": "Desenvolvimento de Software",
-            "description": "Desenvolvimento de aplicações web, APIs e sistemas completos"
+    <style>
+        /* Estilos globais e scrollbar de terminal */
+        body {
+            background-color: #07090e;
+            color: #e2e8f0;
+            font-family: 'JetBrains Mono', monospace;
         }
-    }
-    </script>
-</head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Desktop Navigation -->
-    <nav class="desktop-only fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-white/20 dark:border-slate-700/50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-8">
-                    <span class="font-bold text-xl text-slate-800 dark:text-white tracking-wide">&lt;BRP/&gt;</span>
-                    <div class="flex gap-6">
-                        <a href="#sobre-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Sobre</a>
-                        <a href="#servicos-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Serviços</a>
-                        <a href="#portfolio-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Portfolio</a>
-                        <a href="#depoimentos-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Depoimentos</a>
-                        <a href="#contato-desktop" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition font-medium">Contato</a>
-                    </div>
+        /* Grid de infraestrutura no background */
+        .infra-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #242f44;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+
+        /* Efeitos visuais nerdola */
+        .led-glow-green {
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.7), 0 0 2px rgba(34, 197, 94, 0.9);
+        }
+        .led-glow-cyan {
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.7), 0 0 2px rgba(6, 182, 212, 0.9);
+        }
+        .led-glow-amber {
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.7), 0 0 2px rgba(245, 158, 11, 0.9);
+        }
+
+        @keyframes cursor-blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        .blinking-cursor {
+            animation: cursor-blink 1s infinite;
+        }
+
+        /* Scanline sutil */
+        .scanlines {
+            position: relative;
+        }
+        .scanlines::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            z-index: 20;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen infra-grid flex flex-col text-xs antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+
+    <!-- ================================================================= -->
+    <!-- TOPBAR / CLUSTER CONTROLLER HEADER -->
+    <!-- ================================================================= -->
+    <header class="border-b border-obs-border bg-obs-surface/90 backdrop-blur sticky top-0 z-40 px-4 py-2.5">
+        <div class="max-w-[1720px] mx-auto flex flex-wrap items-center justify-between gap-3">
+            
+            <!-- Node Brand & Status -->
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 led-glow-green animate-pulse"></span>
+                    <span class="font-bold tracking-wider text-sm text-zinc-100 flex items-center gap-1.5">
+                        <span class="text-cyan-400">BRUNO_OS</span>
+                        <span class="text-zinc-600">//</span>
+                        <span class="text-zinc-300">AGENT_ORCHESTRATOR</span>
+                        <span class="px-1.5 py-0.5 rounded text-[10px] bg-zinc-800 text-cyan-300 border border-zinc-700 font-mono">v2.4.1</span>
+                    </span>
                 </div>
-                <div class="flex items-center gap-4">
-                    <button id="theme-toggle-desktop" class="relative inline-flex items-center justify-center w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none">
-                        <i class="ri-sun-line text-xl absolute scale-0 dark:scale-100 transition-transform duration-300 rotate-90 dark:rotate-0"></i>
-                        <i class="ri-moon-line text-xl absolute scale-100 dark:scale-0 transition-transform duration-300 rotate-0 dark:-rotate-90"></i>
-                    </button>
-                    <a href="https://wa.me/5511937183232" class="bg-brand-600 hover:bg-brand-700 text-white px-4 py-2 rounded-lg font-medium transition flex items-center gap-2" target="_blank">
-                        <i class="ri-whatsapp-line"></i>
-                        <span>Fale Comigo</span>
+
+                <div class="hidden sm:flex items-center gap-2 border-l border-zinc-800 pl-3 text-zinc-400 text-[11px]">
+                    <span class="text-zinc-500">CLUSTER:</span>
+                    <span class="text-zinc-300 font-semibold">sa-east-1a (São Paulo)</span>
+                    <span class="w-1 h-1 rounded-full bg-zinc-600"></span>
+                    <span class="text-emerald-400 font-medium">HEALTHY</span>
+                </div>
+            </div>
+
+            <!-- Telemetry Pings & Live Status -->
+            <div class="flex items-center flex-wrap gap-2.5 text-[11px]">
+                
+                <!-- Simulated WS Latency -->
+                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-obs-panel border border-obs-border text-zinc-400">
+                    <span class="text-zinc-500 font-mono">WS_RTT:</span>
+                    <span id="ws-latency" class="text-cyan-400 font-bold font-mono">14ms</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+                </div>
+
+                <!-- Memory Usage -->
+                <div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded bg-obs-panel border border-obs-border text-zinc-400">
+                    <span class="text-zinc-500 font-mono">REDIS_HEAP:</span>
+                    <span id="redis-heap" class="text-emerald-400 font-mono">34.8 MB / 128 MB</span>
+                </div>
+
+                <!-- Clock -->
+                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-obs-panel border border-obs-border text-zinc-400 font-mono">
+                    <span class="text-zinc-500">UTC:</span>
+                    <span id="live-clock" class="text-zinc-200">00:00:00</span>
+                </div>
+
+                <!-- External Links Styled as HTTP Endpoints -->
+                <div class="flex items-center gap-1.5 pl-1">
+                    <a href="cv-bruno-pianca-1.pdf" download="cv-bruno-pianca.pdf" target="_blank"
+                       class="px-2.5 py-1 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-600/50 hover:bg-emerald-900/80 hover:border-emerald-400 transition-all font-mono font-medium flex items-center gap-1 shadow-sm">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <span>GET /cv.pdf</span>
+                    </a>
+
+                    <a href="https://github.com/obrunodev" target="_blank" rel="noopener noreferrer"
+                       class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-700 hover:border-cyan-400 hover:text-cyan-300 transition-all font-mono flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                        <span>gh://obrunodev</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/brunorpdev/" target="_blank" rel="noopener noreferrer"
+                       class="px-2.5 py-1 rounded bg-sky-950/50 text-sky-300 border border-sky-800/60 hover:border-sky-400 transition-all font-mono flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        <span>in://brunorpdev</span>
                     </a>
                 </div>
+
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Mobile Navigation -->
-    <nav class="mobile-only fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-md">
-        <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/40 dark:border-slate-700/50 shadow-lg dark:shadow-black/20 rounded-xl px-5 py-3 flex justify-between items-center">
+    <!-- ================================================================= -->
+    <!-- METRICS & TELEMETRY STRIP -->
+    <!-- ================================================================= -->
+    <section class="border-b border-obs-border bg-obs-surface/40 px-4 py-2">
+        <div class="max-w-[1720px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
             
-            <span class="font-bold text-slate-800 dark:text-white text-sm tracking-wide">&lt;BRP/&gt;</span>
-            
-            <div class="flex items-center gap-4">
-                <div class="flex gap-4 text-xs sm:text-sm">
-                    <a href="#sobre" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition">Sobre</a>
-                    <a href="#portfolio" class="text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 transition">Projetos</a>
+            <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
+                <div>
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">CLUSTER STATUS</div>
+                    <div class="text-xs font-bold text-emerald-400 flex items-center gap-1.5 mt-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                        <span>OPERATIONAL</span>
+                    </div>
                 </div>
-
-                <button id="theme-toggle" class="relative inline-flex items-center justify-center w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition focus:outline-none">
-                    <i class="ri-sun-line text-lg absolute scale-0 dark:scale-100 transition-transform duration-300 rotate-90 dark:rotate-0"></i>
-                    <i class="ri-moon-line text-lg absolute scale-100 dark:scale-0 transition-transform duration-300 rotate-0 dark:-rotate-90"></i>
-                </button>
+                <div class="text-[10px] text-zinc-600 font-mono">100% SLA</div>
             </div>
-        </div>
-    </nav>
 
-    <!-- Desktop Hero Section -->
-    <section class="desktop-only desktop-hero">
-        <div class="max-w-7xl mx-auto px-6 w-full h-full flex items-center">
-            <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
-                <div class="text-white space-y-6">
-                    <div class="space-y-4">
-                        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
-                            Bruno R. Pianca
-                        </h1>
-                        <p class="text-2xl text-blue-100 font-medium">
-                            Sistemas & Automações Inteligentes
-                        </p>
-                        <p class="text-lg text-blue-50 leading-relaxed max-w-lg">
-                            Desenvolvedor Python especializado em eliminar processos manuais. 
-                            Transformo fluxos de trabalho complexos em APIs robustas e sistemas 
-                            automatizados de alta performance.
-                        </p>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://wa.me/5511937183232" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition flex items-center gap-2" target="_blank">
-                            <i class="ri-rocket-2-line"></i>
-                            <span>Iniciar Projeto</span>
-                        </a>
-                        <a href="cv-bruno-pianca-1.pdf" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition flex items-center gap-2" target="_blank">
-                            <i class="ri-file-download-line"></i>
-                            <span>Baixar CV</span>
-                        </a>
-                    </div>
-                    
-                    <div class="flex gap-4 pt-4">
-                        <a href="mailto:brunorpdev@gmail.com" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition">
-                            <i class="ri-mail-send-line text-xl"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/brunorpdev/" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition" target="_blank">
-                            <i class="ri-linkedin-fill text-xl"></i>
-                        </a>
-                        <a href="https://wa.me/5511937183232" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition" target="_blank">
-                            <i class="ri-whatsapp-line text-xl"></i>
-                        </a>
-                    </div>
+            <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
+                <div>
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">ACTIVE WORKERS</div>
+                    <div class="text-xs font-bold text-cyan-400 font-mono mt-0.5">4 / 4 POOL</div>
                 </div>
-                
-                <div class="flex justify-center">
-                    <div class="relative">
-                        <img src="img/perfil.jpeg" 
-                            alt="Foto de Perfil - Bruno R. Pianca" 
-                            loading="lazy"
-                            class="w-80 h-80 rounded-3xl object-cover shadow-2xl border-4 border-white">
-                        <div class="absolute -bottom-4 -right-4 bg-green-500 w-8 h-8 rounded-full border-4 border-white"></div>
-                    </div>
-                </div>
+                <div class="text-[10px] text-zinc-500 font-mono">16 CONCURR.</div>
             </div>
+
+            <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
+                <div>
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">QUEUE DEPTH</div>
+                    <div id="stat-queue-depth" class="text-xs font-bold text-amber-400 font-mono mt-0.5">0 PENDING</div>
+                </div>
+                <div class="text-[10px] text-zinc-600 font-mono">REDIS DB:0</div>
+            </div>
+
+            <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
+                <div>
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">PROCESSED JOBS</div>
+                    <div id="stat-jobs-count" class="text-xs font-bold text-zinc-200 font-mono mt-0.5">2,841</div>
+                </div>
+                <div class="text-[10px] text-emerald-500 font-mono">+100% OK</div>
+            </div>
+
+            <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
+                <div>
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">AVG LATENCY</div>
+                    <div class="text-xs font-bold text-zinc-200 font-mono mt-0.5">380ms</div>
+                </div>
+                <div class="text-[10px] text-zinc-500 font-mono">P99: 890ms</div>
+            </div>
+
+            <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
+                <div>
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">SYSTEM UPTIME</div>
+                    <div class="text-xs font-bold text-purple-400 font-mono mt-0.5">6y+ (PROD)</div>
+                </div>
+                <div class="text-[10px] text-zinc-500 font-mono">PYTHON STACK</div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Mobile Content -->
-    <main class="mobile-only max-w-md mx-auto pt-24 px-4 sm:px-6">
+    <!-- ================================================================= -->
+    <!-- MAIN WORKSPACE: ORCHESTRATION GRID -->
+    <!-- ================================================================= -->
+    <main class="flex-1 max-w-[1720px] w-full mx-auto p-3 sm:p-4 grid grid-cols-1 xl:grid-cols-12 gap-3.5">
+        
+        <!-- ============================================================= -->
+        <!-- LEFT COLUMN: SERVICES & REDIS QUEUE (7 Cols on XL) -->
+        <!-- ============================================================= -->
+        <div class="xl:col-span-7 flex flex-col gap-3.5">
 
-        <div class="fade-in-up bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden border border-slate-100 dark:border-slate-700 relative">
-            
-            <div class="h-32 bg-gradient-to-r from-brand-500 to-indigo-600 relative overflow-hidden">
-                <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-            </div>
-
-            <div class="relative px-6 -mt-12 text-center">
-                <div class="relative inline-block">
-                    <img src="img/perfil.jpeg" 
-                        alt="Foto de Perfil - Bruno R. Pianca" 
-                        loading="lazy"
-                        class="w-24 h-24 rounded-2xl object-cover border-4 border-white dark:border-slate-800 shadow-md mx-auto transition-colors duration-300">
-                    <span class="absolute bottom-0 right-0 w-5 h-5 bg-green-500 border-4 border-white dark:border-slate-800 rounded-full transition-colors duration-300"></span>
-                </div>
+            <!-- PANEL: REGISTERED SERVICES (PROJECTS / WORKLOADS) -->
+            <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden flex flex-col shadow-lg">
                 
-                <div class="mt-4">
-                    <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Bruno R. Pianca</h1>
-                    <p class="text-brand-600 dark:text-brand-400 font-medium text-sm uppercase tracking-wider mt-1">Sistemas & Automações Inteligentes</p>
-                    
-                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
-                        Desenvolvedor Python focado em eliminar processos manuais. Transformo fluxos de trabalho complexos em APIs robustas e sistemas automatizados de alta performance.
-                    </p>
-                </div>
-
-                <div class="flex justify-center gap-3 mt-6 mb-6">
-                    <a href="mailto:brunorpdev@gmail.com" class="p-2 bg-slate-50 dark:bg-slate-700 rounded-full text-slate-600 dark:text-slate-300 hover:bg-brand-50 dark:hover:bg-brand-900/50 hover:text-brand-600 dark:hover:text-brand-400 transition border border-slate-100 dark:border-slate-600" title="E-mail">
-                        <i class="ri-mail-send-line text-xl"></i>
-                    </a>
-                    <a href="https://wa.me/5511937183232" class="p-2 bg-slate-50 dark:bg-slate-700 rounded-full text-slate-600 dark:text-slate-300 hover:bg-brand-50 dark:hover:bg-brand-900/50 hover:text-brand-600 dark:hover:text-brand-400 transition border border-slate-100 dark:border-slate-600" target="_blank" title="WhatsApp">
-                        <i class="ri-whatsapp-line text-xl"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/brunorpdev/" class="p-2 bg-slate-50 dark:bg-slate-700 rounded-full text-slate-600 dark:text-slate-300 hover:bg-brand-50 dark:hover:bg-brand-900/50 hover:text-brand-600 dark:hover:text-brand-400 transition border border-slate-100 dark:border-slate-600" target="_blank" title="LinkedIn">
-                        <i class="ri-linkedin-fill text-xl"></i>
-                    </a>
-                </div>
-            </div>  
-        </div>
-
-        <div class="mt-8 space-y-3 fade-in-up delay-100" id="sobre">
-            <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest ml-1 mb-2">Acesso Rápido</h3>
-            
-            <a href="https://wa.me/5511937183232" class="group flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-brand-200 dark:hover:border-slate-600 transition-all duration-300" target="_blank">
-                <div class="flex items-center gap-4">
-                    <div class="bg-brand-50 text-brand-600 dark:bg-brand-900/30 dark:text-brand-400 p-2 rounded-lg group-hover:bg-brand-500 group-hover:text-white transition">
-                        <i class="ri-calendar-check-line text-xl"></i>
+                <!-- Panel Header -->
+                <div class="bg-obs-surface px-3.5 py-2.5 border-b border-obs-border flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded bg-cyan-400 led-glow-cyan"></div>
+                        <h2 class="font-bold text-zinc-200 tracking-wide uppercase text-xs flex items-center gap-2">
+                            <span>SERVICE_MESH // REGISTERED_WORKLOADS</span>
+                            <span class="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-400 font-normal">8 NODES</span>
+                        </h2>
                     </div>
-                    <div>
-                        <h4 class="font-semibold text-slate-800 dark:text-slate-200">Agendar Consultoria</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">30 minutos gratuitos para discutir seu projeto</p>
+
+                    <div class="flex items-center gap-2 text-[11px] text-zinc-400">
+                        <span class="text-zinc-500">FILTER:</span>
+                        <span class="text-emerald-400 font-semibold">ALL_HEALTHY</span>
+                        <span class="text-zinc-700">|</span>
+                        <span class="text-zinc-500">ENV:</span>
+                        <span class="text-zinc-300">PRODUCTION</span>
                     </div>
                 </div>
-                <i class="ri-arrow-right-s-line text-slate-400 group-hover:translate-x-1 transition"></i>
-            </a>
 
-            <a href="cv-bruno-pianca-1.pdf" class="group flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-brand-200 dark:hover:border-slate-600 transition-all duration-300" target="_blank">
-                <div class="flex items-center gap-4">
-                    <div class="bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400 p-2 rounded-lg group-hover:bg-purple-500 group-hover:text-white transition">
-                        <i class="ri-file-download-line text-xl"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-slate-800 dark:text-slate-200">Baixar meu CV</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">PDF Atualizado 2025</p>
-                    </div>
+                <!-- Services Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-[11px]">
+                        <thead>
+                            <tr class="border-b border-obs-border/80 bg-obs-panelLight/40 text-zinc-400 font-mono uppercase text-[10px]">
+                                <th class="py-2 px-3">Service ID / Domain</th>
+                                <th class="py-2 px-3">Runtime / Tech Stack</th>
+                                <th class="py-2 px-3">State</th>
+                                <th class="py-2 px-3">RTT / Pods</th>
+                                <th class="py-2 px-3 text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="services-table-body" class="divide-y divide-obs-border/50 text-zinc-300 font-mono">
+                            <!-- Injected by JavaScript -->
+                        </tbody>
+                    </table>
                 </div>
-                <i class="ri-arrow-right-s-line text-slate-400 group-hover:translate-x-1 transition"></i>
-            </a>
-        </div>
 
-        <div class="mt-10 fade-in-up delay-200">
-            <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest ml-1 mb-4">Como eu trabalho</h3>
-            <div class="grid grid-cols-1 gap-3">
-                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700">
-                    <span class="text-brand-600 font-bold">01. Diagnóstico:</span>
-                    <p class="text-xs text-slate-500 mt-1">Entendo seu gargalo manual e desenho a solução técnica.</p>
+                <!-- Footer Summary of Services -->
+                <div class="bg-obs-surface/60 border-t border-obs-border px-3.5 py-1.5 flex items-center justify-between text-[10px] text-zinc-500 font-mono">
+                    <div class="flex items-center gap-3">
+                        <span>• Core Protocols: REST / SSE / WebSockets</span>
+                        <span class="hidden sm:inline">• Isolation: Dockerized Containers</span>
+                    </div>
+                    <div class="text-cyan-400">AUTONOMOUS HEALTH CHECK: ACTIVE</div>
                 </div>
-                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700">
-                    <span class="text-brand-600 font-bold">02. Desenvolvimento:</span>
-                    <p class="text-xs text-slate-500 mt-1">Construção com Python (FastAPI/Django) focada em performance e segurança.</p>
-                </div>
-                <div class="p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700">
-                    <span class="text-brand-600 font-bold">03. Entrega & Suporte:</span>
-                    <p class="text-xs text-slate-500 mt-1">Sistema rodando e documentado, com acompanhamento pós-entrega.</p>
-                </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="mt-10 fade-in-up delay-200" id="portfolio">
-            <div class="flex justify-between items-end mb-4">
-                <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest ml-1">Projetos Recentes</h3>
-                <!-- <a href="#" class="text-xs text-brand-600 dark:text-brand-400 font-semibold hover:underline">Ver todos</a> -->
-            </div>
-
-            <div class="grid grid-cols-2 gap-3">
-                <a href="https://app.epigene.com.br/" class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-700" target="_blank">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="SaaS Sistema de Saúde - Epigene" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                        <span class="text-xs text-white/80 font-light">SaaS - Sistema de saúde</span>
-                        <span class="text-sm text-white font-bold">Epigene</span>
-                    </div>
-                </a>
-
-                <a href="#" class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-700">
-                    <img src="img/portfolio/onda-nerd.png" alt="Web App Sistema Financeiro - Onda Nerd Tech" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                        <span class="text-xs text-white/80 font-light">Web App - Sistema financeiro</span>
-                        <span class="text-sm text-white font-bold">Onda Nerd Tech</span>
-                    </div>
-                </a>
-
-                <a href="https://mecanicasilveiracruz.com.br/" class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-700" target="_blank">
-                    <img src="img/portfolio/silveira-cruz.png" alt="Landing Page - Oficina Silveira Cruz" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                        <span class="text-xs text-white/80 font-light">Landing Page</span>
-                        <span class="text-sm text-white font-bold">Oficina Silveira Cruz</span>
-                    </div>
-                </a>
-
-                <a href="#" class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-700">
-                    <img src="img/portfolio/habittari-v1.png" alt="E-commerce - Habittari Decor" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                        <span class="text-xs text-white/80 font-light">E-commerce</span>
-                        <span class="text-sm text-white font-bold">Habittari Decor</span>
-                    </div>
-                </a>
-
-                <a href="#" class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-700">
-                    <img src="img/portfolio/esteio.png" alt="E-commerce Automotivo - Esteio Distribuidora" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-90 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-4 flex flex-col justify-end">
-                        <span class="text-xs text-white/80 font-light">E-commerce</span>
-                        <span class="text-sm text-white font-bold">Esteio Distribuidora</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="mt-8 fade-in-up delay-300">
-            <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest ml-1 mb-3">Expertise Técnica</h3>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/20 border border-brand-100 dark:border-brand-800 rounded-full text-xs font-semibold text-brand-600 dark:text-brand-400">Python</span>
-                <span class="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Django 6 | Ninja</span>
-                <span class="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">FastAPI | Pydantic</span>
-                <span class="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">HTMX</span>
+            <!-- PANEL: REDIS MESSAGE BROKER & TASK QUEUE -->
+            <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden flex flex-col shadow-lg flex-1">
                 
-                <span class="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 text-indigo-500">PostgreSQL</span>
-                <span class="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Redis | Celery</span>
-                <span class="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Docker</span>
-                <span class="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">uv (Modern Tooling)</span>
+                <!-- Queue Header -->
+                <div class="bg-obs-surface px-3.5 py-2.5 border-b border-obs-border flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded bg-amber-400 led-glow-amber"></div>
+                        <h2 class="font-bold text-zinc-200 tracking-wide uppercase text-xs flex items-center gap-2">
+                            <span>MESSAGE_BROKER // REDIS_STREAM_QUEUE</span>
+                            <span class="text-[10px] px-1.5 py-0.5 rounded bg-zinc-800 text-amber-300 font-mono">db:0 / queue:agent_jobs</span>
+                        </h2>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-[10px] font-mono text-zinc-400">
+                        <span class="text-zinc-500">CONSUMER_GROUP:</span>
+                        <span class="text-zinc-300">cg-bruno-agents</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    </div>
+                </div>
+
+                <!-- Queue Stream Table -->
+                <div class="overflow-x-auto flex-1 min-h-[160px]">
+                    <table class="w-full text-left border-collapse text-[11px]">
+                        <thead>
+                            <tr class="border-b border-obs-border/80 bg-obs-panelLight/40 text-zinc-400 font-mono uppercase text-[10px]">
+                                <th class="py-2 px-3">Job ID</th>
+                                <th class="py-2 px-3">Topic / Intent</th>
+                                <th class="py-2 px-3">Status</th>
+                                <th class="py-2 px-3">Timestamp</th>
+                                <th class="py-2 px-3 text-right">Payload</th>
+                            </tr>
+                        </thead>
+                        <tbody id="queue-table-body" class="divide-y divide-obs-border/50 text-zinc-300 font-mono">
+                            <!-- Real-time dynamic jobs injected here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Broker Info Strip -->
+                <div class="bg-obs-surface/60 border-t border-obs-border px-3.5 py-1.5 flex items-center justify-between text-[10px] text-zinc-500 font-mono">
+                    <span id="queue-status-text">LISTENER: POLLING (Interval: 100ms) | ACK MODE: MANUAL</span>
+                    <span class="text-zinc-400 font-mono">Backpressure: 0.0%</span>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- RIGHT COLUMN: DISPATCH TERMINAL, WORKER LOGS, OUTPUT BUFFER -->
+        <!-- ============================================================= -->
+        <div class="xl:col-span-5 flex flex-col gap-3.5">
+
+            <!-- PANEL: DISPATCH TERMINAL (INPUT & SUBMISSION) -->
+            <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden shadow-lg">
                 
-                <span class="px-3 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 opacity-70">React | Tailwind</span>
-            </div>
-        </div>
+                <!-- Terminal Header -->
+                <div class="bg-obs-surface px-3.5 py-2 border-b border-obs-border flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+                        </div>
+                        <span class="font-bold text-zinc-300 text-xs tracking-wider">JOB_DISPATCHER // POST /api/v1/jobs</span>
+                    </div>
 
-        <div class="mt-10 fade-in-up delay-300" id="depoimentos">
-            <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest ml-1 mb-4">Depoimentos de Clientes</h3>
-            
-            <div class="space-y-4">
-                <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 p-2 rounded-lg flex-shrink-0">
-                            <i class="ri-quote-left text-lg"></i>
+                    <div class="text-[10px] text-cyan-400 font-mono">TTY: /dev/pts/0</div>
+                </div>
+
+                <!-- Command Input Form -->
+                <div class="p-3 bg-obs-terminal">
+                    <form id="job-form" class="space-y-2.5" onsubmit="handleJobSubmit(event)">
+                        
+                        <!-- Terminal Input line -->
+                        <div class="flex items-center gap-2 bg-obs-surface/90 border border-obs-border rounded p-2 focus-within:border-cyan-500/80 transition-colors">
+                            <span class="text-emerald-400 font-bold font-mono text-xs select-none">agent@bruno:~$</span>
+                            <input 
+                                type="text" 
+                                id="job-input"
+                                placeholder="Digite sua pergunta (ex: 'quais suas skills?', 'experiência', 'projetos')..."
+                                autocomplete="off"
+                                class="flex-1 bg-transparent border-none outline-none text-zinc-100 font-mono text-xs placeholder:text-zinc-600 focus:ring-0"
+                            />
+                            <button 
+                                type="submit" 
+                                id="dispatch-btn"
+                                class="px-3 py-1.5 rounded bg-cyan-600 hover:bg-cyan-500 active:bg-cyan-700 text-zinc-950 font-bold font-mono text-xs tracking-wide transition-all flex items-center gap-1.5 shadow-md">
+                                <span>DISPATCH</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </button>
                         </div>
-                        <div class="flex-1">
-                            <p class="text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
-                                "Com o sistema personalizado, centralizamos todas as informações da nossa operação da Shopee. Isso simplificou drasticamente nosso dia a dia, permitindo que focássemos no crescimento do negócio."
-                            </p>
-                            <div class="mt-3 flex items-center justify-between">
-                                <div>
-                                    <p class="text-xs font-semibold text-slate-800 dark:text-slate-200">Carol e Andrey</p>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400">Onda Nerd Tech</p>
-                                </div>
-                                <a href="#" class="text-xs text-brand-600 dark:text-brand-400 hover:underline">Ver projeto</a>
-                            </div>
+
+                        <!-- Quick Intent Dispatch Pills -->
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class="text-[10px] text-zinc-500 font-mono uppercase mr-1">Quick Intent:</span>
+                            
+                            <button type="button" onclick="quickDispatch('g30')"
+                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-950/70 hover:bg-purple-900 text-purple-300 border border-purple-700/60 hover:border-purple-400 transition-colors flex items-center gap-1 shadow-sm">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+                                <span>$ g30 (IA)</span>
+                            </button>
+
+                            <button type="button" onclick="quickDispatch('skills')"
+                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-cyan-300 border border-zinc-700 hover:border-cyan-400 transition-colors">
+                                $ skills
+                            </button>
+                            
+                            <button type="button" onclick="quickDispatch('experiencia')"
+                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-emerald-300 border border-zinc-700 hover:border-emerald-400 transition-colors">
+                                $ experiencia
+                            </button>
+                            
+                            <button type="button" onclick="quickDispatch('projetos')"
+                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-purple-300 border border-zinc-700 hover:border-purple-400 transition-colors">
+                                $ projetos
+                            </button>
+
+                            <button type="button" onclick="quickDispatch('contato')"
+                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-sky-300 border border-zinc-700 hover:border-sky-400 transition-colors">
+                                $ contato
+                            </button>
+
+                            <button type="button" onclick="quickDispatch('sobre')"
+                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-amber-300 border border-zinc-700 hover:border-amber-400 transition-colors">
+                                $ sobre
+                            </button>
+
+                            <button type="button" onclick="quickDispatch('arquitetura')"
+                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-rose-300 border border-zinc-700 hover:border-rose-400 transition-colors">
+                                $ arquitetura
+                            </button>
+
+                            <button type="button" onclick="quickDispatch('curriculo')"
+                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-700 hover:border-zinc-400 transition-colors">
+                                $ curriculo
+                            </button>
                         </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- PANEL: WORKER LOGS (LIVE STREAMING TERMINAL) -->
+            <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden shadow-lg flex flex-col">
+                
+                <!-- Log Stream Header -->
+                <div class="bg-obs-surface px-3.5 py-2 border-b border-obs-border flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded bg-purple-400 led-glow-cyan animate-pulse"></div>
+                        <span class="font-bold text-zinc-300 text-xs tracking-wider uppercase">
+                            WORKER_LOGS // STDOUT STREAM
+                        </span>
+                        <span id="log-count-badge" class="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-400 font-mono">0 lines</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-[10px] font-mono">
+                        <button onclick="clearLogs()" class="text-zinc-500 hover:text-zinc-300 transition-colors">[Clear]</button>
+                        <span class="text-zinc-700">|</span>
+                        <label class="flex items-center gap-1 cursor-pointer text-zinc-400">
+                            <input type="checkbox" id="autoscroll-toggle" checked class="rounded bg-zinc-900 border-zinc-700 text-cyan-500 focus:ring-0">
+                            <span>Auto-scroll</span>
+                        </label>
                     </div>
                 </div>
 
-                <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-2 rounded-lg flex-shrink-0">
-                            <i class="ri-quote-left text-lg"></i>
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
-                                "O projeto bem estruturado e o rápido atendimento às demandas foram fundamentais. Conquistamos nosso investidor nos primeiros 2 meses e decolamos a partir daí."
-                            </p>
-                            <div class="mt-3 flex items-center justify-between">
-                                <div>
-                                    <p class="text-xs font-semibold text-slate-800 dark:text-slate-200">Epigene</p>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400">SaaS de Saúde</p>
-                                </div>
-                                <a href="https://app.epigene.com.br/" class="text-xs text-brand-600 dark:text-brand-400 hover:underline" target="_blank">Ver projeto</a>
-                            </div>
-                        </div>
+                <!-- Log Output Window -->
+                <div id="worker-logs-container" class="bg-obs-terminal p-3 font-mono text-[11px] h-48 overflow-y-auto leading-relaxed scanlines border-b border-obs-border space-y-1">
+                    <!-- Logs streamed dynamically -->
+                </div>
+
+                <!-- Worker State Bar -->
+                <div class="bg-obs-surface/80 px-3 py-1.5 flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                    <div class="flex items-center gap-2">
+                        <span class="text-zinc-400">ACTIVE_WORKER:</span>
+                        <span id="active-worker-id" class="text-cyan-400 font-semibold">worker-01 (IDLE)</span>
+                    </div>
+                    <div id="worker-state-indicator" class="text-emerald-400">STATE: LISTENING</div>
+                </div>
+            </section>
+
+            <!-- PANEL: WORKER OUTPUT BUFFER (FORMATTED JSON RESPONSE) -->
+            <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden shadow-lg flex-1 flex flex-col">
+                
+                <!-- Output Buffer Header -->
+                <div class="bg-obs-surface px-3.5 py-2 border-b border-obs-border flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded bg-emerald-400 led-glow-green"></div>
+                        <span class="font-bold text-zinc-300 text-xs tracking-wider uppercase">
+                            OUTPUT_BUFFER // HTTP 200 OK
+                        </span>
+                        <span id="output-meta-badge" class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 font-mono">
+                            JSON_PAYLOAD
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button 
+                            id="copy-json-btn" 
+                            onclick="copyJsonResponse()"
+                            class="px-2 py-0.5 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-700 hover:border-cyan-400 font-mono text-[10px] flex items-center gap-1 transition-all">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                            <span>COPY JSON</span>
+                        </button>
                     </div>
                 </div>
 
-                <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-100 dark:border-slate-700 shadow-sm">
-                    <div class="flex items-start gap-3">
-                        <div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-2 rounded-lg flex-shrink-0">
-                            <i class="ri-quote-left text-lg"></i>
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
-                                "Nosso processo era muito específico e nenhum ERP do mercado atendia 100%. O Bruno desenvolveu uma solução integrada que cobriu todas as brechas da operação."
-                            </p>
-                            <div class="mt-3 flex items-center justify-between">
-                                <div>
-                                    <p class="text-xs font-semibold text-slate-800 dark:text-slate-200">Esteio Distribuidora</p>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400">E-commerce Automotivo</p>
-                                </div>
-                                <a href="#" class="text-xs text-brand-600 dark:text-brand-400 hover:underline">Ver projeto</a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- JSON Response Canvas -->
+                <div class="bg-obs-terminal/90 p-3.5 flex-1 overflow-auto min-h-[220px]">
+                    <pre id="json-output-viewer" class="font-mono text-[11px] leading-relaxed text-zinc-300 selection:bg-cyan-500/30">
+<!-- JSON with syntax highlight injected here -->
+                    </pre>
                 </div>
-            </div>
-        </div>
 
-        <div class="mt-12 mb-6" id="contato">
-            <a href="https://wa.me/5511937183232" class="w-full block bg-gradient-to-r from-brand-600 to-indigo-600 dark:from-brand-500 dark:to-indigo-500 text-white font-bold text-center py-4 px-6 rounded-xl shadow-lg shadow-brand-600/20 hover:shadow-xl hover:from-brand-700 hover:to-indigo-700 hover:-translate-y-1 transition-all duration-300 transform" target="_blank">
-                <i class="ri-rocket-2-line mr-2 align-middle"></i>
-                <span class="text-sm">Iniciar Projeto Agora</span>
-                <span class="block text-xs mt-1 opacity-90">Resposta em até 2 horas</span>
-            </a>
-            <p class="text-center text-xs text-slate-400 mt-4"> 2026 Bruno R. Pianca.</p>
-        </div>
+                <!-- Buffer Status Bar -->
+                <div class="bg-obs-surface/80 px-3 py-1.5 border-t border-obs-border flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                    <span id="output-stats-text">RESOLVED: Local In-Memory Graph | Encoding: UTF-8</span>
+                    <span class="text-zinc-400">SCHEMA: BrunoProfileSchema_v2</span>
+                </div>
+            </section>
 
+        </div>
     </main>
 
-    <!-- Desktop Content -->
-    <div class="desktop-only">
-        <!-- Sobre Section -->
-        <section id="sobre-desktop" class="py-20 bg-white dark:bg-slate-900">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Sobre Mim</h2>
-                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                        Desenvolvedor Python apaixonado por transformar problemas complexos em soluções elegantes e automatizadas
-                    </p>
-                </div>
-                
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="space-y-4">
-                            <h3 class="text-2xl font-semibold text-slate-900 dark:text-white">
-                                Especialista em Automação e Sistemas Inteligentes
-                            </h3>
-                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Com mais de 5 anos de experiência em desenvolvimento Python, foco em criar 
-                                sistemas que eliminam trabalho repetitivo e otimizam processos de negócio. 
-                                Minha especialidade é transformar necessidades complexas em APIs robustas, 
-                                dashboards intuitivos e automações que geram resultados reais.
-                            </p>
-                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Atendo empresas de todos os portes, desde startups que precisam escalar 
-                                rapidamente até grandes corporações buscando modernizar sua infraestrutura. 
-                                Cada projeto é uma oportunidade de aprender e entregar soluções que fazem 
-                                a diferença no dia a dia das pessoas.
-                            </p>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl">
-                                <div class="text-3xl font-bold text-brand-600 dark:text-brand-400 mb-2">50+</div>
-                                <div class="text-sm text-slate-600 dark:text-slate-300">Projetos Entregues</div>
-                            </div>
-                            <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl">
-                                <div class="text-3xl font-bold text-brand-600 dark:text-brand-400 mb-2">30+</div>
-                                <div class="text-sm text-slate-600 dark:text-slate-300">Clientes Satisfeitos</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl">
-                        <h4 class="text-xl font-semibold text-slate-900 dark:text-white mb-6">Minha Metodologia</h4>
-                        <div class="space-y-4">
-                            <div class="flex gap-4">
-                                <div class="bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 p-3 rounded-lg h-fit">
-                                    <i class="ri-search-line text-xl"></i>
-                                </div>
-                                <div>
-                                    <h5 class="font-semibold text-slate-900 dark:text-white mb-1">01. Diagnóstico Profundo</h5>
-                                    <p class="text-sm text-slate-600 dark:text-slate-300">
-                                        Análise completa do seu processo atual para identificar gargalos e oportunidades de automação
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex gap-4">
-                                <div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-3 rounded-lg h-fit">
-                                    <i class="ri-code-s-slash-line text-xl"></i>
-                                </div>
-                                <div>
-                                    <h5 class="font-semibold text-slate-900 dark:text-white mb-1">02. Desenvolvimento Ágil</h5>
-                                    <p class="text-sm text-slate-600 dark:text-slate-300">
-                                        Construção iterativa com entregas frequentes e feedback constante
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex gap-4">
-                                <div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-3 rounded-lg h-fit">
-                                    <i class="ri-rocket-2-line text-xl"></i>
-                                </div>
-                                <div>
-                                    <h5 class="font-semibold text-slate-900 dark:text-white mb-1">03. Entrega e Escala</h5>
-                                    <p class="text-sm text-slate-600 dark:text-slate-300">
-                                        Sistema em produção com documentação completa e suporte para crescimento
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- ================================================================= -->
+    <!-- FOOTER / OBSERVABILITY META -->
+    <!-- ================================================================= -->
+    <footer class="border-t border-obs-border bg-obs-surface px-4 py-2 mt-auto text-zinc-500 text-[10px] font-mono">
+        <div class="max-w-[1720px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div class="flex items-center gap-3">
+                <span class="text-zinc-400 font-semibold">BRUNO R. PIANCA</span>
+                <span>•</span>
+                <span>Senior Backend & AI Agent Engineer (6+ anos • Python / FastAPI / Django / LangGraph / Azure Cosmos / GCP)</span>
+                <span>•</span>
+                <span class="text-zinc-600">Simulated Architecture on GitHub Pages</span>
             </div>
-        </section>
-
-        <!-- Serviços Section -->
-        <section id="servicos-desktop" class="py-20 bg-slate-50 dark:bg-slate-950">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Serviços</h2>
-                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                        Soluções completas para digitalizar e automatizar seu negócio
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
-                        <div class="bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 p-4 rounded-xl w-fit h-fit mb-6">
-                            <i class="ri-code-box-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">APIs e Backend</h3>
-                        <p class="text-slate-600 dark:text-slate-300 mb-4">
-                            APIs RESTful robustas com FastAPI e Django, documentação automática e alta performance
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-brand-600 dark:text-brand-400"></i>
-                                <span>FastAPI com OpenAPI automática</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-brand-600 dark:text-brand-400"></i>
-                                <span>Django Ninja para APIs híbridas</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-brand-600 dark:text-brand-400"></i>
-                                <span>Autenticação JWT e OAuth2</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
-                        <div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-4 rounded-xl w-fit h-fit mb-6">
-                            <i class="ri-dashboard-3-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Dashboards e SaaS</h3>
-                        <p class="text-slate-600 dark:text-slate-300 mb-4">
-                            Sistemas web completos com dashboards em tempo real e interfaces intuitivas
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-purple-600 dark:text-purple-400"></i>
-                                <span>React + Tailwind CSS</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-purple-600 dark:text-purple-400"></i>
-                                <span>Gráficos interativos com D3.js</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-purple-600 dark:text-purple-400"></i>
-                                <span>WebSocket para tempo real</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
-                        <div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-4 rounded-xl w-fit h-fit mb-6">
-                            <i class="ri-cpu-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Automação e Scripts</h3>
-                        <p class="text-slate-600 dark:text-slate-300 mb-4">
-                            Scripts personalizados para automatizar tarefas repetitivas e processos manuais
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
-                                <span>Web scraping com BeautifulSoup</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
-                                <span>Integração com APIs terceiras</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-green-600 dark:text-green-400"></i>
-                                <span>Processamento de dados com Pandas</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
-                        <div class="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 p-4 rounded-xl w-fit h-fit mb-6">
-                            <i class="ri-database-2-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Banco de Dados</h3>
-                        <p class="text-slate-600 dark:text-slate-300 mb-4">
-                            Modelagem eficiente e otimização de performance para PostgreSQL e Redis
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-indigo-600 dark:text-indigo-400"></i>
-                                <span>PostgreSQL avançado</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-indigo-600 dark:text-indigo-400"></i>
-                                <span>Redis para cache e filas</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-indigo-600 dark:text-indigo-400"></i>
-                                <span>Migrações e otimização</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
-                        <div class="bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 p-4 rounded-xl w-fit h-fit mb-6">
-                            <i class="ri-git-branch-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">DevOps e Deploy</h3>
-                        <p class="text-slate-600 dark:text-slate-300 mb-4">
-                            Configuração completa de CI/CD, Docker e infraestrutura na nuvem
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-orange-600 dark:text-orange-400"></i>
-                                <span>Docker e Docker Compose</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-orange-600 dark:text-orange-400"></i>
-                                <span>GitHub Actions CI/CD</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-orange-600 dark:text-orange-400"></i>
-                                <span>Deploy em VPS e Cloud</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-lg transition">
-                        <div class="bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 p-4 rounded-xl w-fit h-fit mb-6">
-                            <i class="ri-customer-service-2-line text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-4">Consultoria</h3>
-                        <p class="text-slate-600 dark:text-slate-300 mb-4">
-                            Análise técnica e arquitetura para guiar suas decisões de tecnologia
-                        </p>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-pink-600 dark:text-pink-400"></i>
-                                <span>Revisão de código</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-pink-600 dark:text-pink-400"></i>
-                                <span>Planejamento arquitetural</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="ri-check-line text-pink-600 dark:text-pink-400"></i>
-                                <span>Treinamento técnico</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="flex items-center gap-4 text-zinc-400">
+                <a href="https://github.com/obrunodev/obrunodev.github.io" target="_blank" class="hover:text-cyan-400 transition-colors">view_source_code()</a>
+                <span>•</span>
+                <span class="text-emerald-500">SYSTEM_HEALTH: 100%</span>
             </div>
-        </section>
+        </div>
+    </footer>
 
-        <!-- Portfolio Desktop -->
-        <section id="portfolio-desktop" class="py-20 bg-white dark:bg-slate-900">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Portfolio</h2>
-                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                        Projetos reais que entregaram valor e resultados mensuráveis
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <a href="https://app.epigene.com.br/" class="portfolio-card group block" target="_blank">
-                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
-                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Epigene SaaS" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                            </div>
-                            <div class="p-6">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="px-2 py-1 bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 text-xs font-semibold rounded">SaaS</span>
-                                    <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-semibold rounded">Saúde</span>
-                                </div>
-                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Epigene</h3>
-                                <p class="text-slate-600 dark:text-slate-300 mb-4">
-                                    Plataforma completa para gestão de dados genéticos com dashboards interativos e relatórios personalizados
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex gap-2">
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">Django</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">React</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">PostgreSQL</span>
-                                    </div>
-                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <div class="portfolio-card group block">
-                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
-                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                                <img src="img/portfolio/onda-nerd.png" alt="Onda Nerd Tech" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                            </div>
-                            <div class="p-6">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-semibold rounded">Web App</span>
-                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-semibold rounded">Financeiro</span>
-                                </div>
-                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Onda Nerd Tech</h3>
-                                <p class="text-slate-600 dark:text-slate-300 mb-4">
-                                    Sistema financeiro automatizado para e-commerce com integração Shopee e dashboards de vendas
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex gap-2">
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">FastAPI</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">HTMX</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">Redis</span>
-                                    </div>
-                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://mecanicasilveiracruz.com.br/" class="portfolio-card group block" target="_blank">
-                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
-                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                                <img src="img/portfolio/silveira-cruz.png" alt="Oficina Silveira Cruz" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                            </div>
-                            <div class="p-6">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs font-semibold rounded">Landing</span>
-                                    <span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs font-semibold rounded">Automotivo</span>
-                                </div>
-                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Oficina Silveira Cruz</h3>
-                                <p class="text-slate-600 dark:text-slate-300 mb-4">
-                                    Landing page profissional com sistema de agendamento integrado e otimização SEO
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex gap-2">
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">Django</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">Tailwind</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">SQLite</span>
-                                    </div>
-                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <div class="portfolio-card group block">
-                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
-                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                                <img src="img/portfolio/habittari-v1.png" alt="Habittari Decor" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                            </div>
-                            <div class="p-6">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 text-xs font-semibold rounded">E-commerce</span>
-                                    <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-semibold rounded">Decoração</span>
-                                </div>
-                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Habittari Decor</h3>
-                                <p class="text-slate-600 dark:text-slate-300 mb-4">
-                                    Loja virtual completa com catálogo dinâmico, carrinho de compras e integração de pagamento
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex gap-2">
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">Django</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">Stripe</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">PostgreSQL</span>
-                                    </div>
-                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-card group block">
-                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
-                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                                <img src="img/portfolio/esteio.png" alt="Esteio Distribuidora" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                            </div>
-                            <div class="p-6">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs font-semibold rounded">E-commerce</span>
-                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-900/30 text-gray-600 dark:text-gray-400 text-xs font-semibold rounded">Autopeças</span>
-                                </div>
-                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">Esteio Distribuidora</h3>
-                                <p class="text-slate-600 dark:text-slate-300 mb-4">
-                                    Plataforma B2B para distribuidora automotiva com controle de estoque e pedidos em lote
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex gap-2">
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">FastAPI</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">React</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">MySQL</span>
-                                    </div>
-                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-card group block">
-                        <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
-                            <div class="aspect-video bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="API Project" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                            </div>
-                            <div class="p-6">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-semibold rounded">API</span>
-                                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-semibold rounded">Fintech</span>
-                                </div>
-                                <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">API Financeira</h3>
-                                <p class="text-slate-600 dark:text-slate-300 mb-4">
-                                    API RESTful para processamento de transações com validação em tempo real e dashboards administrativos
-                                </p>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex gap-2">
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">FastAPI</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">Celery</span>
-                                        <span class="text-xs text-slate-500 dark:text-slate-400">Redis</span>
-                                    </div>
-                                    <i class="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Expertise Section -->
-        <section class="py-20 bg-slate-50 dark:bg-slate-950">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Expertise Técnica</h2>
-                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                        Stack moderno e completo para desenvolver soluções escaláveis
-                    </p>
-                </div>
-                
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Backend & APIs</h3>
-                        
-                        <div class="space-y-4">
-                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 p-2 rounded-lg">
-                                            <i class="ri-code-s-slash-line text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-semibold text-slate-900 dark:text-white">Python</h4>
-                                            <p class="text-sm text-slate-500 dark:text-slate-400">Linguagem principal</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-sm font-semibold text-brand-600 dark:text-brand-400">Expert</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                                    <div class="skill-progress w-[95%]"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-2 rounded-lg">
-                                            <i class="ri-javascript-line text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-semibold text-slate-900 dark:text-white">Django & Ninja</h4>
-                                            <p class="text-sm text-slate-500 dark:text-slate-400">Framework web completo</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-sm font-semibold text-green-600 dark:text-green-400">Avançado</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                                    <div class="skill-progress w-[90%]"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 p-2 rounded-lg">
-                                            <i class="ri-flashlight-line text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-semibold text-slate-900 dark:text-white">FastAPI & Pydantic</h4>
-                                            <p class="text-sm text-slate-500 dark:text-slate-400">APIs modernas e rápidas</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-sm font-semibold text-purple-600 dark:text-purple-400">Expert</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                                    <div class="skill-progress w-[92%]"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Frontend & Tools</h3>
-                        
-                        <div class="space-y-4">
-                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 p-2 rounded-lg">
-                                            <i class="ri-database-2-line text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-semibold text-slate-900 dark:text-white">PostgreSQL</h4>
-                                            <p class="text-sm text-slate-500 dark:text-slate-400">Banco de dados principal</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">Avançado</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                                    <div class="skill-progress w-[85%]"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 rounded-lg">
-                                            <i class="ri-bolt-line text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-semibold text-slate-900 dark:text-white">Redis & Celery</h4>
-                                            <p class="text-sm text-slate-500 dark:text-slate-400">Cache e filas assíncronas</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-sm font-semibold text-red-600 dark:text-red-400">Avançado</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                                    <div class="skill-progress w-[80%]"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center gap-3">
-                                        <div class="bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 p-2 rounded-lg">
-                                            <i class="ri-ship-line text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-semibold text-slate-900 dark:text-white">Docker & DevOps</h4>
-                                            <p class="text-sm text-slate-500 dark:text-slate-400">Containerização e deploy</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-sm font-semibold text-cyan-600 dark:text-cyan-400">Intermediário</span>
-                                </div>
-                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                                    <div class="skill-progress w-[75%]"></div>
-                                </div>
-            </div>
-        </section>
-
-        <!-- Depoimentos Desktop -->
-        <section id="depoimentos-desktop" class="py-20 bg-white dark:bg-slate-900">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Depoimentos de Clientes</h2>
-                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                        O que dizem quem já transformou o negócio com minhas soluções
-                    </p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-                        <div class="flex items-center gap-1 mb-4">
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-300 mb-6 italic leading-relaxed">
-                            "Com o sistema personalizado, centralizamos todas as informações da nossa operação da Shopee. Isso simplificou drasticamente nosso dia a dia, permitindo que focássemos no crescimento do negócio."
-                        </p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-brand-100 dark:bg-brand-900/30 rounded-full flex items-center justify-center">
-                                <i class="ri-user-3-line text-brand-600 dark:text-brand-400 text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-slate-900 dark:text-white">Carol e Andrey</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">Onda Nerd Tech</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-                        <div class="flex items-center gap-1 mb-4">
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-300 mb-6 italic leading-relaxed">
-                            "O projeto bem estruturado e o rápido atendimento às demandas foram fundamentais. Conquistamos nosso investidor nos primeiros 2 meses e decolamos a partir daí."
-                        </p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
-                                <i class="ri-building-line text-purple-600 dark:text-purple-400 text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-slate-900 dark:text-white">Epigene</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">SaaS de Saúde</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-                        <div class="flex items-center gap-1 mb-4">
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                            <i class="ri-star-fill text-yellow-500"></i>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-300 mb-6 italic leading-relaxed">
-                            "Nosso processo era muito específico e nenhum ERP do mercado atendia 100%. O Bruno desenvolveu uma solução integrada que cobriu todas as brechas da operação."
-                        </p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                                <i class="ri-store-line text-green-600 dark:text-green-400 text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-slate-900 dark:text-white">Esteio Distribuidora</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">E-commerce Automotivo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contato Desktop -->
-        <section id="contato-desktop" class="py-20 bg-slate-50 dark:bg-slate-950">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Vamos Conversar?</h2>
-                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                        Transforme sua ideia em realidade. Agende uma consultoria gratuita e vamos discutir como posso ajudar seu negócio a escalar.
-                    </p>
-                </div>
-                
-                <div class="grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Iniciar Projeto</h3>
-                        <p class="text-slate-600 dark:text-slate-300 mb-6">
-                            Resposta em até 2 horas. Vamos analisar sua necessidade e desenhar a melhor solução técnica.
-                        </p>
-                        
-                        <div class="space-y-4">
-                            <a href="https://wa.me/5511937183232" class="w-full flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold py-4 px-6 rounded-xl transition" target="_blank">
-                                <i class="ri-whatsapp-line text-xl"></i>
-                                <span>WhatsApp - Falar Agora</span>
-                            </a>
-                            
-                            <a href="mailto:brunorpdev@gmail.com" class="w-full flex items-center justify-center gap-3 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold py-4 px-6 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
-                                <i class="ri-mail-send-line text-xl"></i>
-                                <span>Enviar E-mail</span>
-                            </a>
-                        </div>
-                        
-                        <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
-                                <span>Disponível para projetos</span>
-                                <span class="flex items-center gap-2">
-                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                                    Online agora
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700">
-                        <h3 class="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Informações de Contato</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg h-fit">
-                                    <i class="ri-mail-line text-brand-600 dark:text-brand-400 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-slate-900 dark:text-white mb-1">E-mail</p>
-                                    <p class="text-slate-600 dark:text-slate-300">brunorpdev@gmail.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg h-fit">
-                                    <i class="ri-phone-line text-brand-600 dark:text-brand-400 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-slate-900 dark:text-white mb-1">Telefone/WhatsApp</p>
-                                    <p class="text-slate-600 dark:text-slate-300">+55 11 93718-3232</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg h-fit">
-                                    <i class="ri-map-pin-line text-brand-600 dark:text-brand-400 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-slate-900 dark:text-white mb-1">Localização</p>
-                                    <p class="text-slate-600 dark:text-slate-300">Jundiaí - SP, Brasil</p>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Atendimento remoto para todo Brasil</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg h-fit">
-                                    <i class="ri-linkedin-box-line text-brand-600 dark:text-brand-400 text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-slate-900 dark:text-white mb-1">LinkedIn</p>
-                                    <a href="https://linkedin.com/in/brunorpdev/" class="text-brand-600 dark:text-brand-400 hover:underline" target="_blank">linkedin.com/in/brunorpdev</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer Desktop -->
-        <footer class="bg-slate-900 dark:bg-slate-950 text-white py-12">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div>
-                        <h4 class="font-bold text-xl mb-4">&lt;BRP/&gt;</h4>
-                        <p class="text-slate-400 text-sm">
-                            Desenvolvedor Python especializado em sistemas inteligentes e automação de processos.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h5 class="font-semibold mb-4">Serviços</h5>
-                        <ul class="space-y-2 text-sm text-slate-400">
-                            <li><a href="#servicos-desktop" class="hover:text-white transition">APIs e Backend</a></li>
-                            <li><a href="#servicos-desktop" class="hover:text-white transition">Dashboards e SaaS</a></li>
-                            <li><a href="#servicos-desktop" class="hover:text-white transition">Automação</a></li>
-                            <li><a href="#servicos-desktop" class="hover:text-white transition">Consultoria</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h5 class="font-semibold mb-4">Links Úteis</h5>
-                        <ul class="space-y-2 text-sm text-slate-400">
-                            <li><a href="#portfolio-desktop" class="hover:text-white transition">Portfolio</a></li>
-                            <li><a href="cv-bruno-pianca-1.pdf" class="hover:text-white transition" target="_blank">Baixar CV</a></li>
-                            <li><a href="#depoimentos-desktop" class="hover:text-white transition">Depoimentos</a></li>
-                            <li><a href="#contato-desktop" class="hover:text-white transition">Contato</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h5 class="font-semibold mb-4">Conecte-se</h5>
-                        <div class="flex gap-3 mb-4">
-                            <a href="https://linkedin.com/in/brunorpdev/" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition" target="_blank">
-                                <i class="ri-linkedin-fill"></i>
-                            </a>
-                            <a href="https://wa.me/5511937183232" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition" target="_blank">
-                                <i class="ri-whatsapp-fill"></i>
-                            </a>
-                            <a href="mailto:brunorpdev@gmail.com" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition">
-                                <i class="ri-mail-fill"></i>
-                            </a>
-                        </div>
-                        <p class="text-sm text-slate-400">
-                            Resposta em até 2 horas
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-400">
-                    <p>&copy; 2026 Bruno R. Pianca. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
+    <!-- ================================================================= -->
+    <!-- CORE CLIENT JAVASCRIPT: QUEUE, WORKERS, LOG STREAM & MOCK KNOWLEDGE -->
+    <!-- ================================================================= -->
     <script>
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeToggleBtnDesktop = document.getElementById('theme-toggle-desktop');
-        const htmlElement = document.documentElement;
+        /**
+         * BRUNO_OS // AGENT & QUEUE SIMULATION CORE
+         * Pure Vanilla JS - Zero external runtime dependencies
+         */
 
-        function initializeTheme() {
-            if ('theme' in localStorage) {
-                if (localStorage.theme === 'dark') {
-                    htmlElement.classList.add('dark');
-                } else {
-                    htmlElement.classList.remove('dark');
+        // -------------------------------------------------------------
+        // 1. KNOWLEDGE BASE & PRE-PROGRAMMED MOCK RESPONSES
+        // -------------------------------------------------------------
+        const KNOWLEDGE_BASE = {
+            g30: {
+                status: "SUCCESS",
+                company: "G30 Inteligência Automotiva",
+                role: "Desenvolvedor Backend & AI Agent Engineer",
+                period: "julho de 2026 - Presente",
+                location: "Vinhedo, São Paulo, Brasil (Remoto)",
+                core_responsibilities: [
+                    "Reescrita completa da API core em FastAPI assíncrono com Azure Cosmos DB, Pydantic v2 e testes automatizados de alta cobertura.",
+                    "Otimização do pipeline de IA conversacional para arquitetura de Agente Único com Tool Calling e LangGraph.",
+                    "Redução substancial de latência, custos operacionais e consumo excessivo de tokens LLM.",
+                    "Desenvolvimento de tools determinísticas para consultar regras automotivas, dados e fluxos de telemetria."
+                ],
+                tech_stack: [
+                    "Python 3.12+",
+                    "FastAPI (Async)",
+                    "Azure Cosmos DB",
+                    "LangGraph",
+                    "Tool Calling / Function Calling",
+                    "Pydantic v2",
+                    "Pytest",
+                    "Docker"
+                ],
+                metrics: {
+                    token_consumption_reduction: "~65%",
+                    p95_latency: "< 280ms",
+                    architecture_pattern: "Single-Agent Deterministic Tool Graph"
                 }
-            } else {
-                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    htmlElement.classList.add('dark');
-                } else {
-                    htmlElement.classList.remove('dark');
+            },
+
+            skills: {
+                status: "SUCCESS",
+                developer: "Bruno R. Pianca",
+                headline: "Desenvolvedor Backend • Python / FastAPI / Django • GCP / Azure • AI Agents",
+                experience_years: "6+ anos no ecossistema Python",
+                current_role: "Backend & AI Agent Engineer na G30 Inteligência Automotiva",
+                core_stack: {
+                    languages: ["Python (6+ anos)", "JavaScript / TypeScript", "SQL", "Bash / Shell"],
+                    backend_frameworks: ["FastAPI (Async)", "Django", "Django REST Framework (DRF)", "Flask", "Celery", "HTMX", "Next.js"],
+                    ai_and_agents: [
+                        "LangGraph (State Graphs determinísticos)",
+                        "Tool Calling / Function Calling em Agente Único",
+                        "LangChain",
+                        "Integração com LLMs (OpenAI, Google Gemini)",
+                        "IA do Cursor",
+                        "Otimização de pipelines conversacionais, latência e consumo de tokens"
+                    ],
+                    cloud_and_infra: [
+                        "Azure (Azure Cosmos DB)",
+                        "Google Cloud Platform (GCP)",
+                        "AWS",
+                        "Docker / Docker Compose",
+                        "Pipelines CI/CD",
+                        "Linux System Administration"
+                    ],
+                    databases_and_storage: [
+                        "Azure Cosmos DB (NoSQL)",
+                        "PostgreSQL",
+                        "MongoDB",
+                        "Redis (Cache & Message Broker)",
+                        "MySQL",
+                        "SQLite"
+                    ],
+                    architecture_patterns: [
+                        "Arquitetura de Microsserviços e Monorepos",
+                        "Monólitos Modulares",
+                        "Single-Agent Tool Calling Architecture",
+                        "Clean Architecture & Pydantic v2",
+                        "Processamento Assíncrono e Filas (Celery/Redis)",
+                        "Multi-Tenancy & Integrações com Wearables (Apple Health, Oura Ring)"
+                    ]
+                },
+                methodology: {
+                    testing: "Pytest, TDD, Testes Automatizados Assíncronos, Code Reviews Colaborativos",
+                    quality: "Clean Code, Tipagem Estrita (Pydantic v2 / Type Hints), PEP8",
+                    observability: "OpenTelemetry, Prometheus, Structured JSON Logging"
                 }
+            },
+
+            experiencia: {
+                status: "SUCCESS",
+                developer: "Bruno R. Pianca",
+                total_experience: "Mais de 6 anos de experiência no ecossistema Python (Microsserviços, Cloud, Agentes de IA e Liderança Técnica)",
+                career_timeline: [
+                    {
+                        company: "G30 Inteligência Automotiva",
+                        role: "Desenvolvedor Backend & AI Agent Engineer",
+                        period: "julho de 2026 - Presente",
+                        location: "Vinhedo, São Paulo, Brasil (Remoto)",
+                        domain: "Inteligência Automotiva & IA Conversacional",
+                        stack: ["Python", "FastAPI (Async)", "Azure Cosmos DB", "Pydantic v2", "LangGraph", "Tool Calling", "Pytest"],
+                        highlights: [
+                            "Reescrita da API core em FastAPI assíncrono com Azure Cosmos DB, Pydantic v2 e testes automatizados.",
+                            "Otimização de pipeline de IA conversacional para Agente Único com Tool Calling e LangGraph, reduzindo drasticamente latência, custos e consumo de tokens.",
+                            "Construção de tools determinísticas para integração da IA com regras de negócio e dados operacionais."
+                        ]
+                    },
+                    {
+                        company: "Arquitech Tecnologia Ltda",
+                        role: "Desenvolvedor Backend",
+                        period: "novembro de 2025 - maio de 2026 (7 meses)",
+                        location: "São Paulo, Brasil",
+                        domain: "Software Empresarial & Arquitetura Monorepo",
+                        stack: ["Python", "FastAPI", "PostgreSQL", "MongoDB", "Docker", "CI/CD"],
+                        highlights: [
+                            "Desenvolvimento de serviços estruturados em arquitetura monorepo utilizando Python, FastAPI, PostgreSQL e MongoDB.",
+                            "Atuação na infraestrutura e processos de deploy, com foco na estabilidade e escalabilidade do sistema.",
+                            "Garantia de qualidade do código através de code reviews colaborativos e pipelines automatizados de CI/CD."
+                        ]
+                    },
+                    {
+                        company: "QFlash",
+                        role: "Desenvolvedor Backend",
+                        period: "dezembro de 2024 - setembro de 2025 (10 meses)",
+                        location: "São Paulo, Brasil",
+                        domain: "Fintech de Antecipação de Recebíveis",
+                        stack: ["Python", "FastAPI", "MongoDB", "Docker", "CI/CD"],
+                        highlights: [
+                            "Construção e manutenção de microsserviços escaláveis utilizando Python, FastAPI e MongoDB.",
+                            "Sustentação da infraestrutura financeira e aplicação das melhores práticas de engenharia de software.",
+                            "Participação ativa em metodologias ágeis, code reviews e entrega contínua (CI/CD)."
+                        ]
+                    },
+                    {
+                        company: "Epigene DNA experts",
+                        role: "Líder Técnico (11 meses) & Desenvolvedor Backend (7 meses)",
+                        period: "setembro de 2023 - janeiro de 2025 (1 ano e 5 meses)",
+                        location: "São Paulo, Brasil",
+                        domain: "HealthTech & Genômica B2B",
+                        stack: ["Django", "FastAPI", "GCP", "PostgreSQL", "OpenAI & Gemini LLMs", "Wearables (Oura/Apple)"],
+                        highlights: [
+                            "Liderança técnica no desenvolvimento e evolução da plataforma HealthTech hospedada no Google Cloud Platform (GCP).",
+                            "Construção de dashboards para processamento de exames de DNA e sincronização contínua de dados com wearables (Oura Ring, Apple Health).",
+                            "Implementação de funcionalidades de Inteligência Artificial integrando LLMs (OpenAI e Gemini).",
+                            "Gerenciamento e automação de deploys em ambientes de Homologação e Produção."
+                        ]
+                    },
+                    {
+                        company: "Alstra Technologies",
+                        role: "Desenvolvedor Python Jr.",
+                        period: "julho de 2022 - fevereiro de 2024 (1 ano e 8 meses)",
+                        location: "São Paulo e Região",
+                        domain: "Enterprise ATS & RH Tech",
+                        stack: ["Django", "Django REST Framework (DRF)", "Celery", "Redis", "PostgreSQL", "API D4Sign"],
+                        highlights: [
+                            "Desenvolvimento de APIs RESTful estruturadas em Django e DRF para plataforma de gestão de talentos.",
+                            "Implementação de processamento assíncrono com Celery e Redis, otimizando fluxos de sistema e notificações.",
+                            "Integração de arquiteturas de gestão de documentos e assinaturas digitais via API (D4Sign)."
+                        ]
+                    },
+                    {
+                        company: "BRP Soluções",
+                        role: "Desenvolvedor Full Stack Python",
+                        period: "novembro de 2020 - junho de 2022 (1 ano e 8 meses)",
+                        location: "Jundiaí, São Paulo, Brasil",
+                        domain: "EdTech, ERPs e E-commerce",
+                        stack: ["Python", "Django", "FastAPI", "MySQL", "Docker"],
+                        highlights: [
+                            "Engenharia de software e desenvolvimento sob demanda, atuando do levantamento de requisitos ao deploy.",
+                            "Construção de plataforma de e-learning (EdTech) de alta escalabilidade para milhares de usuários ativos (Grupo Primo).",
+                            "Desenvolvimento de e-commerce integrado a ERPs e criação de CRMs utilizando Python, Django e FastAPI."
+                        ]
+                    },
+                    {
+                        company: "insped",
+                        role: "RPA Developer",
+                        period: "fevereiro de 2022 - maio de 2022 (4 meses)",
+                        location: "São Paulo, Brasil",
+                        domain: "Automação Governamental",
+                        stack: ["Python", "Robot Framework", "Selenium"],
+                        highlights: [
+                            "Criação de robôs e automações no portal gov.br para extração e processamento regulatório."
+                        ]
+                    }
+                ]
+            },
+
+            projetos: {
+                status: "SUCCESS",
+                developer: "Bruno R. Pianca",
+                total_projects_cataloged: 6,
+                portfolio: [
+                    {
+                        id: "g30-agent-core",
+                        name: "API Core & Pipeline de IA Conversacional (G30)",
+                        role: "Desenvolvedor Backend & AI Agent Engineer",
+                        domain: "Automotive AI & Cloud",
+                        description: "Reescrita da API core em FastAPI assíncrono com Azure Cosmos DB e pipeline de agente único com LangGraph e Tool Calling, otimizando drasticamente custos e latência de tokens.",
+                        stack: ["FastAPI", "Azure Cosmos DB", "LangGraph", "Tool Calling", "Pydantic v2"],
+                        status: "PRODUCTION_ACTIVE"
+                    },
+                    {
+                        id: "epigene-dna-wearables",
+                        name: "Plataforma HealthTech com Processamento de DNA & Wearables",
+                        role: "Líder Técnico",
+                        domain: "Healthcare / Genômica",
+                        description: "Plataforma no GCP com dashboards de exames de DNA, sincronização com Oura Ring e Apple Health, e integração de IA generativa (OpenAI & Gemini).",
+                        stack: ["Django", "FastAPI", "GCP", "PostgreSQL", "LLMs (OpenAI/Gemini)", "Wearables API"],
+                        url: "https://app.epigene.com.br/",
+                        status: "PRODUCTION"
+                    },
+                    {
+                        id: "arquitech-monorepo",
+                        name: "Monorepo de Microsserviços Corporativos",
+                        role: "Desenvolvedor Backend",
+                        domain: "Infra & Arquitetura Monorepo",
+                        description: "Serviços em arquitetura monorepo utilizando FastAPI, PostgreSQL e MongoDB com pipelines automatizados de CI/CD.",
+                        stack: ["Python", "FastAPI", "PostgreSQL", "MongoDB", "CI/CD"],
+                        status: "ENTERPRISE"
+                    },
+                    {
+                        id: "onda-nerd-finance",
+                        name: "Controle Financeiro para Micro-Empresas",
+                        domain: "Finanças / Micro-SaaS",
+                        description: "Aplicação enxuta para gestão financeira de pequenos negócios.",
+                        stack: ["Django", "HTMX", "Bootstrap 5", "SQLite"],
+                        url: "https://github.com/obrunodev/onda-nerd-tech",
+                        status: "OPEN_SOURCE"
+                    },
+                    {
+                        id: "signature-bridge-gateway",
+                        name: "Gateway Centralizador de Assinaturas Digitais",
+                        domain: "Infra / Integrações",
+                        description: "Gateway REST unificado para orquestrar assinaturas via Docusign e D4Sign com webhooks resilientes.",
+                        stack: ["Django REST Framework", "Celery", "PostgreSQL", "D4Sign API"],
+                        status: "ENTERPRISE"
+                    },
+                    {
+                        id: "esteio-ecommerce",
+                        name: "E-commerce & Inventário de Peças Automotivas",
+                        domain: "B2B E-commerce & Estoque",
+                        description: "Loja virtual e controle de inventário para distribuidora de autopeças.",
+                        stack: ["Django", "PostgreSQL", "Bootstrap", "jQuery"],
+                        url: "https://app.esteiodistribuidora.com.br/",
+                        status: "PRODUCTION"
+                    }
+                ]
+            },
+
+            contato: {
+                status: "SUCCESS",
+                developer: "Bruno R. Pianca",
+                headline: "Desenvolvedor Backend • Python / FastAPI / Django • GCP / Azure",
+                location: "Jundiaí, São Paulo, Brasil (Disponível para Remoto / Híbrido)",
+                email: "brunorpdev@gmail.com",
+                mobile: "+55 (11) 93718-3232",
+                profiles: {
+                    linkedin: "https://www.linkedin.com/in/brunorpdev/",
+                    github: "https://github.com/obrunodev",
+                    instagram: "https://www.instagram.com/obruno.dev/",
+                    curriculo_pdf: "./cv-bruno-pianca-1.pdf"
+                },
+                community_initiatives: {
+                    founder: "Comunidade Pythonizando / Code'n Coffee",
+                    members: "300+ desenvolvedores",
+                    focus: "Ensino de programação, boas práticas e colaboração em Python"
+                },
+                availability: "Aberto para propostas de Engenharia de Software Backend Sênior e Projetos de Agentes de IA."
+            },
+
+            sobre: {
+                status: "SUCCESS",
+                developer: "Bruno R. Pianca",
+                headline: "Desenvolvedor Backend com mais de 6 anos de experiência no ecossistema Python",
+                summary: "Atuo na construção de microsserviços, arquiteturas escaláveis, integrações complexas e agentes de IA orientados a ferramentas (Tool Calling). Atualmente na G30 Inteligência Automotiva, desenvolvendo com FastAPI assíncrono, Azure Cosmos DB, LangGraph e otimização de custos e latência de tokens. Experiência prévia como Líder Técnico na Epigene e sólida atuação em nuvens (GCP, Azure, AWS) e bancos de dados relacionais e NoSQL.",
+                education: [
+                    {
+                        institution: "Estácio",
+                        degree: "Curso Superior de Tecnologia (CST), Análise e Desenvolvimento de Sistemas",
+                        period: "2026 - 2029"
+                    },
+                    {
+                        institution: "Etec Vasco Antonio Venchiarutti",
+                        degree: "Ensino Técnico, Tecnologia em Informática / Software",
+                        period: "2018 - 2019"
+                    }
+                ],
+                certifications: [
+                    "DOCKER Completo - Do Zero ao Avançado 2023",
+                    "Fundamentos de Python",
+                    "Fundamentos de Django"
+                ]
+            },
+
+            arquitetura: {
+                status: "SUCCESS",
+                architecture_blueprint: {
+                    backend_frameworks: "FastAPI assíncrono para microsserviços de alto throughput; Django para monólitos estruturados",
+                    ai_agent_design: "LangGraph State Graphs com padrão Single-Agent + Deterministic Tool Calling (minimização de hops e custo de tokens)",
+                    cloud_and_databases: "Azure Cosmos DB (NoSQL em produção na G30), PostgreSQL (ACID), MongoDB, Redis (Cache & Streams)",
+                    schemas_and_validation: "Pydantic v2 com validação estrita em runtime e serialização de alta velocidade",
+                    queues_and_workers: "Celery & Redis Streams com Dead Letter Queues (DLQ) e pools de workers concorrentes",
+                    monorepo_and_cicd: "Estruturas monorepo para serviços compartilhados, testes automatizados (Pytest) e pipelines de CI/CD"
+                }
+            },
+
+            curriculo: {
+                status: "SUCCESS",
+                document: {
+                    title: "Currículo de Bruno R. Pianca",
+                    file_format: "PDF",
+                    download_url: "./cv-bruno-pianca-1.pdf",
+                    instructions: "Você pode baixar o arquivo diretamente clicando no link ou no botão 'GET /cv.pdf' no topo desta página."
+                }
+            },
+
+            fallback: {
+                status: "ROUTING_FALLBACK",
+                agent_notes: "Não foi encontrado um comando direto com correspondência exata para esta consulta.",
+                help: "Você pode consultar os seguintes domínios do sistema:",
+                available_intents: [
+                    { command: "g30", description: "Experiência atual na G30 Inteligência Automotiva e Agente de IA com LangGraph" },
+                    { command: "skills", description: "Habilidades técnicas, linguagens, IA e cloud (Azure/GCP)" },
+                    { command: "experiencia", description: "Histórico profissional completo (G30, Arquitech, QFlash, Epigene, etc.)" },
+                    { command: "projetos", description: "Projetos em produção, microsserviços e agentes de IA" },
+                    { command: "contato", description: "LinkedIn, GitHub, e-mail e telefone" },
+                    { command: "sobre", description: "Apresentação, formação acadêmica e certificações" },
+                    { command: "arquitetura", description: "Padrões de design, Cosmos DB, Tool Calling e filas" },
+                    { command: "curriculo", description: "Download do currículo completo em PDF" }
+                ],
+                tip: "Experimente clicar em um dos botões rápidos acima do terminal de dispatch!"
+            }
+        };
+
+        // -------------------------------------------------------------
+        // 2. REGISTERED SERVICES (PROJECTS TABLE DATA)
+        // -------------------------------------------------------------
+        const REGISTERED_SERVICES = [
+            {
+                id: "g30-agent-core",
+                name: "g30-agent-core",
+                category: "Automotive AI & Core API (G30)",
+                stack: "FastAPI Async · Azure Cosmos DB · LangGraph · Tool Calling · Pydantic v2",
+                status: "RUNNING",
+                statusColor: "purple",
+                rtt: "8ms",
+                pods: "4 pods",
+                url: null,
+                actionLabel: "inspect"
+            },
+            {
+                id: "arquitech-monorepo-core",
+                name: "arquitech-monorepo-core",
+                category: "Enterprise Monorepo Microservices",
+                stack: "FastAPI · Python · PostgreSQL · MongoDB · CI/CD",
+                status: "RUNNING",
+                statusColor: "emerald",
+                rtt: "16ms",
+                pods: "3 pods",
+                url: null,
+                actionLabel: "inspect"
+            },
+            {
+                id: "epigene-health-ai",
+                name: "epigene-health-ai",
+                category: "HealthTech Platform (Liderança Técnica)",
+                stack: "GCP · DNA Processing · Wearables (Oura/Apple) · OpenAI & Gemini",
+                status: "HEALTHY",
+                statusColor: "emerald",
+                rtt: "24ms",
+                pods: "3 pods",
+                url: "https://app.epigene.com.br/",
+                actionLabel: "inspect"
+            },
+            {
+                id: "qflash-fintech-core",
+                name: "qflash-fintech-core",
+                category: "Receivables Settlement API",
+                stack: "Python · FastAPI · MongoDB · Docker · CI/CD",
+                status: "RUNNING",
+                statusColor: "emerald",
+                rtt: "12ms",
+                pods: "4 pods",
+                url: null,
+                actionLabel: "inspect"
+            },
+            {
+                id: "alstra-talent-engine",
+                name: "alstra-talent-engine",
+                category: "Enterprise ATS & Docs",
+                stack: "Django · Celery · Redis Queue · Postgres · D4Sign",
+                status: "RUNNING",
+                statusColor: "emerald",
+                rtt: "38ms",
+                pods: "2 pods",
+                url: null,
+                actionLabel: "inspect"
+            },
+            {
+                id: "signature-bridge-gw",
+                name: "signature-bridge-gw",
+                category: "DocuSign & D4Sign Gateway",
+                stack: "Django REST · Celery · Webhooks · DRF",
+                status: "STANDBY",
+                statusColor: "cyan",
+                rtt: "45ms",
+                pods: "1 pod",
+                url: null,
+                actionLabel: "inspect"
+            },
+            {
+                id: "onda-nerd-finance",
+                name: "onda-nerd-finance",
+                category: "Micro-SaaS Financial Tool",
+                stack: "Django · HTMX · Bootstrap 5 · SQLite",
+                status: "RUNNING",
+                statusColor: "emerald",
+                rtt: "18ms",
+                pods: "1 pod",
+                url: "https://github.com/obrunodev/onda-nerd-tech",
+                actionLabel: "repo"
+            },
+            {
+                id: "esteio-ecommerce-b2b",
+                name: "esteio-ecommerce-b2b",
+                category: "Auto Parts E-commerce",
+                stack: "Django · PostgreSQL · Bootstrap · jQuery",
+                status: "HEALTHY",
+                statusColor: "emerald",
+                rtt: "32ms",
+                pods: "2 pods",
+                url: "https://app.esteiodistribuidora.com.br/",
+                actionLabel: "live"
+            }
+        ];
+
+        // -------------------------------------------------------------
+        // 3. QUEUE SIMULATION STATE
+        // -------------------------------------------------------------
+        let jobsHistory = [
+            {
+                id: "job_9a12c4",
+                intent: "INTENT_BOOT_HEALTHCHECK",
+                status: "COMPLETED",
+                statusClass: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
+                timestamp: "00:00:12",
+                payload: "system::ping()",
+                duration: "112ms"
+            },
+            {
+                id: "job_9a12c3",
+                intent: "INTENT_PULL_TELEMETRY",
+                status: "COMPLETED",
+                statusClass: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
+                timestamp: "00:00:08",
+                payload: "metrics::collector()",
+                duration: "64ms"
+            }
+        ];
+
+        let totalJobsCount = 2841;
+        let isProcessingJob = false;
+        let currentResponseRaw = null;
+        let logLineCount = 0;
+
+        // -------------------------------------------------------------
+        // 4. DOM ELEMENTS
+        // -------------------------------------------------------------
+        const servicesTableBody = document.getElementById('services-table-body');
+        const queueTableBody = document.getElementById('queue-table-body');
+        const workerLogsContainer = document.getElementById('worker-logs-container');
+        const jsonOutputViewer = document.getElementById('json-output-viewer');
+        const jobInput = document.getElementById('job-input');
+        const dispatchBtn = document.getElementById('dispatch-btn');
+        const activeWorkerIdEl = document.getElementById('active-worker-id');
+        const workerStateIndicatorEl = document.getElementById('worker-state-indicator');
+        const statQueueDepth = document.getElementById('stat-queue-depth');
+        const statJobsCount = document.getElementById('stat-jobs-count');
+        const autoscrollToggle = document.getElementById('autoscroll-toggle');
+        const logCountBadge = document.getElementById('log-count-badge');
+        const outputStatsText = document.getElementById('output-stats-text');
+
+        // -------------------------------------------------------------
+        // 5. INITIALIZATION
+        // -------------------------------------------------------------
+        window.addEventListener('DOMContentLoaded', () => {
+            renderServicesTable();
+            renderQueueTable();
+            initLiveTelemetry();
+            
+            // Print initial boot logs
+            appendLog('INFO', 'broker', 'Redis cluster connection initialized at redis://127.0.0.1:6379/0');
+            appendLog('INFO', 'orchestrator', 'Spawned 4 concurrent worker daemons: [worker-01 .. worker-04]');
+            appendLog('DEBUG', 'vector-index', 'Loaded in-memory embeddings for knowledge base [BrunoProfileSchema_v2]');
+            appendLog('SUCCESS', 'system', 'Cluster operational. Ready to dispatch jobs via CLI or Quick Intent pills.');
+
+            // Initial view: show Skills JSON directly
+            displayJsonResponse(KNOWLEDGE_BASE.skills, "skills", 210);
+        });
+
+        // -------------------------------------------------------------
+        // 6. RENDER SERVICES TABLE
+        // -------------------------------------------------------------
+        function renderServicesTable() {
+            servicesTableBody.innerHTML = REGISTERED_SERVICES.map(service => {
+                const badgeColor = service.statusColor === 'emerald' 
+                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' 
+                    : service.statusColor === 'cyan' 
+                        ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30' 
+                        : 'bg-purple-500/10 text-purple-400 border-purple-500/30';
+
+                const dotColor = service.statusColor === 'emerald' ? 'bg-emerald-400' : service.statusColor === 'cyan' ? 'bg-cyan-400' : 'bg-purple-400';
+
+                let actionButton = '';
+                if (service.url) {
+                    actionButton = `
+                        <a href="${service.url}" target="_blank" rel="noopener noreferrer" 
+                           class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-cyan-300 border border-zinc-700 hover:border-cyan-400 transition-colors inline-flex items-center gap-1">
+                            <span>[${service.actionLabel}]</span>
+                            <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    `;
+                } else {
+                    actionButton = `
+                        <button onclick="inspectService('${service.id}')" 
+                                class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-cyan-300 border border-zinc-700 hover:border-cyan-400 transition-colors">
+                            [${service.actionLabel}]
+                        </button>
+                    `;
+                }
+
+                return `
+                    <tr class="hover:bg-obs-surface/70 transition-colors">
+                        <td class="py-2.5 px-3">
+                            <div class="font-bold text-zinc-100 flex items-center gap-1.5">
+                                <span class="text-zinc-600">svc://</span>${service.name}
+                            </div>
+                            <div class="text-[10px] text-zinc-500 font-sans">${service.category}</div>
+                        </td>
+                        <td class="py-2.5 px-3 text-zinc-400">
+                            ${service.stack}
+                        </td>
+                        <td class="py-2.5 px-3">
+                            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] border ${badgeColor}">
+                                <span class="w-1.5 h-1.5 rounded-full ${dotColor}"></span>
+                                <span>${service.status}</span>
+                            </span>
+                        </td>
+                        <td class="py-2.5 px-3 text-zinc-400">
+                            <span class="text-zinc-300 font-semibold">${service.rtt}</span>
+                            <span class="text-zinc-600 ml-1">(${service.pods})</span>
+                        </td>
+                        <td class="py-2.5 px-3 text-right">
+                            ${actionButton}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // -------------------------------------------------------------
+        // 7. RENDER QUEUE TABLE
+        // -------------------------------------------------------------
+        function renderQueueTable() {
+            queueTableBody.innerHTML = jobsHistory.map(job => {
+                let badge = '';
+                if (job.status === 'QUEUED') {
+                    badge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/30 animate-pulse">QUEUED</span>`;
+                } else if (job.status === 'PROCESSING') {
+                    badge = `<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>PROCESSING</span>
+                    </span>`;
+                } else {
+                    badge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">COMPLETED</span>`;
+                }
+
+                return `
+                    <tr class="hover:bg-obs-surface/70 transition-colors">
+                        <td class="py-2 px-3 text-cyan-400 font-bold">#${job.id}</td>
+                        <td class="py-2 px-3 text-zinc-300 font-semibold">${job.intent}</td>
+                        <td class="py-2 px-3">${badge}</td>
+                        <td class="py-2 px-3 text-zinc-400">${job.timestamp}</td>
+                        <td class="py-2 px-3 text-right text-zinc-400 max-w-[140px] truncate" title="${job.payload}">
+                            <code class="text-zinc-500">&gt;</code> ${job.payload}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // -------------------------------------------------------------
+        // 8. LOG STREAMING ENGINE
+        // -------------------------------------------------------------
+        function appendLog(level, source, message) {
+            logLineCount++;
+            logCountBadge.textContent = `${logLineCount} lines`;
+
+            const now = new Date();
+            const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}.${String(now.getMilliseconds()).padStart(3, '0')}`;
+
+            let levelColor = 'text-cyan-400';
+            if (level === 'DEBUG') levelColor = 'text-amber-400';
+            if (level === 'TRACE') levelColor = 'text-purple-400';
+            if (level === 'SUCCESS') levelColor = 'text-emerald-400 font-bold';
+            if (level === 'ERROR') levelColor = 'text-rose-400 font-bold';
+
+            const logLine = document.createElement('div');
+            logLine.className = 'flex items-start gap-1.5 hover:bg-zinc-900/60 py-0.5 px-1 rounded transition-colors';
+            logLine.innerHTML = `
+                <span class="text-zinc-600 select-none">${timeStr}</span>
+                <span class="text-zinc-500 font-semibold select-none">[${source}]</span>
+                <span class="${levelColor} select-none">[${level}]</span>
+                <span class="text-zinc-200 flex-1 break-all">${message}</span>
+            `;
+
+            workerLogsContainer.appendChild(logLine);
+
+            if (autoscrollToggle.checked) {
+                workerLogsContainer.scrollTop = workerLogsContainer.scrollHeight;
             }
         }
-        initializeTheme();
 
-        function toggleTheme() {
-            htmlElement.classList.toggle('dark');
-            if (htmlElement.classList.contains('dark')) {
-                localStorage.theme = 'dark';
+        function clearLogs() {
+            workerLogsContainer.innerHTML = '';
+            logLineCount = 0;
+            logCountBadge.textContent = '0 lines';
+        }
+
+        // Helper sleep for staggered realistic delays
+        const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+        // -------------------------------------------------------------
+        // 9. INTENT RESOLUTION & QUERY MATCHER
+        // -------------------------------------------------------------
+        function resolveIntent(query) {
+            const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
+            if (q.includes("g30") || q.includes("automotiv") || (q.includes("agent") && (q.includes("ia") || q.includes("tool") || q.includes("langgraph"))) || q.includes("tool call") || q.includes("cosmos") || q.includes("langgraph")) {
+                return { key: "g30", intentName: "INTENT_FETCH_G30_AI_AGENT" };
+            }
+            if (q.includes("skill") || q.includes("habili") || q.includes("tecnolog") || q.includes("stack") || q.includes("linguagen") || q.includes("ferramenta") || q.includes("azure") || q.includes("gcp") || q.includes("aws")) {
+                return { key: "skills", intentName: "INTENT_FETCH_SKILLS" };
+            }
+            if (q.includes("experien") || q.includes("empres") || q.includes("carreira") || q.includes("trampo") || q.includes("trabalh") || q.includes("qflash") || q.includes("epigene") || q.includes("alstra") || q.includes("arquitech") || q.includes("brp") || q.includes("lider")) {
+                return { key: "experiencia", intentName: "INTENT_FETCH_EXPERIENCE" };
+            }
+            if (q.includes("projet") || q.includes("portfolio") || q.includes("portifolio") || q.includes("apps") || q.includes("sistemas") || q.includes("producao") || q.includes("service") || q.includes("servico") || q.includes("onda") || q.includes("esteio") || q.includes("signature")) {
+                return { key: "projetos", intentName: "INTENT_FETCH_PROJECTS" };
+            }
+            if (q.includes("contat") || q.includes("falar") || q.includes("email") || q.includes("telefone") || q.includes("celular") || q.includes("whatsapp") || q.includes("rede") || q.includes("social") || q.includes("linkedin") || q.includes("github") || q.includes("instagram")) {
+                return { key: "contato", intentName: "INTENT_FETCH_CONTACT" };
+            }
+            if (q.includes("sobre") || q.includes("quem") || q.includes("bio") || q.includes("apresent") || q.includes("bruno") || q.includes("formacao") || q.includes("faculdade") || q.includes("curso") || q.includes("certificad") || q.includes("estacio")) {
+                return { key: "sobre", intentName: "INTENT_FETCH_ABOUT" };
+            }
+            if (q.includes("arquitet") || q.includes("design") || q.includes("padro") || q.includes("fila") || q.includes("celery") || q.includes("infra") || q.includes("clean") || q.includes("monorepo")) {
+                return { key: "arquitetura", intentName: "INTENT_FETCH_ARCHITECTURE" };
+            }
+            if (q.includes("curricul") || q.includes("cv") || q.includes("resume") || q.includes("pdf") || q.includes("download")) {
+                return { key: "curriculo", intentName: "INTENT_FETCH_CV_DOCUMENT" };
+            }
+
+            // Fallback
+            return { key: "fallback", intentName: "INTENT_UNMATCHED_FALLBACK" };
+        }
+
+        // -------------------------------------------------------------
+        // 10. JOB DISPATCH ORCHESTRATION PIPELINE
+        // -------------------------------------------------------------
+        async function dispatchJob(queryText) {
+            if (isProcessingJob || !queryText.trim()) return;
+
+            isProcessingJob = true;
+            dispatchBtn.disabled = true;
+            dispatchBtn.innerHTML = `
+                <svg class="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+                <span>RUNNING</span>
+            `;
+
+            // 1. Generate Job ID & Metadata
+            const randomHex = Math.random().toString(16).substring(2, 8);
+            const jobId = `job_${randomHex}`;
+            const workerId = `worker-0${Math.floor(Math.random() * 4) + 1}`;
+            const { key: intentKey, intentName } = resolveIntent(queryText);
+            const startTime = performance.now();
+
+            const now = new Date();
+            const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+            const newJob = {
+                id: jobId,
+                intent: intentName,
+                status: 'QUEUED',
+                timestamp: timeStr,
+                payload: queryText,
+                duration: '...'
+            };
+
+            // Prepend job to Redis queue history
+            jobsHistory.unshift(newJob);
+            if (jobsHistory.length > 8) jobsHistory.pop();
+            renderQueueTable();
+
+            statQueueDepth.textContent = "1 PENDING";
+            statQueueDepth.className = "text-xs font-bold text-amber-400 font-mono mt-0.5 animate-pulse";
+
+            // Step 1: Push to Redis message queue
+            appendLog('INFO', 'broker', `Enqueued message to 'queue:agent_jobs' (job_id: #${jobId}, priority: HIGH)`);
+            appendLog('DEBUG', 'scheduler', `Worker scheduler assigning idle thread...`);
+
+            await sleep(650);
+
+            // Step 2: Transition to PROCESSING
+            newJob.status = 'PROCESSING';
+            renderQueueTable();
+
+            statQueueDepth.textContent = "0 PENDING";
+            statQueueDepth.className = "text-xs font-bold text-zinc-400 font-mono mt-0.5";
+
+            activeWorkerIdEl.textContent = `${workerId} (ACTIVE)`;
+            activeWorkerIdEl.className = "text-amber-400 font-semibold";
+            workerStateIndicatorEl.textContent = "STATE: BUSY_PROCESSING";
+            workerStateIndicatorEl.className = "text-amber-400";
+
+            appendLog('INFO', workerId, `Consumer acknowledged message #${jobId} from stream. ACK status: OK`);
+            await sleep(350);
+
+            // Step 3: Stream Worker Reasoning & Tool Calls
+            if (intentKey === 'g30') {
+                appendLog('DEBUG', 'langgraph-core', `Initializing LangGraph state graph node: [SingleAgentWorkflow]`);
+                await sleep(280);
+                appendLog('TRACE', 'tool-registry', `Binding tools: [vehicle_telemetry_fetcher, cosmos_inventory_query, token_guardrails]`);
+                await sleep(300);
+                appendLog('INFO', 'tool-execution', `Executing Tool Calling on Azure Cosmos DB via Pydantic v2 schemas`);
+                await sleep(350);
+                appendLog('INFO', 'token-optimizer', `Latency: 142ms | Token reduction achieved: -65% vs multi-agent hops`);
+                await sleep(280);
             } else {
-                localStorage.theme = 'light';
+                appendLog('DEBUG', 'agent-core', `Intent classification engine parsed prompt: "${queryText.substring(0, 45)}"`);
+                await sleep(320);
+                appendLog('TRACE', 'intent-classifier', `Matched target intent: ${intentName} (confidence: 0.987)`);
+                await sleep(280);
+                appendLog('INFO', 'tool-dispatch', `Invoking deterministic tool: get_${intentKey}_metadata(scope="cluster_local")`);
+                await sleep(400);
+                appendLog('DEBUG', 'vector-db', `Cache lookup in Redis memory store: KEY 'bruno:profile:${intentKey}' -> HIT (0.6ms)`);
+                await sleep(300);
+                appendLog('INFO', 'agent-llm', `Validating payload against Pydantic schema [BrunoProfileSchema_v2]...`);
+                await sleep(280);
+            }
+
+            // Step 4: Finalize Job & Render Output
+            const durationMs = Math.round(performance.now() - startTime);
+            newJob.status = 'COMPLETED';
+            newJob.duration = `${durationMs}ms`;
+            renderQueueTable();
+
+            appendLog('SUCCESS', workerId, `Task finished successfully in ${durationMs}ms. Emitting JSON payload (exit code 0).`);
+
+            // Update output JSON
+            const responseData = KNOWLEDGE_BASE[intentKey] || KNOWLEDGE_BASE.fallback;
+            displayJsonResponse(responseData, intentKey, durationMs);
+
+            // Update stats
+            totalJobsCount++;
+            statJobsCount.textContent = totalJobsCount.toLocaleString();
+
+            activeWorkerIdEl.textContent = `${workerId} (IDLE)`;
+            activeWorkerIdEl.className = "text-cyan-400 font-semibold";
+            workerStateIndicatorEl.textContent = "STATE: LISTENING";
+            workerStateIndicatorEl.className = "text-emerald-400";
+
+            dispatchBtn.disabled = false;
+            dispatchBtn.innerHTML = `
+                <span>DISPATCH</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            `;
+
+            isProcessingJob = false;
+            jobInput.focus();
+        }
+
+        // -------------------------------------------------------------
+        // 11. JSON SYNTAX HIGHLIGHTER & RENDERER
+        // -------------------------------------------------------------
+        function displayJsonResponse(data, intentKey, durationMs) {
+            currentResponseRaw = data;
+            const highlightedHTML = syntaxHighlight(data);
+            jsonOutputViewer.innerHTML = highlightedHTML;
+
+            outputStatsText.textContent = `RESOLVED: ${intentKey.toUpperCase()} | LATENCY: ${durationMs}ms | STATUS: 200 OK`;
+        }
+
+        function syntaxHighlight(json) {
+            if (typeof json !== 'string') {
+                json = JSON.stringify(json, undefined, 2);
+            }
+            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                let cls = 'text-amber-400'; // number
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) {
+                        cls = 'text-cyan-400 font-semibold'; // key
+                    } else {
+                        cls = 'text-emerald-300'; // string
+                        const cleanStr = match.replace(/^"|"$/g, '');
+                        // Clickable URLs and relative file links
+                        if (cleanStr.startsWith('http://') || cleanStr.startsWith('https://') || cleanStr.startsWith('./') || cleanStr.endsWith('.pdf')) {
+                            return `"<a href="${cleanStr}" target="_blank" rel="noopener noreferrer" class="underline text-cyan-300 hover:text-cyan-100 transition-colors">${cleanStr}</a>"`;
+                        }
+                    }
+                } else if (/true|false/.test(match)) {
+                    cls = 'text-purple-400 font-bold'; // boolean
+                } else if (/null/.test(match)) {
+                    cls = 'text-zinc-500 italic'; // null
+                }
+                return `<span class="${cls}">${match}</span>`;
+            });
+        }
+
+        // Copy button handler
+        function copyJsonResponse() {
+            if (!currentResponseRaw) return;
+            const jsonText = JSON.stringify(currentResponseRaw, null, 2);
+            navigator.clipboard.writeText(jsonText).then(() => {
+                const btn = document.getElementById('copy-json-btn');
+                const prev = btn.innerHTML;
+                btn.innerHTML = `
+                    <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span class="text-emerald-400 font-bold">COPIED!</span>
+                `;
+                setTimeout(() => { btn.innerHTML = prev; }, 2000);
+            });
+        }
+
+        // -------------------------------------------------------------
+        // 12. EVENT LISTENERS & SHORTCUTS
+        // -------------------------------------------------------------
+        function handleJobSubmit(e) {
+            e.preventDefault();
+            const query = jobInput.value.trim();
+            if (query) {
+                dispatchJob(query);
             }
         }
 
-        if (themeToggleBtn) {
-            themeToggleBtn.addEventListener('click', toggleTheme);
+        function quickDispatch(intentName) {
+            jobInput.value = intentName;
+            dispatchJob(intentName);
         }
-        
-        if (themeToggleBtnDesktop) {
-            themeToggleBtnDesktop.addEventListener('click', toggleTheme);
+
+        function inspectService(serviceId) {
+            jobInput.value = `inspect service ${serviceId}`;
+            dispatchJob(`inspect service ${serviceId}`);
+        }
+
+        // -------------------------------------------------------------
+        // 13. LIVE TELEMETRY SIMULATOR (PULSE, LATENCY JITTER, CLOCK)
+        // -------------------------------------------------------------
+        function initLiveTelemetry() {
+            const clockEl = document.getElementById('live-clock');
+            const wsLatencyEl = document.getElementById('ws-latency');
+            const redisHeapEl = document.getElementById('redis-heap');
+
+            // Clock updater
+            setInterval(() => {
+                const d = new Date();
+                clockEl.textContent = d.toISOString().substring(11, 19);
+            }, 1000);
+
+            // Subtle realistic jitter on latency and memory
+            setInterval(() => {
+                const jitter = Math.floor(Math.random() * 8) + 11; // 11ms - 18ms
+                wsLatencyEl.textContent = `${jitter}ms`;
+
+                const memJitter = (34.2 + (Math.random() * 1.4)).toFixed(1);
+                redisHeapEl.textContent = `${memJitter} MB / 128 MB`;
+            }, 3500);
         }
     </script>
 </body>
