@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bruno R. Pianca // AGENT_ORCHESTRATOR & INFRA DASHBOARD</title>
+    <title>Bruno R. Pianca // Desenvolvedor Backend Sênior & Agentes de IA</title>
     
-    <meta name="description" content="Dashboard de Orquestração de Agentes e Filas - Portfólio de Bruno R. Pianca. Desenvolvedor Backend (6+ anos), Python, FastAPI, Django, G30, LangGraph, Azure Cosmos DB e AI Agents.">
-    <meta name="keywords" content="Bruno Pianca, Backend Developer, Python, FastAPI, Django, G30, LangGraph, Tool Calling, Azure Cosmos DB, GCP, Redis Queue, Agent Orchestrator, DevOps">
+    <meta name="description" content="Portfólio de Bruno R. Pianca. Desenvolvedor Backend Sênior (6+ anos), Especialista em Python, FastAPI, Django, LangGraph, Azure Cosmos DB, GCP e Agentes de IA.">
+    <meta name="keywords" content="Bruno Pianca, Desenvolvedor Backend, Python, FastAPI, Django, G30, LangGraph, Tool Calling, Azure Cosmos DB, GCP, Redis, Agentes de IA, Microsserviços">
     <meta name="author" content="Bruno R. Pianca">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
 
-    <!-- Google Fonts: JetBrains Mono & Inter -->
+    <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -53,7 +53,7 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Grid de infraestrutura no background */
+        /* Grid sutil de infraestrutura no background */
         .infra-grid {
             background-image: 
                 linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
@@ -77,7 +77,7 @@
             background: #38bdf8;
         }
 
-        /* Efeitos visuais nerdola */
+        /* LEDs indicadores */
         .led-glow-green {
             box-shadow: 0 0 10px rgba(34, 197, 94, 0.7), 0 0 2px rgba(34, 197, 94, 0.9);
         }
@@ -88,15 +88,7 @@
             box-shadow: 0 0 10px rgba(245, 158, 11, 0.7), 0 0 2px rgba(245, 158, 11, 0.9);
         }
 
-        @keyframes cursor-blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
-        .blinking-cursor {
-            animation: cursor-blink 1s infinite;
-        }
-
-        /* Scanline sutil */
+        /* Scanline sutil no terminal */
         .scanlines {
             position: relative;
         }
@@ -109,7 +101,7 @@
             background-size: 100% 4px;
             z-index: 20;
             pointer-events: none;
-            opacity: 0.35;
+            opacity: 0.25;
         }
     </style>
 </head>
@@ -117,414 +109,469 @@
 <body class="min-h-screen infra-grid flex flex-col text-xs antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
 
     <!-- ================================================================= -->
-    <!-- TOPBAR / CLUSTER CONTROLLER HEADER -->
+    <!-- CABEÇALHO PRINCIPAL // IDENTIDADE CLARA DO BRUNO PIANCA -->
     <!-- ================================================================= -->
-    <header class="border-b border-obs-border bg-obs-surface/90 backdrop-blur sticky top-0 z-40 px-4 py-2.5">
-        <div class="max-w-[1720px] mx-auto flex flex-wrap items-center justify-between gap-3">
+    <header class="border-b border-obs-border bg-obs-surface/95 backdrop-blur sticky top-0 z-40 px-4 py-3.5 shadow-md">
+        <div class="max-w-[1720px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
             
-            <!-- Node Brand & Status -->
-            <div class="flex items-center gap-3">
-                <div class="flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 led-glow-green animate-pulse"></span>
-                    <span class="font-bold tracking-wider text-sm text-zinc-100 flex items-center gap-1.5">
-                        <span class="text-cyan-400">BRUNO_OS</span>
-                        <span class="text-zinc-600">//</span>
-                        <span class="text-zinc-300">AGENT_ORCHESTRATOR</span>
-                        <span class="px-1.5 py-0.5 rounded text-[10px] bg-zinc-800 text-cyan-300 border border-zinc-700 font-mono">v2.4.1</span>
-                    </span>
+            <!-- Foto + Nome + Especialidades Claramente Visíveis -->
+            <div class="flex items-center gap-3.5 sm:gap-4">
+                <div class="relative shrink-0">
+                    <img src="img/perfil.jpeg" alt="Foto de Bruno R. Pianca" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-emerald-500/80 object-cover shadow-lg">
+                    <span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-obs-surface led-glow-green" title="Disponível para Projetos e Oportunidades"></span>
                 </div>
+                
+                <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h1 class="text-lg sm:text-xl font-bold text-zinc-100 tracking-tight font-sans">
+                            Bruno R. Pianca
+                        </h1>
+                        <span class="px-2.5 py-0.5 rounded text-[11px] bg-purple-500/15 text-purple-300 border border-purple-500/40 font-mono font-semibold">
+                            G30 Inteligência Automotiva
+                        </span>
+                        <span class="px-2.5 py-0.5 rounded text-[11px] bg-emerald-500/15 text-emerald-400 border border-emerald-500/40 font-mono font-medium">
+                            6+ Anos de Experiência
+                        </span>
+                    </div>
 
-                <div class="hidden sm:flex items-center gap-2 border-l border-zinc-800 pl-3 text-zinc-400 text-[11px]">
-                    <span class="text-zinc-500">CLUSTER:</span>
-                    <span class="text-zinc-300 font-semibold">sa-east-1a (São Paulo)</span>
-                    <span class="w-1 h-1 rounded-full bg-zinc-600"></span>
-                    <span class="text-emerald-400 font-medium">HEALTHY</span>
+                    <p class="text-xs sm:text-sm text-zinc-200 mt-1 font-sans font-medium">
+                        Desenvolvedor Backend Sênior • Especialista em <span class="text-cyan-400 font-bold font-mono">Python</span>, <span class="text-cyan-400 font-bold font-mono">FastAPI</span>, <span class="text-cyan-400 font-bold font-mono">Django</span> & <span class="text-purple-400 font-bold font-mono">Agentes de IA (LangGraph)</span>
+                    </p>
+                    
+                    <div class="flex items-center gap-2.5 text-[11px] text-zinc-400 mt-1 flex-wrap">
+                        <span class="flex items-center gap-1.5 text-zinc-300">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            <span>Jundiaí - SP (Disponível Remoto / Híbrido)</span>
+                        </span>
+                        <span class="text-zinc-600">•</span>
+                        <span class="text-zinc-300 font-mono text-[11px]">Azure Cosmos DB · GCP · Docker · Microsserviços · Filas & Workers</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Telemetry Pings & Live Status -->
-            <div class="flex items-center flex-wrap gap-2.5 text-[11px]">
+            <!-- Botões de Ação Direta (Currículo, Redes e Contato) -->
+            <div class="flex items-center flex-wrap gap-2 text-xs w-full lg:w-auto justify-start lg:justify-end">
                 
-                <!-- Simulated WS Latency -->
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-obs-panel border border-obs-border text-zinc-400">
-                    <span class="text-zinc-500 font-mono">WS_RTT:</span>
-                    <span id="ws-latency" class="text-cyan-400 font-bold font-mono">14ms</span>
-                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
-                </div>
+                <a href="cv-bruno-pianca-1.pdf" download="cv-bruno-pianca.pdf" target="_blank"
+                   class="px-3.5 py-2 rounded-md bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-zinc-950 font-bold transition-all flex items-center gap-1.5 shadow-md">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Baixar Currículo (PDF)</span>
+                </a>
 
-                <!-- Memory Usage -->
-                <div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded bg-obs-panel border border-obs-border text-zinc-400">
-                    <span class="text-zinc-500 font-mono">REDIS_HEAP:</span>
-                    <span id="redis-heap" class="text-emerald-400 font-mono">34.8 MB / 128 MB</span>
-                </div>
+                <a href="https://www.linkedin.com/in/brunorpdev/" target="_blank" rel="noopener noreferrer"
+                   class="px-3 py-2 rounded-md bg-sky-950/70 hover:bg-sky-900 text-sky-200 border border-sky-700/60 transition-all flex items-center gap-1.5 font-medium">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    <span>LinkedIn</span>
+                </a>
 
-                <!-- Clock -->
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-obs-panel border border-obs-border text-zinc-400 font-mono">
-                    <span class="text-zinc-500">UTC:</span>
-                    <span id="live-clock" class="text-zinc-200">00:00:00</span>
-                </div>
+                <a href="https://github.com/obrunodev" target="_blank" rel="noopener noreferrer"
+                   class="px-3 py-2 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700 transition-all flex items-center gap-1.5 font-medium">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <span>GitHub</span>
+                </a>
 
-                <!-- External Links Styled as HTTP Endpoints -->
-                <div class="flex items-center gap-1.5 pl-1">
-                    <a href="cv-bruno-pianca-1.pdf" download="cv-bruno-pianca.pdf" target="_blank"
-                       class="px-2.5 py-1 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-600/50 hover:bg-emerald-900/80 hover:border-emerald-400 transition-all font-mono font-medium flex items-center gap-1 shadow-sm">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                        <span>GET /cv.pdf</span>
-                    </a>
-
-                    <a href="https://github.com/obrunodev" target="_blank" rel="noopener noreferrer"
-                       class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-700 hover:border-cyan-400 hover:text-cyan-300 transition-all font-mono flex items-center gap-1">
-                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                        <span>gh://obrunodev</span>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/brunorpdev/" target="_blank" rel="noopener noreferrer"
-                       class="px-2.5 py-1 rounded bg-sky-950/50 text-sky-300 border border-sky-800/60 hover:border-sky-400 transition-all font-mono flex items-center gap-1">
-                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                        <span>in://brunorpdev</span>
-                    </a>
-                </div>
+                <a href="https://wa.me/5511937183232" target="_blank" rel="noopener noreferrer"
+                   class="px-3 py-2 rounded-md bg-emerald-950/70 hover:bg-emerald-900 text-emerald-300 border border-emerald-700/60 transition-all flex items-center gap-1.5 font-medium">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <span>WhatsApp</span>
+                </a>
 
             </div>
         </div>
     </header>
 
     <!-- ================================================================= -->
-    <!-- METRICS & TELEMETRY STRIP -->
+    <!-- BARRA DE BOAS-VINDAS & GUIA PARA RECRUTADORES -->
+    <!-- ================================================================= -->
+    <section class="border-b border-obs-border bg-gradient-to-r from-cyan-950/30 via-obs-surface to-purple-950/30 px-4 py-2 text-zinc-300 text-xs font-sans">
+        <div class="max-w-[1720px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="text-base select-none">👋</span>
+                <span>
+                    <b>Boas-vindas ao meu portfólio!</b> Explore os <b>Projetos</b> na tabela abaixo ou faça perguntas no <b>Terminal</b> à direita.
+                </span>
+            </div>
+            <div class="flex items-center gap-3 text-[11px] text-zinc-400 font-mono shrink-0">
+                <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Servidor Ativo</span>
+                </span>
+                <span class="text-zinc-600">|</span>
+                <span>Horário: <span id="live-clock" class="text-cyan-300 font-semibold">--:--:--</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- BARRA DE TELEMETRIA E MÉTRICAS DO SISTEMA -->
     <!-- ================================================================= -->
     <section class="border-b border-obs-border bg-obs-surface/40 px-4 py-2">
         <div class="max-w-[1720px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
             
             <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
                 <div>
-                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">CLUSTER STATUS</div>
+                    <div class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold font-sans">Status do Sistema</div>
                     <div class="text-xs font-bold text-emerald-400 flex items-center gap-1.5 mt-0.5">
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                        <span>OPERATIONAL</span>
+                        <span>100% OPERACIONAL</span>
                     </div>
                 </div>
-                <div class="text-[10px] text-zinc-600 font-mono">100% SLA</div>
+                <div class="text-[10px] text-zinc-500 font-mono">DISPONIBILIDADE</div>
             </div>
 
             <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
                 <div>
-                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">ACTIVE WORKERS</div>
-                    <div class="text-xs font-bold text-cyan-400 font-mono mt-0.5">4 / 4 POOL</div>
+                    <div class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold font-sans">Workers de IA</div>
+                    <div class="text-xs font-bold text-cyan-400 font-mono mt-0.5">4 / 4 ATIVOS</div>
                 </div>
-                <div class="text-[10px] text-zinc-500 font-mono">16 CONCURR.</div>
+                <div class="text-[10px] text-zinc-500 font-mono">LANGGRAPH</div>
             </div>
 
             <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
                 <div>
-                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">QUEUE DEPTH</div>
-                    <div id="stat-queue-depth" class="text-xs font-bold text-amber-400 font-mono mt-0.5">0 PENDING</div>
+                    <div class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold font-sans">Fila de Tarefas</div>
+                    <div id="stat-queue-depth" class="text-xs font-bold text-amber-400 font-mono mt-0.5">0 PENDENTES</div>
                 </div>
-                <div class="text-[10px] text-zinc-600 font-mono">REDIS DB:0</div>
+                <div class="text-[10px] text-zinc-500 font-mono">REDIS QUEUE</div>
             </div>
 
             <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
                 <div>
-                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">PROCESSED JOBS</div>
+                    <div class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold font-sans">Consultas Respondidas</div>
                     <div id="stat-jobs-count" class="text-xs font-bold text-zinc-200 font-mono mt-0.5">2,841</div>
                 </div>
-                <div class="text-[10px] text-emerald-500 font-mono">+100% OK</div>
+                <div class="text-[10px] text-emerald-500 font-mono">+100% SUCESSO</div>
             </div>
 
             <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
                 <div>
-                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">AVG LATENCY</div>
-                    <div class="text-xs font-bold text-zinc-200 font-mono mt-0.5">380ms</div>
+                    <div class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold font-sans">Tempo de Resposta</div>
+                    <div id="ws-latency" class="text-xs font-bold text-cyan-400 font-mono mt-0.5">14ms</div>
                 </div>
-                <div class="text-[10px] text-zinc-500 font-mono">P99: 890ms</div>
+                <div class="text-[10px] text-zinc-500 font-mono">TEMPO REAL</div>
             </div>
 
             <div class="bg-obs-panel/90 border border-obs-border rounded p-2 flex items-center justify-between">
                 <div>
-                    <div class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">SYSTEM UPTIME</div>
-                    <div class="text-xs font-bold text-purple-400 font-mono mt-0.5">6y+ (PROD)</div>
+                    <div class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold font-sans">Experiência Total</div>
+                    <div class="text-xs font-bold text-purple-400 font-mono mt-0.5">6+ ANOS</div>
                 </div>
-                <div class="text-[10px] text-zinc-500 font-mono">PYTHON STACK</div>
+                <div class="text-[10px] text-zinc-500 font-mono">PYTHON & IA</div>
             </div>
 
         </div>
     </section>
 
     <!-- ================================================================= -->
-    <!-- MAIN WORKSPACE: ORCHESTRATION GRID -->
+    <!-- PAINEL PRINCIPAL DO DASHBOARD (GRID) -->
     <!-- ================================================================= -->
     <main class="flex-1 max-w-[1720px] w-full mx-auto p-3 sm:p-4 grid grid-cols-1 xl:grid-cols-12 gap-3.5">
         
         <!-- ============================================================= -->
-        <!-- LEFT COLUMN: SERVICES & REDIS QUEUE (7 Cols on XL) -->
+        <!-- COLUNA ESQUERDA: PROJETOS EM PRODUÇÃO & FILA REDIS (7 Cols no XL) -->
         <!-- ============================================================= -->
         <div class="xl:col-span-7 flex flex-col gap-3.5">
 
-            <!-- PANEL: REGISTERED SERVICES (PROJECTS / WORKLOADS) -->
+            <!-- PAINEL: PROJETOS E SISTEMAS EM PRODUÇÃO -->
             <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden flex flex-col shadow-lg">
                 
-                <!-- Panel Header -->
+                <!-- Cabeçalho do Painel -->
                 <div class="bg-obs-surface px-3.5 py-2.5 border-b border-obs-border flex items-center justify-between flex-wrap gap-2">
                     <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded bg-cyan-400 led-glow-cyan"></div>
-                        <h2 class="font-bold text-zinc-200 tracking-wide uppercase text-xs flex items-center gap-2">
-                            <span>SERVICE_MESH // REGISTERED_WORKLOADS</span>
-                            <span class="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-400 font-normal">8 NODES</span>
-                        </h2>
+                        <div class="w-2.5 h-2.5 rounded bg-cyan-400 led-glow-cyan"></div>
+                        <div>
+                            <h2 class="font-bold text-zinc-100 text-xs flex items-center gap-2 tracking-wide font-sans">
+                                <span>PROJETOS & SISTEMAS EM PRODUÇÃO</span>
+                                <span class="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-cyan-300 font-mono">8 SERVIÇOS ATIVOS</span>
+                            </h2>
+                            <p class="text-[10px] text-zinc-400 font-sans mt-0.5">Sistemas, microsserviços e aplicações entregues pelo Bruno</p>
+                        </div>
                     </div>
 
-                    <div class="flex items-center gap-2 text-[11px] text-zinc-400">
-                        <span class="text-zinc-500">FILTER:</span>
-                        <span class="text-emerald-400 font-semibold">ALL_HEALTHY</span>
-                        <span class="text-zinc-700">|</span>
-                        <span class="text-zinc-500">ENV:</span>
-                        <span class="text-zinc-300">PRODUCTION</span>
+                    <div class="flex items-center gap-2 text-[10px] text-zinc-400 font-mono">
+                        <span class="text-emerald-400 font-semibold">● TODOS OPERACIONAIS</span>
+                        <span class="text-zinc-600">|</span>
+                        <span class="text-zinc-300">PRODUÇÃO REAL</span>
                     </div>
                 </div>
 
-                <!-- Services Table -->
+                <!-- Tabela de Projetos -->
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse text-[11px]">
                         <thead>
                             <tr class="border-b border-obs-border/80 bg-obs-panelLight/40 text-zinc-400 font-mono uppercase text-[10px]">
-                                <th class="py-2 px-3">Service ID / Domain</th>
-                                <th class="py-2 px-3">Runtime / Tech Stack</th>
-                                <th class="py-2 px-3">State</th>
-                                <th class="py-2 px-3">RTT / Pods</th>
-                                <th class="py-2 px-3 text-right">Actions</th>
+                                <th class="py-2.5 px-3">Projeto / Empresa</th>
+                                <th class="py-2.5 px-3">Tecnologias Utilizadas</th>
+                                <th class="py-2.5 px-3 text-center whitespace-nowrap min-w-[110px]">Status</th>
+                                <th class="py-2.5 px-3 text-center whitespace-nowrap min-w-[70px]">Resposta</th>
+                                <th class="py-2.5 px-3 text-right whitespace-nowrap min-w-[185px]">Ações</th>
                             </tr>
                         </thead>
-                        <tbody id="services-table-body" class="divide-y divide-obs-border/50 text-zinc-300 font-mono">
-                            <!-- Injected by JavaScript -->
+                        <tbody id="services-table-body" class="divide-y divide-obs-border/50 text-zinc-300">
+                            <!-- Injetado dinamicamente via JavaScript -->
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Footer Summary of Services -->
-                <div class="bg-obs-surface/60 border-t border-obs-border px-3.5 py-1.5 flex items-center justify-between text-[10px] text-zinc-500 font-mono">
-                    <div class="flex items-center gap-3">
-                        <span>• Core Protocols: REST / SSE / WebSockets</span>
-                        <span class="hidden sm:inline">• Isolation: Dockerized Containers</span>
+                <!-- Rodapé da Tabela -->
+                <div class="bg-obs-surface/60 border-t border-obs-border px-3.5 py-2 flex items-center justify-between text-[11px] text-zinc-400 font-sans">
+                    <div class="flex items-center gap-2">
+                        <span>💡 <span class="text-zinc-200 font-medium">Dica:</span> Clique em <b>[🔍 Detalhes]</b> em qualquer projeto para consultar seus objetivos e arquitetura</span>
                     </div>
-                    <div class="text-cyan-400">AUTONOMOUS HEALTH CHECK: ACTIVE</div>
+                    <div class="text-cyan-400 font-mono text-[10px]">UPTIME: 99.9%</div>
                 </div>
             </section>
 
-            <!-- PANEL: REDIS MESSAGE BROKER & TASK QUEUE -->
+            <!-- PAINEL: FILA DE PROCESSAMENTO (REDIS QUEUE) -->
             <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden flex flex-col shadow-lg flex-1">
                 
-                <!-- Queue Header -->
+                <!-- Cabeçalho da Fila -->
                 <div class="bg-obs-surface px-3.5 py-2.5 border-b border-obs-border flex items-center justify-between flex-wrap gap-2">
                     <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded bg-amber-400 led-glow-amber"></div>
-                        <h2 class="font-bold text-zinc-200 tracking-wide uppercase text-xs flex items-center gap-2">
-                            <span>MESSAGE_BROKER // REDIS_STREAM_QUEUE</span>
-                            <span class="text-[10px] px-1.5 py-0.5 rounded bg-zinc-800 text-amber-300 font-mono">db:0 / queue:agent_jobs</span>
-                        </h2>
+                        <div class="w-2.5 h-2.5 rounded bg-amber-400 led-glow-amber"></div>
+                        <div>
+                            <h2 class="font-bold text-zinc-100 text-xs flex items-center gap-2 tracking-wide font-sans">
+                                <span>FILA DE PROCESSAMENTO (REDIS QUEUE)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-zinc-800 text-amber-300 font-mono">Redis Queue (db:0)</span>
+                            </h2>
+                            <p class="text-[10px] text-zinc-400 font-sans mt-0.5">Visualize as tarefas entrando na fila e sendo atendidas pelos workers em tempo real</p>
+                        </div>
                     </div>
 
                     <div class="flex items-center gap-2 text-[10px] font-mono text-zinc-400">
-                        <span class="text-zinc-500">CONSUMER_GROUP:</span>
-                        <span class="text-zinc-300">cg-bruno-agents</span>
+                        <span class="text-zinc-400">WORKERS:</span>
+                        <span class="text-emerald-400 font-semibold">4 Ativos</span>
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                     </div>
                 </div>
 
-                <!-- Queue Stream Table -->
+                <!-- Tabela de Tarefas na Fila -->
                 <div class="overflow-x-auto flex-1 min-h-[160px]">
                     <table class="w-full text-left border-collapse text-[11px]">
                         <thead>
                             <tr class="border-b border-obs-border/80 bg-obs-panelLight/40 text-zinc-400 font-mono uppercase text-[10px]">
                                 <th class="py-2 px-3">Job ID</th>
-                                <th class="py-2 px-3">Topic / Intent</th>
+                                <th class="py-2 px-3">Requisição / Assunto</th>
                                 <th class="py-2 px-3">Status</th>
-                                <th class="py-2 px-3">Timestamp</th>
-                                <th class="py-2 px-3 text-right">Payload</th>
+                                <th class="py-2 px-3">Horário</th>
+                                <th class="py-2 px-3 text-right">Comando</th>
                             </tr>
                         </thead>
                         <tbody id="queue-table-body" class="divide-y divide-obs-border/50 text-zinc-300 font-mono">
-                            <!-- Real-time dynamic jobs injected here -->
+                            <!-- Tarefas dinâmicas injetadas aqui -->
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Broker Info Strip -->
-                <div class="bg-obs-surface/60 border-t border-obs-border px-3.5 py-1.5 flex items-center justify-between text-[10px] text-zinc-500 font-mono">
-                    <span id="queue-status-text">LISTENER: POLLING (Interval: 100ms) | ACK MODE: MANUAL</span>
-                    <span class="text-zinc-400 font-mono">Backpressure: 0.0%</span>
+                <!-- Rodapé da Fila -->
+                <div class="bg-obs-surface/60 border-t border-obs-border px-3.5 py-2 flex items-center justify-between text-[11px] text-zinc-400 font-sans">
+                    <span id="queue-status-text">Status: Fila pronta para receber comandos | Workers concorrentes ouvindo</span>
+                    <span class="text-zinc-400 font-mono text-[10px]">Memória: <span id="redis-heap" class="text-zinc-300">34.8 MB / 128 MB</span></span>
                 </div>
             </section>
 
         </div>
 
         <!-- ============================================================= -->
-        <!-- RIGHT COLUMN: DISPATCH TERMINAL, WORKER LOGS, OUTPUT BUFFER -->
+        <!-- COLUNA DIREITA: TERMINAL, LOGS DO AGENTE, RESPOSTA (5 Cols no XL) -->
         <!-- ============================================================= -->
         <div class="xl:col-span-5 flex flex-col gap-3.5">
 
-            <!-- PANEL: DISPATCH TERMINAL (INPUT & SUBMISSION) -->
+            <!-- PAINEL: TERMINAL DE PERGUNTAS / COMANDOS -->
             <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden shadow-lg">
                 
-                <!-- Terminal Header -->
-                <div class="bg-obs-surface px-3.5 py-2 border-b border-obs-border flex items-center justify-between">
+                <!-- Cabeçalho do Terminal -->
+                <div class="bg-obs-surface px-3.5 py-2.5 border-b border-obs-border flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <div class="flex gap-1.5">
                             <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block"></span>
                             <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
                             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
                         </div>
-                        <span class="font-bold text-zinc-300 text-xs tracking-wider">JOB_DISPATCHER // POST /api/v1/jobs</span>
+                        <div>
+                            <span class="font-bold text-zinc-100 text-xs tracking-wide font-sans">TERMINAL INTERATIVO // CONHEÇA O BRUNO</span>
+                            <p class="text-[10px] text-zinc-400 font-sans">Digite uma dúvida ou clique nos atalhos rápidos abaixo:</p>
+                        </div>
                     </div>
 
-                    <div class="text-[10px] text-cyan-400 font-mono">TTY: /dev/pts/0</div>
+                    <div class="text-[10px] text-cyan-400 font-mono hidden sm:block">prompt: interativo</div>
                 </div>
 
-                <!-- Command Input Form -->
+                <!-- Formulário de Input -->
                 <div class="p-3 bg-obs-terminal">
                     <form id="job-form" class="space-y-2.5" onsubmit="handleJobSubmit(event)">
                         
-                        <!-- Terminal Input line -->
-                        <div class="flex items-center gap-2 bg-obs-surface/90 border border-obs-border rounded p-2 focus-within:border-cyan-500/80 transition-colors">
-                            <span class="text-emerald-400 font-bold font-mono text-xs select-none">agent@bruno:~$</span>
+                        <!-- Linha de Input com prefixo amigável -->
+                        <div class="flex items-center gap-2 bg-obs-surface/90 border border-obs-border rounded-md p-2 focus-within:border-cyan-500/80 transition-colors">
+                            <span class="text-emerald-400 font-bold font-mono text-xs select-none">pergunta:~$</span>
                             <input 
                                 type="text" 
                                 id="job-input"
-                                placeholder="Digite sua pergunta (ex: 'quais suas skills?', 'experiência', 'projetos')..."
+                                placeholder="Ex: 'quais suas skills?', 'experiência na G30', 'projetos', 'contato'..."
                                 autocomplete="off"
-                                class="flex-1 bg-transparent border-none outline-none text-zinc-100 font-mono text-xs placeholder:text-zinc-600 focus:ring-0"
+                                class="flex-1 bg-transparent border-none outline-none text-zinc-100 font-mono text-xs placeholder:text-zinc-500 focus:ring-0"
                             />
                             <button 
                                 type="submit" 
                                 id="dispatch-btn"
-                                class="px-3 py-1.5 rounded bg-cyan-600 hover:bg-cyan-500 active:bg-cyan-700 text-zinc-950 font-bold font-mono text-xs tracking-wide transition-all flex items-center gap-1.5 shadow-md">
-                                <span>DISPATCH</span>
+                                class="px-3.5 py-1.5 rounded bg-cyan-600 hover:bg-cyan-500 active:bg-cyan-700 text-zinc-950 font-bold font-sans text-xs tracking-wide transition-all flex items-center gap-1.5 shadow-md">
+                                <span>Enviar</span>
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                             </button>
                         </div>
 
-                        <!-- Quick Intent Dispatch Pills -->
-                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
-                            <span class="text-[10px] text-zinc-500 font-mono uppercase mr-1">Quick Intent:</span>
+                        <!-- Botões Rápidos Claros & Diretos -->
+                        <div>
+                            <div class="text-[10px] text-zinc-400 font-sans mb-1.5 flex items-center gap-1 font-medium">
+                                <span>Atalhos Rápidos (Clique para ver a resposta):</span>
+                            </div>
                             
-                            <button type="button" onclick="quickDispatch('g30')"
-                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-950/70 hover:bg-purple-900 text-purple-300 border border-purple-700/60 hover:border-purple-400 transition-colors flex items-center gap-1 shadow-sm">
-                                <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
-                                <span>$ g30 (IA)</span>
-                            </button>
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <button type="button" onclick="quickDispatch('g30')"
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-sans bg-purple-950/70 hover:bg-purple-900 text-purple-200 border border-purple-700/60 hover:border-purple-400 transition-colors flex items-center gap-1.5 shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+                                    <span>⭐ Experiência na G30 (IA)</span>
+                                </button>
 
-                            <button type="button" onclick="quickDispatch('skills')"
-                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-cyan-300 border border-zinc-700 hover:border-cyan-400 transition-colors">
-                                $ skills
-                            </button>
-                            
-                            <button type="button" onclick="quickDispatch('experiencia')"
-                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-emerald-300 border border-zinc-700 hover:border-emerald-400 transition-colors">
-                                $ experiencia
-                            </button>
-                            
-                            <button type="button" onclick="quickDispatch('projetos')"
-                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-purple-300 border border-zinc-700 hover:border-purple-400 transition-colors">
-                                $ projetos
-                            </button>
+                                <button type="button" onclick="quickDispatch('skills')"
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-sans bg-zinc-900 hover:bg-zinc-800 text-cyan-200 border border-zinc-700 hover:border-cyan-400 transition-colors flex items-center gap-1">
+                                    <span>⚡ Habilidades & Stacks</span>
+                                </button>
+                                
+                                <button type="button" onclick="quickDispatch('experiencia')"
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-sans bg-zinc-900 hover:bg-zinc-800 text-emerald-200 border border-zinc-700 hover:border-emerald-400 transition-colors flex items-center gap-1">
+                                    <span>💼 Histórico Profissional</span>
+                                </button>
+                                
+                                <button type="button" onclick="quickDispatch('projetos')"
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-sans bg-zinc-900 hover:bg-zinc-800 text-purple-200 border border-zinc-700 hover:border-purple-400 transition-colors flex items-center gap-1">
+                                    <span>🚀 Projetos em Produção</span>
+                                </button>
 
-                            <button type="button" onclick="quickDispatch('contato')"
-                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-sky-300 border border-zinc-700 hover:border-sky-400 transition-colors">
-                                $ contato
-                            </button>
+                                <button type="button" onclick="quickDispatch('contato')"
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-sans bg-zinc-900 hover:bg-zinc-800 text-sky-200 border border-zinc-700 hover:border-sky-400 transition-colors flex items-center gap-1">
+                                    <span>📬 Contato & Redes</span>
+                                </button>
 
-                            <button type="button" onclick="quickDispatch('sobre')"
-                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-amber-300 border border-zinc-700 hover:border-amber-400 transition-colors">
-                                $ sobre
-                            </button>
+                                <button type="button" onclick="quickDispatch('sobre')"
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-sans bg-zinc-900 hover:bg-zinc-800 text-amber-200 border border-zinc-700 hover:border-amber-400 transition-colors flex items-center gap-1">
+                                    <span>👤 Sobre Mim & Formação</span>
+                                </button>
 
-                            <button type="button" onclick="quickDispatch('arquitetura')"
-                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-rose-300 border border-zinc-700 hover:border-rose-400 transition-colors">
-                                $ arquitetura
-                            </button>
+                                <button type="button" onclick="quickDispatch('curriculo')"
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-sans bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700 hover:border-zinc-400 transition-colors flex items-center gap-1">
+                                    <span>📄 Baixar Currículo</span>
+                                </button>
 
-                            <button type="button" onclick="quickDispatch('curriculo')"
-                                class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-700 hover:border-zinc-400 transition-colors">
-                                $ curriculo
-                            </button>
+                                <button type="button" onclick="quickDispatch('arquitetura')"
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-sans bg-zinc-900 hover:bg-zinc-800 text-rose-200 border border-zinc-700 hover:border-rose-400 transition-colors flex items-center gap-1">
+                                    <span>🏗️ Arquitetura de Software</span>
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>
             </section>
 
-            <!-- PANEL: WORKER LOGS (LIVE STREAMING TERMINAL) -->
+            <!-- PAINEL: LOGS DE PROCESSAMENTO (EM TEMPO REAL) -->
             <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden shadow-lg flex flex-col">
                 
-                <!-- Log Stream Header -->
-                <div class="bg-obs-surface px-3.5 py-2 border-b border-obs-border flex items-center justify-between">
+                <!-- Cabeçalho dos Logs -->
+                <div class="bg-obs-surface px-3.5 py-2.5 border-b border-obs-border flex items-center justify-between">
                     <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded bg-purple-400 led-glow-cyan animate-pulse"></div>
-                        <span class="font-bold text-zinc-300 text-xs tracking-wider uppercase">
-                            WORKER_LOGS // STDOUT STREAM
-                        </span>
-                        <span id="log-count-badge" class="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-400 font-mono">0 lines</span>
+                        <div class="w-2.5 h-2.5 rounded bg-purple-400 led-glow-cyan animate-pulse"></div>
+                        <div>
+                            <span class="font-bold text-zinc-100 text-xs tracking-wide font-sans">
+                                LOGS DE PROCESSAMENTO (EM TEMPO REAL)
+                            </span>
+                            <p class="text-[10px] text-zinc-400 font-sans">Acompanhe o agente de IA buscando e formatando os dados linha a linha:</p>
+                        </div>
                     </div>
 
                     <div class="flex items-center gap-2 text-[10px] font-mono">
-                        <button onclick="clearLogs()" class="text-zinc-500 hover:text-zinc-300 transition-colors">[Clear]</button>
-                        <span class="text-zinc-700">|</span>
-                        <label class="flex items-center gap-1 cursor-pointer text-zinc-400">
+                        <span id="log-count-badge" class="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400">0 linhas</span>
+                        <button onclick="clearLogs()" class="text-zinc-400 hover:text-zinc-200 transition-colors">[Limpar]</button>
+                        <span class="text-zinc-600">|</span>
+                        <label class="flex items-center gap-1 cursor-pointer text-zinc-300">
                             <input type="checkbox" id="autoscroll-toggle" checked class="rounded bg-zinc-900 border-zinc-700 text-cyan-500 focus:ring-0">
                             <span>Auto-scroll</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Log Output Window -->
-                <div id="worker-logs-container" class="bg-obs-terminal p-3 font-mono text-[11px] h-48 overflow-y-auto leading-relaxed scanlines border-b border-obs-border space-y-1">
-                    <!-- Logs streamed dynamically -->
+                <!-- Janela de Terminal com Scanlines -->
+                <div id="worker-logs-container" class="bg-obs-terminal p-3 font-mono text-[11px] h-44 overflow-y-auto leading-relaxed scanlines border-b border-obs-border space-y-1">
+                    <!-- Logs impressos linha a linha -->
                 </div>
 
-                <!-- Worker State Bar -->
-                <div class="bg-obs-surface/80 px-3 py-1.5 flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                <!-- Barra de Estado do Worker -->
+                <div class="bg-obs-surface/80 px-3 py-1.5 flex items-center justify-between text-[10px] font-sans text-zinc-400">
                     <div class="flex items-center gap-2">
-                        <span class="text-zinc-400">ACTIVE_WORKER:</span>
-                        <span id="active-worker-id" class="text-cyan-400 font-semibold">worker-01 (IDLE)</span>
+                        <span class="text-zinc-400">Worker Ativo:</span>
+                        <span id="active-worker-id" class="text-cyan-400 font-mono font-semibold">worker-01 (Pronto)</span>
                     </div>
-                    <div id="worker-state-indicator" class="text-emerald-400">STATE: LISTENING</div>
+                    <div id="worker-state-indicator" class="text-emerald-400 font-mono font-medium">STATUS: AGUARDANDO COMANDOS</div>
                 </div>
             </section>
 
-            <!-- PANEL: WORKER OUTPUT BUFFER (FORMATTED JSON RESPONSE) -->
+            <!-- PAINEL: RESPOSTA DA CONSULTA // DUPLA VISUALIZAÇÃO (AMIGÁVEL + JSON) -->
             <section class="bg-obs-panel/95 border border-obs-border rounded-lg overflow-hidden shadow-lg flex-1 flex flex-col">
                 
-                <!-- Output Buffer Header -->
-                <div class="bg-obs-surface px-3.5 py-2 border-b border-obs-border flex items-center justify-between flex-wrap gap-2">
+                <!-- Cabeçalho do Painel com Seletor de Modo -->
+                <div class="bg-obs-surface px-3.5 py-2.5 border-b border-obs-border flex items-center justify-between flex-wrap gap-2">
                     <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded bg-emerald-400 led-glow-green"></div>
-                        <span class="font-bold text-zinc-300 text-xs tracking-wider uppercase">
-                            OUTPUT_BUFFER // HTTP 200 OK
-                        </span>
-                        <span id="output-meta-badge" class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 font-mono">
-                            JSON_PAYLOAD
-                        </span>
+                        <div class="w-2.5 h-2.5 rounded bg-emerald-400 led-glow-green"></div>
+                        <div>
+                            <span class="font-bold text-zinc-100 text-xs tracking-wide font-sans">
+                                RESPOSTA DA CONSULTA
+                            </span>
+                            <p class="text-[10px] text-zinc-400 font-sans">Veja as informações retornadas para a sua pergunta:</p>
+                        </div>
                     </div>
 
+                    <!-- Seletor de Visualização: Amigável (Recrutador) vs JSON (Dev) -->
                     <div class="flex items-center gap-2">
+                        <div class="flex items-center bg-zinc-900 p-0.5 rounded border border-zinc-700">
+                            <button 
+                                id="btn-view-friendly" 
+                                onclick="switchOutputView('friendly')"
+                                class="px-2.5 py-1 rounded text-[11px] font-sans font-bold bg-cyan-600 text-zinc-950 transition-all flex items-center gap-1 shadow-sm">
+                                <span>📋 Leitura Fácil</span>
+                            </button>
+                            <button 
+                                id="btn-view-json" 
+                                onclick="switchOutputView('json')"
+                                class="px-2.5 py-1 rounded text-[11px] font-mono text-zinc-400 hover:text-zinc-200 transition-all flex items-center gap-1">
+                                <span>{ } JSON</span>
+                            </button>
+                        </div>
+
                         <button 
                             id="copy-json-btn" 
                             onclick="copyJsonResponse()"
-                            class="px-2 py-0.5 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-700 hover:border-cyan-400 font-mono text-[10px] flex items-center gap-1 transition-all">
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                            <span>COPY JSON</span>
+                            class="px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700 hover:border-cyan-400 font-sans text-[11px] flex items-center gap-1 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                            <span>Copiar</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- JSON Response Canvas -->
-                <div class="bg-obs-terminal/90 p-3.5 flex-1 overflow-auto min-h-[220px]">
+                <!-- Conteúdo 1: Visualização Amigável (Cartões Formatados) -->
+                <div id="friendly-output-viewer" class="bg-obs-terminal/90 p-4 flex-1 overflow-auto min-h-[220px] font-sans">
+                    <!-- Cartão amigável gerado via JS -->
+                </div>
+
+                <!-- Conteúdo 2: Visualização Técnica JSON (Opcional, com Syntax Highlight) -->
+                <div id="json-output-wrapper" class="bg-obs-terminal/90 p-3.5 flex-1 overflow-auto min-h-[220px] hidden">
                     <pre id="json-output-viewer" class="font-mono text-[11px] leading-relaxed text-zinc-300 selection:bg-cyan-500/30">
-<!-- JSON with syntax highlight injected here -->
+                        <!-- JSON com highlight de sintaxe -->
                     </pre>
                 </div>
 
-                <!-- Buffer Status Bar -->
-                <div class="bg-obs-surface/80 px-3 py-1.5 border-t border-obs-border flex items-center justify-between text-[10px] font-mono text-zinc-500">
-                    <span id="output-stats-text">RESOLVED: Local In-Memory Graph | Encoding: UTF-8</span>
-                    <span class="text-zinc-400">SCHEMA: BrunoProfileSchema_v2</span>
+                <!-- Barra de Status do Resultado -->
+                <div class="bg-obs-surface/80 px-3 py-1.5 border-t border-obs-border flex items-center justify-between text-[10px] font-sans text-zinc-400">
+                    <span id="output-stats-text">Consulta concluída com sucesso</span>
+                    <span class="text-emerald-400 font-mono font-medium">STATUS: 200 OK</span>
                 </div>
             </section>
 
@@ -532,27 +579,27 @@
     </main>
 
     <!-- ================================================================= -->
-    <!-- FOOTER / OBSERVABILITY META -->
+    <!-- RODAPÉ // METADADOS & LINKS -->
     <!-- ================================================================= -->
     <footer class="border-t border-obs-border bg-obs-surface px-4 py-2 mt-auto text-zinc-500 text-[10px] font-mono">
         <div class="max-w-[1720px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div class="flex items-center gap-3">
-                <span class="text-zinc-400 font-semibold">BRUNO R. PIANCA</span>
+            <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-zinc-300 font-bold font-sans">Bruno R. Pianca</span>
                 <span>•</span>
-                <span>Senior Backend & AI Agent Engineer (6+ anos • Python / FastAPI / Django / LangGraph / Azure Cosmos / GCP)</span>
+                <span>Desenvolvedor Backend Sênior (Python, FastAPI, Django, LangGraph, Azure Cosmos DB, GCP, Docker)</span>
                 <span>•</span>
-                <span class="text-zinc-600">Simulated Architecture on GitHub Pages</span>
+                <span class="text-zinc-600">GitHub Pages</span>
             </div>
             <div class="flex items-center gap-4 text-zinc-400">
-                <a href="https://github.com/obrunodev/obrunodev.github.io" target="_blank" class="hover:text-cyan-400 transition-colors">view_source_code()</a>
+                <a href="https://github.com/obrunodev/obrunodev.github.io" target="_blank" class="hover:text-cyan-400 transition-colors">Código-Fonte no GitHub</a>
                 <span>•</span>
-                <span class="text-emerald-500">SYSTEM_HEALTH: 100%</span>
+                <span class="text-emerald-500">DISPONIBILIDADE: 100%</span>
             </div>
         </div>
     </footer>
 
     <!-- ================================================================= -->
-    <!-- CORE CLIENT JAVASCRIPT: QUEUE, WORKERS, LOG STREAM & MOCK KNOWLEDGE -->
+    <!-- JAVASCRIPT: FILA, WORKERS, LOGS, BASE DE DADOS & RENDERIZADORES -->
     <!-- ================================================================= -->
     <script>
         /**
@@ -561,180 +608,196 @@
          */
 
         // -------------------------------------------------------------
-        // 1. KNOWLEDGE BASE & PRE-PROGRAMMED MOCK RESPONSES
+        // 1. BASE DE CONHECIMENTO (DADOS ATUALIZADOS DO PERFIL)
         // -------------------------------------------------------------
         const KNOWLEDGE_BASE = {
+            apresentacao: {
+                status: "SUCCESS",
+                boas_vindas: "Olá! Boas-vindas ao meu portfólio interativo.",
+                desenvolvedor: "Bruno R. Pianca",
+                cargo_atual: "Backend & AI Agent Engineer na G30 Inteligência Automotiva",
+                especialidade: "Desenvolvedor Backend Sênior • Python, FastAPI, Django & Agentes de IA (LangGraph)",
+                experiencia_total: "Mais de 6 anos de experiência sólida no ecossistema Python",
+                localizacao: "Jundiaí - SP (Disponível para Remoto / Híbrido)",
+                resumo_profissional: "Desenvolvo microsserviços de alta escala, APIs assíncronas resilientes e pipelines de IA conversacional baseados em Agente Único com Tool Calling determinístico. Sólida vivência em nuvens (Azure Cosmos DB, GCP, AWS) e liderança técnica prévia.",
+                stacks_principais: [
+                    "Python (FastAPI Assíncrono, Django, Pydantic v2)",
+                    "Agentes de IA (LangGraph, Single-Agent Tool Calling determinístico, OpenAI, Gemini)",
+                    "Bancos de Dados (Azure Cosmos DB, PostgreSQL, MongoDB, Redis)",
+                    "Processamento Assíncrono e Mensageria (Celery, Redis Queue, Docker)"
+                ],
+                como_navegar: "Utilize os atalhos rápidos do terminal ao lado para ver detalhes sobre Minha Experiência na G30, Habilidades, Histórico de Carreira, Projetos e Contato!"
+            },
+
             g30: {
                 status: "SUCCESS",
                 company: "G30 Inteligência Automotiva",
                 role: "Desenvolvedor Backend & AI Agent Engineer",
                 period: "julho de 2026 - Presente",
                 location: "Vinhedo, São Paulo, Brasil (Remoto)",
+                domain: "Inteligência Automotiva & IA Conversacional",
                 core_responsibilities: [
                     "Reescrita completa da API core em FastAPI assíncrono com Azure Cosmos DB, Pydantic v2 e testes automatizados de alta cobertura.",
                     "Otimização do pipeline de IA conversacional para arquitetura de Agente Único com Tool Calling e LangGraph.",
-                    "Redução substancial de latência, custos operacionais e consumo excessivo de tokens LLM.",
-                    "Desenvolvimento de tools determinísticas para consultar regras automotivas, dados e fluxos de telemetria."
+                    "Redução de aproximadamente 65% no consumo de tokens LLM, diminuindo custos operacionais e mantendo latência p95 abaixo de 280ms.",
+                    "Desenvolvimento de tools determinísticas para consultar regras automotivas, dados e fluxos de telemetria sem alucinações."
                 ],
                 tech_stack: [
                     "Python 3.12+",
                     "FastAPI (Async)",
                     "Azure Cosmos DB",
                     "LangGraph",
-                    "Tool Calling / Function Calling",
+                    "Tool Calling determinístico",
                     "Pydantic v2",
                     "Pytest",
                     "Docker"
                 ],
                 metrics: {
-                    token_consumption_reduction: "~65%",
+                    token_reduction: "~65% de economia de tokens",
                     p95_latency: "< 280ms",
-                    architecture_pattern: "Single-Agent Deterministic Tool Graph"
+                    architecture: "Single-Agent Deterministic Tool Graph"
                 }
             },
 
             skills: {
                 status: "SUCCESS",
                 developer: "Bruno R. Pianca",
-                headline: "Desenvolvedor Backend • Python / FastAPI / Django • GCP / Azure • AI Agents",
+                headline: "Desenvolvedor Backend Sênior • Python / FastAPI / Django • GCP / Azure • Agentes de IA",
                 experience_years: "6+ anos no ecossistema Python",
                 current_role: "Backend & AI Agent Engineer na G30 Inteligência Automotiva",
-                core_stack: {
-                    languages: ["Python (6+ anos)", "JavaScript / TypeScript", "SQL", "Bash / Shell"],
-                    backend_frameworks: ["FastAPI (Async)", "Django", "Django REST Framework (DRF)", "Flask", "Celery", "HTMX", "Next.js"],
+                categories: {
+                    backend_and_languages: [
+                        "Python (6+ anos de experiência profunda)",
+                        "FastAPI (Microsserviços Assíncronos & Pydantic v2)",
+                        "Django & Django REST Framework (DRF)",
+                        "Celery & Filas Assíncronas",
+                        "JavaScript / TypeScript",
+                        "SQL & Shell / Bash"
+                    ],
                     ai_and_agents: [
-                        "LangGraph (State Graphs determinísticos)",
-                        "Tool Calling / Function Calling em Agente Único",
-                        "LangChain",
-                        "Integração com LLMs (OpenAI, Google Gemini)",
-                        "IA do Cursor",
-                        "Otimização de pipelines conversacionais, latência e consumo de tokens"
+                        "LangGraph (Fluxos determinísticos com State Graphs)",
+                        "Single-Agent Tool Calling (Arquitetura de Agente Único com ferramentas especializadas)",
+                        "Integração com LLMs (OpenAI GPT-4, Google Gemini)",
+                        "Otimização de pipelines conversacionais, redução de tokens e latência",
+                        "Ferramentas de IA do Cursor"
                     ],
                     cloud_and_infra: [
-                        "Azure (Azure Cosmos DB)",
+                        "Azure (Azure Cosmos DB NoSQL)",
                         "Google Cloud Platform (GCP)",
                         "AWS",
-                        "Docker / Docker Compose",
-                        "Pipelines CI/CD",
-                        "Linux System Administration"
+                        "Docker & Docker Compose",
+                        "Pipelines CI/CD (GitHub Actions)",
+                        "Administração Linux"
                     ],
-                    databases_and_storage: [
-                        "Azure Cosmos DB (NoSQL)",
+                    databases_and_cache: [
+                        "Azure Cosmos DB (NoSQL de alta performance)",
                         "PostgreSQL",
                         "MongoDB",
-                        "Redis (Cache & Message Broker)",
+                        "Redis (Cache e Message Broker)",
                         "MySQL",
                         "SQLite"
                     ],
                     architecture_patterns: [
-                        "Arquitetura de Microsserviços e Monorepos",
-                        "Monólitos Modulares",
-                        "Single-Agent Tool Calling Architecture",
-                        "Clean Architecture & Pydantic v2",
-                        "Processamento Assíncrono e Filas (Celery/Redis)",
-                        "Multi-Tenancy & Integrações com Wearables (Apple Health, Oura Ring)"
+                        "Arquitetura de Microsserviços & Monorepos",
+                        "Clean Architecture & Tipagem Estrita (Pydantic v2)",
+                        "Filas e Mensageria Assíncrona (Redis / Celery)",
+                        "Multi-Tenancy & Integrações com APIs de Wearables (Apple Health, Oura Ring)"
                     ]
-                },
-                methodology: {
-                    testing: "Pytest, TDD, Testes Automatizados Assíncronos, Code Reviews Colaborativos",
-                    quality: "Clean Code, Tipagem Estrita (Pydantic v2 / Type Hints), PEP8",
-                    observability: "OpenTelemetry, Prometheus, Structured JSON Logging"
                 }
             },
 
             experiencia: {
                 status: "SUCCESS",
                 developer: "Bruno R. Pianca",
-                total_experience: "Mais de 6 anos de experiência no ecossistema Python (Microsserviços, Cloud, Agentes de IA e Liderança Técnica)",
+                total_experience: "Mais de 6 anos de experiência profissional no ecossistema Python",
                 career_timeline: [
                     {
                         company: "G30 Inteligência Automotiva",
                         role: "Desenvolvedor Backend & AI Agent Engineer",
                         period: "julho de 2026 - Presente",
-                        location: "Vinhedo, São Paulo, Brasil (Remoto)",
+                        location: "Vinhedo, SP (Remoto)",
                         domain: "Inteligência Automotiva & IA Conversacional",
-                        stack: ["Python", "FastAPI (Async)", "Azure Cosmos DB", "Pydantic v2", "LangGraph", "Tool Calling", "Pytest"],
+                        stack: ["Python", "FastAPI Async", "Azure Cosmos DB", "LangGraph", "Tool Calling", "Pydantic v2", "Pytest"],
                         highlights: [
                             "Reescrita da API core em FastAPI assíncrono com Azure Cosmos DB, Pydantic v2 e testes automatizados.",
-                            "Otimização de pipeline de IA conversacional para Agente Único com Tool Calling e LangGraph, reduzindo drasticamente latência, custos e consumo de tokens.",
-                            "Construção de tools determinísticas para integração da IA com regras de negócio e dados operacionais."
+                            "Otimização de pipeline de IA conversacional para Agente Único com Tool Calling e LangGraph, reduzindo ~65% dos custos e tokens.",
+                            "Criação de tools determinísticas para integração do agente com regras automotivas de produção."
                         ]
                     },
                     {
                         company: "Arquitech Tecnologia Ltda",
                         role: "Desenvolvedor Backend",
                         period: "novembro de 2025 - maio de 2026 (7 meses)",
-                        location: "São Paulo, Brasil",
-                        domain: "Software Empresarial & Arquitetura Monorepo",
+                        location: "São Paulo, SP",
+                        domain: "Software Corporativo & Arquitetura Monorepo",
                         stack: ["Python", "FastAPI", "PostgreSQL", "MongoDB", "Docker", "CI/CD"],
                         highlights: [
-                            "Desenvolvimento de serviços estruturados em arquitetura monorepo utilizando Python, FastAPI, PostgreSQL e MongoDB.",
-                            "Atuação na infraestrutura e processos de deploy, com foco na estabilidade e escalabilidade do sistema.",
-                            "Garantia de qualidade do código através de code reviews colaborativos e pipelines automatizados de CI/CD."
+                            "Desenvolvimento de microsserviços em monorepo corporativo utilizando FastAPI, PostgreSQL e MongoDB.",
+                            "Atuação na infraestrutura de deploy, estabilidade e manutenibilidade do sistema.",
+                            "Garantia de qualidade através de revisões de código e pipelines automatizados de CI/CD."
                         ]
                     },
                     {
                         company: "QFlash",
                         role: "Desenvolvedor Backend",
                         period: "dezembro de 2024 - setembro de 2025 (10 meses)",
-                        location: "São Paulo, Brasil",
+                        location: "São Paulo, SP",
                         domain: "Fintech de Antecipação de Recebíveis",
                         stack: ["Python", "FastAPI", "MongoDB", "Docker", "CI/CD"],
                         highlights: [
-                            "Construção e manutenção de microsserviços escaláveis utilizando Python, FastAPI e MongoDB.",
-                            "Sustentação da infraestrutura financeira e aplicação das melhores práticas de engenharia de software.",
-                            "Participação ativa em metodologias ágeis, code reviews e entrega contínua (CI/CD)."
+                            "Construção e sustentação de microsserviços financeiros escaláveis com FastAPI e MongoDB.",
+                            "Aplicação de boas práticas de segurança, escalabilidade e arquitetura limpa.",
+                            "Participação ativa em metodologias ágeis e pipelines de entrega contínua."
                         ]
                     },
                     {
                         company: "Epigene DNA experts",
                         role: "Líder Técnico (11 meses) & Desenvolvedor Backend (7 meses)",
                         period: "setembro de 2023 - janeiro de 2025 (1 ano e 5 meses)",
-                        location: "São Paulo, Brasil",
+                        location: "São Paulo, SP",
                         domain: "HealthTech & Genômica B2B",
-                        stack: ["Django", "FastAPI", "GCP", "PostgreSQL", "OpenAI & Gemini LLMs", "Wearables (Oura/Apple)"],
+                        stack: ["Django", "FastAPI", "GCP", "PostgreSQL", "OpenAI & Gemini", "Wearables (Apple/Oura)"],
                         highlights: [
-                            "Liderança técnica no desenvolvimento e evolução da plataforma HealthTech hospedada no Google Cloud Platform (GCP).",
-                            "Construção de dashboards para processamento de exames de DNA e sincronização contínua de dados com wearables (Oura Ring, Apple Health).",
-                            "Implementação de funcionalidades de Inteligência Artificial integrando LLMs (OpenAI e Gemini).",
-                            "Gerenciamento e automação de deploys em ambientes de Homologação e Produção."
+                            "Liderança técnica na evolução da plataforma no Google Cloud Platform (GCP).",
+                            "Desenvolvimento de dashboards para processamento de laudos de DNA e sincronização contínua com wearables (Oura Ring, Apple Health).",
+                            "Implementação de funcionalidades de IA integrando modelos OpenAI e Gemini.",
+                            "Automação de deploys nos ambientes de Homologação e Produção."
                         ]
                     },
                     {
                         company: "Alstra Technologies",
                         role: "Desenvolvedor Python Jr.",
                         period: "julho de 2022 - fevereiro de 2024 (1 ano e 8 meses)",
-                        location: "São Paulo e Região",
-                        domain: "Enterprise ATS & RH Tech",
+                        location: "São Paulo, SP",
+                        domain: "Enterprise ATS & Plataforma de RH",
                         stack: ["Django", "Django REST Framework (DRF)", "Celery", "Redis", "PostgreSQL", "API D4Sign"],
                         highlights: [
-                            "Desenvolvimento de APIs RESTful estruturadas em Django e DRF para plataforma de gestão de talentos.",
-                            "Implementação de processamento assíncrono com Celery e Redis, otimizando fluxos de sistema e notificações.",
-                            "Integração de arquiteturas de gestão de documentos e assinaturas digitais via API (D4Sign)."
+                            "Desenvolvimento de APIs RESTful estruturadas em Django e DRF.",
+                            "Implementação de processamento assíncrono com Celery e Redis para notificações e relatórios.",
+                            "Integração de assinatura digital com D4Sign via webhooks."
                         ]
                     },
                     {
                         company: "BRP Soluções",
                         role: "Desenvolvedor Full Stack Python",
                         period: "novembro de 2020 - junho de 2022 (1 ano e 8 meses)",
-                        location: "Jundiaí, São Paulo, Brasil",
+                        location: "Jundiaí, SP",
                         domain: "EdTech, ERPs e E-commerce",
                         stack: ["Python", "Django", "FastAPI", "MySQL", "Docker"],
                         highlights: [
-                            "Engenharia de software e desenvolvimento sob demanda, atuando do levantamento de requisitos ao deploy.",
-                            "Construção de plataforma de e-learning (EdTech) de alta escalabilidade para milhares de usuários ativos (Grupo Primo).",
-                            "Desenvolvimento de e-commerce integrado a ERPs e criação de CRMs utilizando Python, Django e FastAPI."
+                            "Construção de plataforma EdTech de alta concorrência para milhares de alunos (Grupo Primo).",
+                            "Desenvolvimento de e-commerces integrados a ERPs e sistemas de CRM."
                         ]
                     },
                     {
                         company: "insped",
                         role: "RPA Developer",
                         period: "fevereiro de 2022 - maio de 2022 (4 meses)",
-                        location: "São Paulo, Brasil",
-                        domain: "Automação Governamental",
+                        location: "São Paulo, SP",
+                        domain: "Automações Governamentais",
                         stack: ["Python", "Robot Framework", "Selenium"],
                         highlights: [
-                            "Criação de robôs e automações no portal gov.br para extração e processamento regulatório."
+                            "Criação de robôs e automações no portal gov.br para extração regulatória de certidões."
                         ]
                     }
                 ]
@@ -743,91 +806,200 @@
             projetos: {
                 status: "SUCCESS",
                 developer: "Bruno R. Pianca",
-                total_projects_cataloged: 6,
+                total_projects: 8,
                 portfolio: [
                     {
                         id: "g30-agent-core",
-                        name: "API Core & Pipeline de IA Conversacional (G30)",
+                        name: "API Core & Agentes de IA Conversacional (G30)",
                         role: "Desenvolvedor Backend & AI Agent Engineer",
-                        domain: "Automotive AI & Cloud",
-                        description: "Reescrita da API core em FastAPI assíncrono com Azure Cosmos DB e pipeline de agente único com LangGraph e Tool Calling, otimizando drasticamente custos e latência de tokens.",
+                        domain: "Inteligência Automotiva",
+                        description: "Reescrita da API core em FastAPI assíncrono com Azure Cosmos DB e pipeline de agente único com LangGraph e Tool Calling, gerando 65% de economia de tokens.",
                         stack: ["FastAPI", "Azure Cosmos DB", "LangGraph", "Tool Calling", "Pydantic v2"],
-                        status: "PRODUCTION_ACTIVE"
+                        status: "PRODUÇÃO"
                     },
                     {
                         id: "epigene-dna-wearables",
-                        name: "Plataforma HealthTech com Processamento de DNA & Wearables",
-                        role: "Líder Técnico",
+                        name: "Plataforma HealthTech com DNA & Wearables (Epigene)",
+                        role: "Líder Técnico & Backend",
                         domain: "Healthcare / Genômica",
                         description: "Plataforma no GCP com dashboards de exames de DNA, sincronização com Oura Ring e Apple Health, e integração de IA generativa (OpenAI & Gemini).",
                         stack: ["Django", "FastAPI", "GCP", "PostgreSQL", "LLMs (OpenAI/Gemini)", "Wearables API"],
                         url: "https://app.epigene.com.br/",
-                        status: "PRODUCTION"
+                        status: "PRODUÇÃO"
                     },
                     {
                         id: "arquitech-monorepo",
-                        name: "Monorepo de Microsserviços Corporativos",
+                        name: "Monorepo de Microsserviços Corporativos (Arquitech)",
                         role: "Desenvolvedor Backend",
-                        domain: "Infra & Arquitetura Monorepo",
-                        description: "Serviços em arquitetura monorepo utilizando FastAPI, PostgreSQL e MongoDB com pipelines automatizados de CI/CD.",
+                        domain: "Infraestrutura & Monorepo",
+                        description: "Serviços corporativos estruturados em monorepo utilizando FastAPI, PostgreSQL e MongoDB com deploys contínuos.",
                         stack: ["Python", "FastAPI", "PostgreSQL", "MongoDB", "CI/CD"],
-                        status: "ENTERPRISE"
+                        status: "PRODUÇÃO"
+                    },
+                    {
+                        id: "qflash-fintech-core",
+                        name: "Microsserviços de Antecipação de Recebíveis (QFlash)",
+                        role: "Desenvolvedor Backend",
+                        domain: "Fintech",
+                        description: "Microsserviços de alta concorrência com FastAPI e MongoDB para antecipação de recebíveis.",
+                        stack: ["Python", "FastAPI", "MongoDB", "Docker", "CI/CD"],
+                        status: "PRODUÇÃO"
                     },
                     {
                         id: "onda-nerd-finance",
-                        name: "Controle Financeiro para Micro-Empresas",
-                        domain: "Finanças / Micro-SaaS",
+                        name: "Onda Nerd Finance - Gestão Financeira",
+                        domain: "Micro-SaaS Financeiro",
                         description: "Aplicação enxuta para gestão financeira de pequenos negócios.",
                         stack: ["Django", "HTMX", "Bootstrap 5", "SQLite"],
                         url: "https://github.com/obrunodev/onda-nerd-tech",
                         status: "OPEN_SOURCE"
                     },
                     {
-                        id: "signature-bridge-gateway",
-                        name: "Gateway Centralizador de Assinaturas Digitais",
-                        domain: "Infra / Integrações",
-                        description: "Gateway REST unificado para orquestrar assinaturas via Docusign e D4Sign com webhooks resilientes.",
-                        stack: ["Django REST Framework", "Celery", "PostgreSQL", "D4Sign API"],
-                        status: "ENTERPRISE"
-                    },
-                    {
                         id: "esteio-ecommerce",
-                        name: "E-commerce & Inventário de Peças Automotivas",
-                        domain: "B2B E-commerce & Estoque",
+                        name: "E-commerce & Inventário B2B (Esteio)",
+                        domain: "E-commerce & Estoque",
                         description: "Loja virtual e controle de inventário para distribuidora de autopeças.",
                         stack: ["Django", "PostgreSQL", "Bootstrap", "jQuery"],
                         url: "https://app.esteiodistribuidora.com.br/",
-                        status: "PRODUCTION"
+                        status: "PRODUÇÃO"
+                    },
+                    {
+                        id: "alstra-talent-engine",
+                        name: "Plataforma de RH & Processamento Assíncrono (Alstra)",
+                        domain: "RH Tech",
+                        description: "APIs RESTful e fluxos de mensagens assíncronas com Celery e Redis.",
+                        stack: ["Django", "DRF", "Celery", "Redis", "PostgreSQL"],
+                        status: "PRODUÇÃO"
+                    },
+                    {
+                        id: "signature-bridge-gateway",
+                        name: "Gateway Centralizador de Assinaturas Digitais",
+                        domain: "Integrações",
+                        description: "Gateway REST unificado para orquestrar assinaturas via Docusign e D4Sign com webhooks resilientes.",
+                        stack: ["Django REST Framework", "Celery", "PostgreSQL", "D4Sign API"],
+                        status: "PRODUÇÃO"
                     }
+                ]
+            },
+
+            // Detalhes específicos de cada serviço inspecionado
+            arquitech: {
+                status: "SUCCESS",
+                project_name: "Arquitech Tecnologia - Monorepo de Microsserviços",
+                role: "Desenvolvedor Backend",
+                period: "novembro de 2025 - maio de 2026 (7 meses)",
+                description: "Desenvolvimento e manutenção de microsserviços integrados em arquitetura monorepo corporativo.",
+                tech_stack: ["Python 3.11", "FastAPI", "PostgreSQL", "MongoDB", "Docker", "Pipelines CI/CD"],
+                highlights: [
+                    "Arquitetura monorepo compartilhando bibliotecas e schemas de validação.",
+                    "Pipelines de deploy contínuo garantindo entregas seguras e estáveis.",
+                    "Revisões de código rigorosas para manter altos padrões de qualidade técnica."
+                ]
+            },
+
+            epigene: {
+                status: "SUCCESS",
+                project_name: "Epigene DNA Experts - Plataforma HealthTech & Genômica",
+                role: "Líder Técnico (11 meses) & Desenvolvedor Backend (7 meses)",
+                period: "setembro de 2023 - janeiro de 2025 (1 ano e 5 meses)",
+                url: "https://app.epigene.com.br/",
+                description: "Plataforma inovadora de saúde personalizada baseada em dados genéticos e dispositivos vestíveis (wearables).",
+                tech_stack: ["Django", "FastAPI", "Google Cloud Platform (GCP)", "PostgreSQL", "OpenAI GPT", "Google Gemini", "APIs Apple Health & Oura"],
+                highlights: [
+                    "Liderança do time técnico e sustentação de ambiente em nuvem GCP.",
+                    "Sincronização em tempo real de biometria e sono via Apple Health e Oura Ring.",
+                    "Pipelines de IA para auxílio na interpretação de relatórios de estilo de vida e exames genéticos."
+                ]
+            },
+
+            qflash: {
+                status: "SUCCESS",
+                project_name: "QFlash Fintech - Antecipação de Recebíveis",
+                role: "Desenvolvedor Backend",
+                period: "dezembro de 2024 - setembro de 2025 (10 meses)",
+                description: "Sistemas financeiros de alta confiabilidade para antecipação de recebíveis.",
+                tech_stack: ["Python", "FastAPI", "MongoDB", "Docker", "CI/CD"],
+                highlights: [
+                    "APIs de processamento financeiro com alta disponibilidade e consistência de dados.",
+                    "Modelagem de dados flexível com MongoDB para contratos e transações financeiras.",
+                    "Integração contínua e monitoramento de serviços em produção."
+                ]
+            },
+
+            alstra: {
+                status: "SUCCESS",
+                project_name: "Alstra Technologies - Gestão de Talentos & ATS",
+                role: "Desenvolvedor Python Jr.",
+                period: "julho de 2022 - fevereiro de 2024 (1 ano e 8 meses)",
+                description: "Plataforma corporativa de alocação de talentos e gestão de contratos de trabalho.",
+                tech_stack: ["Django", "Django REST Framework (DRF)", "Celery", "Redis", "PostgreSQL", "D4Sign API"],
+                highlights: [
+                    "Criação de rotinas assíncronas em Celery/Redis para disparos de e-mails e geração de PDFs.",
+                    "Integração de assinatura digital com D4Sign com webhooks para confirmação de recebimento.",
+                    "Desenvolvimento de endpoints REST eficientes para o frontend da aplicação."
+                ]
+            },
+
+            onda_nerd: {
+                status: "SUCCESS",
+                project_name: "Onda Nerd Finance - Micro-SaaS Financeiro",
+                url: "https://github.com/obrunodev/onda-nerd-tech",
+                description: "Solução ágil e acessível de fluxo de caixa e gestão de despesas para microempresas.",
+                tech_stack: ["Django", "HTMX", "Bootstrap 5", "SQLite / PostgreSQL"],
+                highlights: [
+                    "Interface interativa sem complexidade de SPAs graças ao HTMX.",
+                    "Código open source disponível no GitHub.",
+                    "Controle completo de receitas, categorias e relatórios mensais."
+                ]
+            },
+
+            esteio: {
+                status: "SUCCESS",
+                project_name: "Esteio Distribuidora - E-commerce B2B e Controle de Estoque",
+                url: "https://app.esteiodistribuidora.com.br/",
+                description: "Plataforma de comércio eletrônico B2B para distribuição de peças automotivas.",
+                tech_stack: ["Django", "PostgreSQL", "Bootstrap", "jQuery"],
+                highlights: [
+                    "Catálogo com milhares de itens e busca ágil de códigos de peças automotivas.",
+                    "Integração com controle de inventário e emissão de pedidos de venda.",
+                    "Em produção atendendo clientes em todo o território nacional."
+                ]
+            },
+
+            signature_bridge: {
+                status: "SUCCESS",
+                project_name: "Gateway Centralizador de Assinaturas Digitais",
+                description: "Microsserviço intermediário que abstrai múltiplos provedores de assinatura eletrônica (DocuSign e D4Sign).",
+                tech_stack: ["Django REST Framework", "Celery", "Redis", "PostgreSQL", "Webhooks"],
+                highlights: [
+                    "Fila resiliente com re-tentativas automáticas em caso de instabilidade dos provedores.",
+                    "Webhooks autenticados para confirmação instantânea de documentos assinados.",
+                    "Auditoria centralizada de status de documentos."
                 ]
             },
 
             contato: {
                 status: "SUCCESS",
                 developer: "Bruno R. Pianca",
-                headline: "Desenvolvedor Backend • Python / FastAPI / Django • GCP / Azure",
-                location: "Jundiaí, São Paulo, Brasil (Disponível para Remoto / Híbrido)",
+                headline: "Desenvolvedor Backend Sênior • Python / FastAPI / Django • GCP / Azure • Agentes de IA",
+                location: "Jundiaí, São Paulo, Brasil (Disponível Remoto / Híbrido)",
                 email: "brunorpdev@gmail.com",
                 mobile: "+55 (11) 93718-3232",
+                whatsapp_url: "https://wa.me/5511937183232",
                 profiles: {
                     linkedin: "https://www.linkedin.com/in/brunorpdev/",
                     github: "https://github.com/obrunodev",
-                    instagram: "https://www.instagram.com/obruno.dev/",
                     curriculo_pdf: "./cv-bruno-pianca-1.pdf"
                 },
-                community_initiatives: {
-                    founder: "Comunidade Pythonizando / Code'n Coffee",
-                    members: "300+ desenvolvedores",
-                    focus: "Ensino de programação, boas práticas e colaboração em Python"
-                },
-                availability: "Aberto para propostas de Engenharia de Software Backend Sênior e Projetos de Agentes de IA."
+                community: "Fundador da Comunidade Pythonizando / Code'n Coffee (300+ desenvolvedores)",
+                availability: "Disponível para oportunidades de Engenharia de Software Backend Sênior e Projetos de IA."
             },
 
             sobre: {
                 status: "SUCCESS",
                 developer: "Bruno R. Pianca",
                 headline: "Desenvolvedor Backend com mais de 6 anos de experiência no ecossistema Python",
-                summary: "Atuo na construção de microsserviços, arquiteturas escaláveis, integrações complexas e agentes de IA orientados a ferramentas (Tool Calling). Atualmente na G30 Inteligência Automotiva, desenvolvendo com FastAPI assíncrono, Azure Cosmos DB, LangGraph e otimização de custos e latência de tokens. Experiência prévia como Líder Técnico na Epigene e sólida atuação em nuvens (GCP, Azure, AWS) e bancos de dados relacionais e NoSQL.",
+                summary: "Engenheiro de software focado em microsserviços, alta performance, bancos relacionais e NoSQL, e agentes de IA conversacionais com Tool Calling. Atualmente na G30 Inteligência Automotiva atuando com FastAPI assíncrono, Azure Cosmos DB e LangGraph. Experiência prévia como Líder Técnico na Epigene e forte atuação em nuvens (GCP, Azure, AWS).",
                 education: [
                     {
                         institution: "Estácio",
@@ -836,7 +1008,7 @@
                     },
                     {
                         institution: "Etec Vasco Antonio Venchiarutti",
-                        degree: "Ensino Técnico, Tecnologia em Informática / Software",
+                        degree: "Ensino Técnico, Tecnologia em Informática / Desenvolvimento de Software",
                         period: "2018 - 2019"
                     }
                 ],
@@ -849,166 +1021,146 @@
 
             arquitetura: {
                 status: "SUCCESS",
-                architecture_blueprint: {
-                    backend_frameworks: "FastAPI assíncrono para microsserviços de alto throughput; Django para monólitos estruturados",
-                    ai_agent_design: "LangGraph State Graphs com padrão Single-Agent + Deterministic Tool Calling (minimização de hops e custo de tokens)",
-                    cloud_and_databases: "Azure Cosmos DB (NoSQL em produção na G30), PostgreSQL (ACID), MongoDB, Redis (Cache & Streams)",
-                    schemas_and_validation: "Pydantic v2 com validação estrita em runtime e serialização de alta velocidade",
-                    queues_and_workers: "Celery & Redis Streams com Dead Letter Queues (DLQ) e pools de workers concorrentes",
-                    monorepo_and_cicd: "Estruturas monorepo para serviços compartilhados, testes automatizados (Pytest) e pipelines de CI/CD"
+                principles: {
+                    backend: "FastAPI assíncrono para microsserviços de alto throughput; Django para monólitos estruturados",
+                    ai_agent_design: "LangGraph State Graphs com padrão Single-Agent + Deterministic Tool Calling (minimização de latência e consumo de tokens)",
+                    cloud_and_databases: "Azure Cosmos DB (NoSQL em produção na G30), PostgreSQL (ACID), MongoDB e Redis para cache e filas",
+                    schemas_and_validation: "Pydantic v2 com validação estrita em runtime e alta performance de serialização",
+                    queues_and_workers: "Celery e Redis Streams com tratamento de falhas e concorrência",
+                    monorepo_and_cicd: "Organização modular com testes automatizados (Pytest) e pipelines no GitHub Actions"
                 }
             },
 
             curriculo: {
                 status: "SUCCESS",
                 document: {
-                    title: "Currículo de Bruno R. Pianca",
-                    file_format: "PDF",
+                    title: "Currículo Atualizado - Bruno R. Pianca",
+                    format: "PDF",
                     download_url: "./cv-bruno-pianca-1.pdf",
-                    instructions: "Você pode baixar o arquivo diretamente clicando no link ou no botão 'GET /cv.pdf' no topo desta página."
+                    instructions: "Clique no botão 'Baixar Currículo' no topo da página ou utilize o link direto disponível nesta resposta."
                 }
             },
 
             fallback: {
                 status: "ROUTING_FALLBACK",
-                agent_notes: "Não foi encontrado um comando direto com correspondência exata para esta consulta.",
-                help: "Você pode consultar os seguintes domínios do sistema:",
+                agent_notes: "Não encontrei um comando exato para essa frase, mas posso te ajudar com as seguintes áreas:",
                 available_intents: [
-                    { command: "g30", description: "Experiência atual na G30 Inteligência Automotiva e Agente de IA com LangGraph" },
-                    { command: "skills", description: "Habilidades técnicas, linguagens, IA e cloud (Azure/GCP)" },
-                    { command: "experiencia", description: "Histórico profissional completo (G30, Arquitech, QFlash, Epigene, etc.)" },
-                    { command: "projetos", description: "Projetos em produção, microsserviços e agentes de IA" },
-                    { command: "contato", description: "LinkedIn, GitHub, e-mail e telefone" },
-                    { command: "sobre", description: "Apresentação, formação acadêmica e certificações" },
-                    { command: "arquitetura", description: "Padrões de design, Cosmos DB, Tool Calling e filas" },
-                    { command: "curriculo", description: "Download do currículo completo em PDF" }
+                    { command: "g30", description: "Experiência na G30 Inteligência Automotiva e Agentes de IA" },
+                    { command: "skills", description: "Habilidades técnicas, Python, FastAPI, Azure Cosmos DB, etc." },
+                    { command: "experiencia", description: "Histórico profissional completo em todas as empresas" },
+                    { command: "projetos", description: "Projetos em produção e sistemas entregues" },
+                    { command: "contato", description: "LinkedIn, WhatsApp, GitHub e e-mail" },
+                    { command: "sobre", description: "Biografia, formação acadêmica e certificações" },
+                    { command: "curriculo", description: "Download do currículo em PDF" }
                 ],
-                tip: "Experimente clicar em um dos botões rápidos acima do terminal de dispatch!"
+                tip: "Clique em qualquer botão rápido logo acima do formulário para ver o resultado instantaneamente!"
             }
         };
 
         // -------------------------------------------------------------
-        // 2. REGISTERED SERVICES (PROJECTS TABLE DATA)
+        // 2. TABELA DE PROJETOS E SERVIÇOS CADASTRADOS
         // -------------------------------------------------------------
         const REGISTERED_SERVICES = [
             {
-                id: "g30-agent-core",
-                name: "g30-agent-core",
-                category: "Automotive AI & Core API (G30)",
+                id: "g30",
+                title: "G30 Inteligência Automotiva",
+                category: "API Core em FastAPI Assíncrono & Agente de IA Conversacional (LangGraph)",
                 stack: "FastAPI Async · Azure Cosmos DB · LangGraph · Tool Calling · Pydantic v2",
-                status: "RUNNING",
+                status: "Produção",
                 statusColor: "purple",
                 rtt: "8ms",
-                pods: "4 pods",
-                url: null,
-                actionLabel: "inspect"
+                url: null
             },
             {
-                id: "arquitech-monorepo-core",
-                name: "arquitech-monorepo-core",
-                category: "Enterprise Monorepo Microservices",
-                stack: "FastAPI · Python · PostgreSQL · MongoDB · CI/CD",
-                status: "RUNNING",
+                id: "arquitech",
+                title: "Arquitech Tecnologia",
+                category: "Monorepo Corporativo de Microsserviços",
+                stack: "FastAPI · Python · PostgreSQL · MongoDB · Docker · CI/CD",
+                status: "Produção",
                 statusColor: "emerald",
                 rtt: "16ms",
-                pods: "3 pods",
-                url: null,
-                actionLabel: "inspect"
+                url: null
             },
             {
-                id: "epigene-health-ai",
-                name: "epigene-health-ai",
-                category: "HealthTech Platform (Liderança Técnica)",
-                stack: "GCP · DNA Processing · Wearables (Oura/Apple) · OpenAI & Gemini",
-                status: "HEALTHY",
+                id: "epigene",
+                title: "Epigene DNA Experts",
+                category: "Plataforma HealthTech com DNA & Wearables (Liderança Técnica)",
+                stack: "GCP · Processamento de DNA · Wearables (Oura/Apple) · OpenAI & Gemini",
+                status: "Produção",
                 statusColor: "emerald",
                 rtt: "24ms",
-                pods: "3 pods",
-                url: "https://app.epigene.com.br/",
-                actionLabel: "inspect"
+                url: "https://app.epigene.com.br/"
             },
             {
-                id: "qflash-fintech-core",
-                name: "qflash-fintech-core",
-                category: "Receivables Settlement API",
+                id: "qflash",
+                title: "QFlash Fintech",
+                category: "Microsserviços de Antecipação de Recebíveis",
                 stack: "Python · FastAPI · MongoDB · Docker · CI/CD",
-                status: "RUNNING",
+                status: "Produção",
                 statusColor: "emerald",
                 rtt: "12ms",
-                pods: "4 pods",
-                url: null,
-                actionLabel: "inspect"
+                url: null
             },
             {
-                id: "alstra-talent-engine",
-                name: "alstra-talent-engine",
-                category: "Enterprise ATS & Docs",
-                stack: "Django · Celery · Redis Queue · Postgres · D4Sign",
-                status: "RUNNING",
+                id: "alstra",
+                title: "Alstra Technologies",
+                category: "Plataforma de RH & Processamento Assíncrono",
+                stack: "Django · Celery · Redis Queue · PostgreSQL · API D4Sign",
+                status: "Produção",
                 statusColor: "emerald",
                 rtt: "38ms",
-                pods: "2 pods",
-                url: null,
-                actionLabel: "inspect"
+                url: null
             },
             {
-                id: "signature-bridge-gw",
-                name: "signature-bridge-gw",
-                category: "DocuSign & D4Sign Gateway",
-                stack: "Django REST · Celery · Webhooks · DRF",
-                status: "STANDBY",
-                statusColor: "cyan",
-                rtt: "45ms",
-                pods: "1 pod",
-                url: null,
-                actionLabel: "inspect"
-            },
-            {
-                id: "onda-nerd-finance",
-                name: "onda-nerd-finance",
-                category: "Micro-SaaS Financial Tool",
+                id: "onda_nerd",
+                title: "Onda Nerd Finance",
+                category: "Micro-SaaS Financeiro para Pequenas Empresas",
                 stack: "Django · HTMX · Bootstrap 5 · SQLite",
-                status: "RUNNING",
+                status: "Open Source",
                 statusColor: "emerald",
                 rtt: "18ms",
-                pods: "1 pod",
-                url: "https://github.com/obrunodev/onda-nerd-tech",
-                actionLabel: "repo"
+                url: "https://github.com/obrunodev/onda-nerd-tech"
             },
             {
-                id: "esteio-ecommerce-b2b",
-                name: "esteio-ecommerce-b2b",
-                category: "Auto Parts E-commerce",
+                id: "esteio",
+                title: "Esteio Distribuidora",
+                category: "E-commerce B2B e Controle de Estoque de Autopeças",
                 stack: "Django · PostgreSQL · Bootstrap · jQuery",
-                status: "HEALTHY",
+                status: "Produção",
                 statusColor: "emerald",
                 rtt: "32ms",
-                pods: "2 pods",
-                url: "https://app.esteiodistribuidora.com.br/",
-                actionLabel: "live"
+                url: "https://app.esteiodistribuidora.com.br/"
+            },
+            {
+                id: "signature_bridge",
+                title: "Gateway de Assinaturas",
+                category: "Integração Centralizada DocuSign & D4Sign via Webhooks",
+                stack: "Django REST · Celery · Webhooks · DRF",
+                status: "Produção",
+                statusColor: "cyan",
+                rtt: "45ms",
+                url: null
             }
         ];
 
         // -------------------------------------------------------------
-        // 3. QUEUE SIMULATION STATE
+        // 3. ESTADO DA FILA E TELEMETRIA
         // -------------------------------------------------------------
         let jobsHistory = [
             {
                 id: "job_9a12c4",
-                intent: "INTENT_BOOT_HEALTHCHECK",
+                intent: "Inicialização do Sistema",
                 status: "COMPLETED",
-                statusClass: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
                 timestamp: "00:00:12",
-                payload: "system::ping()",
+                payload: "system::boot_services()",
                 duration: "112ms"
             },
             {
                 id: "job_9a12c3",
-                intent: "INTENT_PULL_TELEMETRY",
+                intent: "Coleta de Telemetria",
                 status: "COMPLETED",
-                statusClass: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
                 timestamp: "00:00:08",
-                payload: "metrics::collector()",
+                payload: "metrics::healthcheck()",
                 duration: "64ms"
             }
         ];
@@ -1016,15 +1168,21 @@
         let totalJobsCount = 2841;
         let isProcessingJob = false;
         let currentResponseRaw = null;
+        let currentIntentKey = 'apresentacao';
+        let currentViewMode = 'friendly'; // 'friendly' ou 'json'
         let logLineCount = 0;
 
         // -------------------------------------------------------------
-        // 4. DOM ELEMENTS
+        // 4. ELEMENTOS DO DOM
         // -------------------------------------------------------------
         const servicesTableBody = document.getElementById('services-table-body');
         const queueTableBody = document.getElementById('queue-table-body');
         const workerLogsContainer = document.getElementById('worker-logs-container');
+        const friendlyOutputViewer = document.getElementById('friendly-output-viewer');
+        const jsonOutputWrapper = document.getElementById('json-output-wrapper');
         const jsonOutputViewer = document.getElementById('json-output-viewer');
+        const btnViewFriendly = document.getElementById('btn-view-friendly');
+        const btnViewJson = document.getElementById('btn-view-json');
         const jobInput = document.getElementById('job-input');
         const dispatchBtn = document.getElementById('dispatch-btn');
         const activeWorkerIdEl = document.getElementById('active-worker-id');
@@ -1036,25 +1194,25 @@
         const outputStatsText = document.getElementById('output-stats-text');
 
         // -------------------------------------------------------------
-        // 5. INITIALIZATION
+        // 5. INICIALIZAÇÃO DA PÁGINA
         // -------------------------------------------------------------
         window.addEventListener('DOMContentLoaded', () => {
             renderServicesTable();
             renderQueueTable();
             initLiveTelemetry();
             
-            // Print initial boot logs
-            appendLog('INFO', 'broker', 'Redis cluster connection initialized at redis://127.0.0.1:6379/0');
-            appendLog('INFO', 'orchestrator', 'Spawned 4 concurrent worker daemons: [worker-01 .. worker-04]');
-            appendLog('DEBUG', 'vector-index', 'Loaded in-memory embeddings for knowledge base [BrunoProfileSchema_v2]');
-            appendLog('SUCCESS', 'system', 'Cluster operational. Ready to dispatch jobs via CLI or Quick Intent pills.');
+            // Logs iniciais amigáveis
+            appendLog('INFO', 'Fila', 'Conexão com Redis estabelecida em redis://cluster.local:6379/0');
+            appendLog('INFO', 'Workers', '4 workers de IA em execução e prontos para processamento');
+            appendLog('DEBUG', 'Memória', 'Base de perfil do Bruno Pianca indexada com sucesso');
+            appendLog('SUCCESS', 'Sistema', 'Sistema 100% operacional. Digite uma pergunta ou clique em um atalho rápido.');
 
-            // Initial view: show Skills JSON directly
-            displayJsonResponse(KNOWLEDGE_BASE.skills, "skills", 210);
+            // Exibição inicial: Apresentação calorosa
+            displayResponse(KNOWLEDGE_BASE.apresentacao, "apresentacao", 115);
         });
 
         // -------------------------------------------------------------
-        // 6. RENDER SERVICES TABLE
+        // 6. RENDERIZAÇÃO DA TABELA DE PROJETOS
         // -------------------------------------------------------------
         function renderServicesTable() {
             servicesTableBody.innerHTML = REGISTERED_SERVICES.map(service => {
@@ -1066,44 +1224,48 @@
 
                 const dotColor = service.statusColor === 'emerald' ? 'bg-emerald-400' : service.statusColor === 'cyan' ? 'bg-cyan-400' : 'bg-purple-400';
 
-                let actionButton = '';
-                if (service.url) {
-                    actionButton = `
-                        <a href="${service.url}" target="_blank" rel="noopener noreferrer" 
-                           class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-cyan-300 border border-zinc-700 hover:border-cyan-400 transition-colors inline-flex items-center gap-1">
-                            <span>[${service.actionLabel}]</span>
-                            <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        </a>
-                    `;
-                } else {
-                    actionButton = `
-                        <button onclick="inspectService('${service.id}')" 
-                                class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 hover:bg-zinc-700 text-zinc-400 hover:text-cyan-300 border border-zinc-700 hover:border-cyan-400 transition-colors">
-                            [${service.actionLabel}]
-                        </button>
-                    `;
-                }
+                const linkSlot = service.url ? `
+                    <a href="${service.url}" target="_blank" rel="noopener noreferrer" 
+                       class="w-[78px] py-1 rounded text-[10px] bg-emerald-950/70 hover:bg-emerald-900 text-emerald-300 border border-emerald-700/60 transition-colors inline-flex items-center justify-center gap-1 font-sans font-medium shrink-0">
+                        <span>${service.id === 'onda_nerd' ? 'GitHub' : 'Acessar'}</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                ` : `<span class="w-[78px] inline-block shrink-0"></span>`;
+
+                const detailsSlot = `
+                    <button onclick="inspectService('${service.id}')" 
+                            class="w-[88px] py-1 rounded text-[10px] bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-cyan-300 border border-zinc-700 hover:border-cyan-400 transition-colors font-sans font-medium inline-flex items-center justify-center gap-1 shrink-0"
+                            title="Consultar detalhes de arquitetura no painel">
+                        <span>🔍 Detalhes</span>
+                    </button>
+                `;
+
+                const actionButton = `
+                    <div class="flex items-center justify-end gap-1.5 whitespace-nowrap">
+                        ${linkSlot}
+                        ${detailsSlot}
+                    </div>
+                `;
 
                 return `
                     <tr class="hover:bg-obs-surface/70 transition-colors">
                         <td class="py-2.5 px-3">
-                            <div class="font-bold text-zinc-100 flex items-center gap-1.5">
-                                <span class="text-zinc-600">svc://</span>${service.name}
+                            <div class="font-bold text-zinc-100 font-sans text-xs flex items-center gap-1.5">
+                                <span>${service.title}</span>
                             </div>
-                            <div class="text-[10px] text-zinc-500 font-sans">${service.category}</div>
+                            <div class="text-[11px] text-zinc-400 font-sans mt-0.5">${service.category}</div>
                         </td>
-                        <td class="py-2.5 px-3 text-zinc-400">
+                        <td class="py-2.5 px-3 text-zinc-300 font-sans text-[11px]">
                             ${service.stack}
                         </td>
-                        <td class="py-2.5 px-3">
-                            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] border ${badgeColor}">
-                                <span class="w-1.5 h-1.5 rounded-full ${dotColor}"></span>
+                        <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                            <span class="inline-flex items-center justify-center gap-1.5 px-2.5 py-0.5 rounded text-[10px] border ${badgeColor} font-sans font-medium whitespace-nowrap min-w-[94px]">
+                                <span class="w-1.5 h-1.5 rounded-full ${dotColor} shrink-0"></span>
                                 <span>${service.status}</span>
                             </span>
                         </td>
-                        <td class="py-2.5 px-3 text-zinc-400">
-                            <span class="text-zinc-300 font-semibold">${service.rtt}</span>
-                            <span class="text-zinc-600 ml-1">(${service.pods})</span>
+                        <td class="py-2.5 px-3 text-zinc-300 font-mono text-[11px] whitespace-nowrap text-center">
+                            ${service.rtt}
                         </td>
                         <td class="py-2.5 px-3 text-right">
                             ${actionButton}
@@ -1114,26 +1276,26 @@
         }
 
         // -------------------------------------------------------------
-        // 7. RENDER QUEUE TABLE
+        // 7. RENDERIZAÇÃO DA FILA DE TAREFAS
         // -------------------------------------------------------------
         function renderQueueTable() {
             queueTableBody.innerHTML = jobsHistory.map(job => {
                 let badge = '';
                 if (job.status === 'QUEUED') {
-                    badge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/30 animate-pulse">QUEUED</span>`;
+                    badge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/30 animate-pulse font-sans font-medium">NA FILA</span>`;
                 } else if (job.status === 'PROCESSING') {
-                    badge = `<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                    badge = `<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-sans font-medium">
                         <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
-                        <span>PROCESSING</span>
+                        <span>PROCESSANDO</span>
                     </span>`;
                 } else {
-                    badge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">COMPLETED</span>`;
+                    badge = `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-sans font-medium">CONCLUÍDO</span>`;
                 }
 
                 return `
                     <tr class="hover:bg-obs-surface/70 transition-colors">
                         <td class="py-2 px-3 text-cyan-400 font-bold">#${job.id}</td>
-                        <td class="py-2 px-3 text-zinc-300 font-semibold">${job.intent}</td>
+                        <td class="py-2 px-3 text-zinc-200 font-sans font-medium">${job.intent}</td>
                         <td class="py-2 px-3">${badge}</td>
                         <td class="py-2 px-3 text-zinc-400">${job.timestamp}</td>
                         <td class="py-2 px-3 text-right text-zinc-400 max-w-[140px] truncate" title="${job.payload}">
@@ -1145,11 +1307,13 @@
         }
 
         // -------------------------------------------------------------
-        // 8. LOG STREAMING ENGINE
+        // 8. LOG STREAMING (TERMINAL DE LOGS EM TEMPO REAL)
         // -------------------------------------------------------------
         function appendLog(level, source, message) {
             logLineCount++;
-            logCountBadge.textContent = `${logLineCount} lines`;
+            if (logCountBadge) {
+                logCountBadge.textContent = `${logLineCount} linhas`;
+            }
 
             const now = new Date();
             const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}.${String(now.getMilliseconds()).padStart(3, '0')}`;
@@ -1164,14 +1328,14 @@
             logLine.className = 'flex items-start gap-1.5 hover:bg-zinc-900/60 py-0.5 px-1 rounded transition-colors';
             logLine.innerHTML = `
                 <span class="text-zinc-600 select-none">${timeStr}</span>
-                <span class="text-zinc-500 font-semibold select-none">[${source}]</span>
+                <span class="text-zinc-400 font-semibold select-none">[${source}]</span>
                 <span class="${levelColor} select-none">[${level}]</span>
                 <span class="text-zinc-200 flex-1 break-all">${message}</span>
             `;
 
             workerLogsContainer.appendChild(logLine);
 
-            if (autoscrollToggle.checked) {
+            if (autoscrollToggle && autoscrollToggle.checked) {
                 workerLogsContainer.scrollTop = workerLogsContainer.scrollHeight;
             }
         }
@@ -1179,49 +1343,89 @@
         function clearLogs() {
             workerLogsContainer.innerHTML = '';
             logLineCount = 0;
-            logCountBadge.textContent = '0 lines';
+            if (logCountBadge) logCountBadge.textContent = '0 linhas';
         }
 
-        // Helper sleep for staggered realistic delays
         const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
         // -------------------------------------------------------------
-        // 9. INTENT RESOLUTION & QUERY MATCHER
+        // 9. RESOLUÇÃO DE INTENÇÕES (MAPEAMENTO DA PERGUNTA)
         // -------------------------------------------------------------
         function resolveIntent(query) {
             const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
+            // G30 & Agentes de IA
             if (q.includes("g30") || q.includes("automotiv") || (q.includes("agent") && (q.includes("ia") || q.includes("tool") || q.includes("langgraph"))) || q.includes("tool call") || q.includes("cosmos") || q.includes("langgraph")) {
-                return { key: "g30", intentName: "INTENT_FETCH_G30_AI_AGENT" };
-            }
-            if (q.includes("skill") || q.includes("habili") || q.includes("tecnolog") || q.includes("stack") || q.includes("linguagen") || q.includes("ferramenta") || q.includes("azure") || q.includes("gcp") || q.includes("aws")) {
-                return { key: "skills", intentName: "INTENT_FETCH_SKILLS" };
-            }
-            if (q.includes("experien") || q.includes("empres") || q.includes("carreira") || q.includes("trampo") || q.includes("trabalh") || q.includes("qflash") || q.includes("epigene") || q.includes("alstra") || q.includes("arquitech") || q.includes("brp") || q.includes("lider")) {
-                return { key: "experiencia", intentName: "INTENT_FETCH_EXPERIENCE" };
-            }
-            if (q.includes("projet") || q.includes("portfolio") || q.includes("portifolio") || q.includes("apps") || q.includes("sistemas") || q.includes("producao") || q.includes("service") || q.includes("servico") || q.includes("onda") || q.includes("esteio") || q.includes("signature")) {
-                return { key: "projetos", intentName: "INTENT_FETCH_PROJECTS" };
-            }
-            if (q.includes("contat") || q.includes("falar") || q.includes("email") || q.includes("telefone") || q.includes("celular") || q.includes("whatsapp") || q.includes("rede") || q.includes("social") || q.includes("linkedin") || q.includes("github") || q.includes("instagram")) {
-                return { key: "contato", intentName: "INTENT_FETCH_CONTACT" };
-            }
-            if (q.includes("sobre") || q.includes("quem") || q.includes("bio") || q.includes("apresent") || q.includes("bruno") || q.includes("formacao") || q.includes("faculdade") || q.includes("curso") || q.includes("certificad") || q.includes("estacio")) {
-                return { key: "sobre", intentName: "INTENT_FETCH_ABOUT" };
-            }
-            if (q.includes("arquitet") || q.includes("design") || q.includes("padro") || q.includes("fila") || q.includes("celery") || q.includes("infra") || q.includes("clean") || q.includes("monorepo")) {
-                return { key: "arquitetura", intentName: "INTENT_FETCH_ARCHITECTURE" };
-            }
-            if (q.includes("curricul") || q.includes("cv") || q.includes("resume") || q.includes("pdf") || q.includes("download")) {
-                return { key: "curriculo", intentName: "INTENT_FETCH_CV_DOCUMENT" };
+                return { key: "g30", intentName: "Experiência G30 (IA & Backend)" };
             }
 
-            // Fallback
-            return { key: "fallback", intentName: "INTENT_UNMATCHED_FALLBACK" };
+            // Projetos específicos inspecionados
+            if (q.includes("arquitech")) {
+                return { key: "arquitech", intentName: "Projeto Arquitech Tecnologia" };
+            }
+            if (q.includes("epigene")) {
+                return { key: "epigene", intentName: "Projeto Epigene DNA Experts" };
+            }
+            if (q.includes("qflash")) {
+                return { key: "qflash", intentName: "Projeto QFlash Fintech" };
+            }
+            if (q.includes("alstra")) {
+                return { key: "alstra", intentName: "Projeto Alstra Technologies" };
+            }
+            if (q.includes("onda")) {
+                return { key: "onda_nerd", intentName: "Projeto Onda Nerd Finance" };
+            }
+            if (q.includes("esteio")) {
+                return { key: "esteio", intentName: "Projeto Esteio Distribuidora" };
+            }
+            if (q.includes("assinatura") || q.includes("signature")) {
+                return { key: "signature_bridge", intentName: "Gateway de Assinaturas Digitais" };
+            }
+
+            // Habilidades & Stacks
+            if (q.includes("skill") || q.includes("habili") || q.includes("tecnolog") || q.includes("stack") || q.includes("linguagen") || q.includes("ferramenta") || q.includes("fastapi") || q.includes("django") || q.includes("python") || q.includes("azure") || q.includes("gcp") || q.includes("docker")) {
+                return { key: "skills", intentName: "Habilidades & Tecnologias" };
+            }
+
+            // Experiência & Carreira
+            if (q.includes("experien") || q.includes("empres") || q.includes("carreira") || q.includes("trampo") || q.includes("trabalh") || q.includes("historico") || q.includes("lider")) {
+                return { key: "experiencia", intentName: "Histórico Profissional" };
+            }
+
+            // Projetos em geral
+            if (q.includes("projet") || q.includes("portfolio") || q.includes("portifolio") || q.includes("apps") || q.includes("sistemas") || q.includes("producao") || q.includes("servico") || q.includes("trabalhos")) {
+                return { key: "projetos", intentName: "Projetos em Produção" };
+            }
+
+            // Contato & Redes
+            if (q.includes("contat") || q.includes("falar") || q.includes("email") || q.includes("telefone") || q.includes("celular") || q.includes("whatsapp") || q.includes("rede") || q.includes("social") || q.includes("linkedin") || q.includes("github")) {
+                return { key: "contato", intentName: "Contato & Redes Sociais" };
+            }
+
+            // Apresentação & Sobre
+            if (q.includes("ola") || q.includes("oi") || q.includes("inicio") || q.includes("comecar") || q.includes("apresent") || q.includes("resumo") || q.includes("o que voce faz")) {
+                return { key: "apresentacao", intentName: "Apresentação & Boas-Vindas" };
+            }
+            if (q.includes("sobre") || q.includes("quem") || q.includes("bio") || q.includes("bruno") || q.includes("formacao") || q.includes("faculdade") || q.includes("curso") || q.includes("estacio") || q.includes("certificad")) {
+                return { key: "sobre", intentName: "Sobre Mim & Formação" };
+            }
+
+            // Arquitetura
+            if (q.includes("arquitet") || q.includes("design") || q.includes("padro") || q.includes("fila") || q.includes("celery") || q.includes("infra") || q.includes("clean") || q.includes("monorepo")) {
+                return { key: "arquitetura", intentName: "Arquitetura de Software" };
+            }
+
+            // Currículo
+            if (q.includes("curricul") || q.includes("cv") || q.includes("resume") || q.includes("pdf") || q.includes("download") || q.includes("baixar")) {
+                return { key: "curriculo", intentName: "Download do Currículo" };
+            }
+
+            // Fallback amigável
+            return { key: "fallback", intentName: "Sugestões de Consulta" };
         }
 
         // -------------------------------------------------------------
-        // 10. JOB DISPATCH ORCHESTRATION PIPELINE
+        // 10. SIMULAÇÃO DA FILA E PROCESSAMENTO DO JOB
         // -------------------------------------------------------------
         async function dispatchJob(queryText) {
             if (isProcessingJob || !queryText.trim()) return;
@@ -1230,10 +1434,9 @@
             dispatchBtn.disabled = true;
             dispatchBtn.innerHTML = `
                 <svg class="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
-                <span>RUNNING</span>
+                <span>Processando...</span>
             `;
 
-            // 1. Generate Job ID & Metadata
             const randomHex = Math.random().toString(16).substring(2, 8);
             const jobId = `job_${randomHex}`;
             const workerId = `worker-0${Math.floor(Math.random() * 4) + 1}`;
@@ -1252,82 +1455,82 @@
                 duration: '...'
             };
 
-            // Prepend job to Redis queue history
+            // Adiciona na fila
             jobsHistory.unshift(newJob);
             if (jobsHistory.length > 8) jobsHistory.pop();
             renderQueueTable();
 
-            statQueueDepth.textContent = "1 PENDING";
+            statQueueDepth.textContent = "1 PENDENTE";
             statQueueDepth.className = "text-xs font-bold text-amber-400 font-mono mt-0.5 animate-pulse";
 
-            // Step 1: Push to Redis message queue
-            appendLog('INFO', 'broker', `Enqueued message to 'queue:agent_jobs' (job_id: #${jobId}, priority: HIGH)`);
-            appendLog('DEBUG', 'scheduler', `Worker scheduler assigning idle thread...`);
+            // Etapa 1: Enfileirando
+            appendLog('INFO', 'Fila', `Nova requisição enviada para processamento (#${jobId}): "${queryText}"`);
+            appendLog('DEBUG', 'Orquestrador', `Worker escalonado para responder à solicitação...`);
 
-            await sleep(650);
+            await sleep(550);
 
-            // Step 2: Transition to PROCESSING
+            // Etapa 2: Em processamento
             newJob.status = 'PROCESSING';
             renderQueueTable();
 
-            statQueueDepth.textContent = "0 PENDING";
+            statQueueDepth.textContent = "0 PENDENTES";
             statQueueDepth.className = "text-xs font-bold text-zinc-400 font-mono mt-0.5";
 
-            activeWorkerIdEl.textContent = `${workerId} (ACTIVE)`;
-            activeWorkerIdEl.className = "text-amber-400 font-semibold";
-            workerStateIndicatorEl.textContent = "STATE: BUSY_PROCESSING";
-            workerStateIndicatorEl.className = "text-amber-400";
+            activeWorkerIdEl.textContent = `${workerId} (Ocupado)`;
+            activeWorkerIdEl.className = "text-amber-400 font-mono font-semibold";
+            workerStateIndicatorEl.textContent = "STATUS: PROCESSANDO CONSULTA";
+            workerStateIndicatorEl.className = "text-amber-400 font-mono font-medium";
 
-            appendLog('INFO', workerId, `Consumer acknowledged message #${jobId} from stream. ACK status: OK`);
-            await sleep(350);
+            appendLog('INFO', workerId, `Requisição aceita. Iniciando busca na base de conhecimento...`);
+            await sleep(300);
 
-            // Step 3: Stream Worker Reasoning & Tool Calls
+            // Etapa 3: Raciocínio & Busca com logs amigáveis
             if (intentKey === 'g30') {
-                appendLog('DEBUG', 'langgraph-core', `Initializing LangGraph state graph node: [SingleAgentWorkflow]`);
+                appendLog('DEBUG', 'LangGraph', `Ativando fluxo do Agente Único com Tool Calling determinístico...`);
+                await sleep(250);
+                appendLog('INFO', 'Azure Cosmos DB', `Consultando regras da API core em FastAPI assíncrono e Cosmos DB...`);
                 await sleep(280);
-                appendLog('TRACE', 'tool-registry', `Binding tools: [vehicle_telemetry_fetcher, cosmos_inventory_query, token_guardrails]`);
+                appendLog('INFO', 'Otimização', `Tokens economizados: ~65% | Latência p95 observada: < 280ms`);
+                await sleep(250);
+            } else if (intentKey === 'skills') {
+                appendLog('DEBUG', 'Indexador', `Consultando perfil técnico: Python, FastAPI, Django, LangGraph e Cloud...`);
                 await sleep(300);
-                appendLog('INFO', 'tool-execution', `Executing Tool Calling on Azure Cosmos DB via Pydantic v2 schemas`);
-                await sleep(350);
-                appendLog('INFO', 'token-optimizer', `Latency: 142ms | Token reduction achieved: -65% vs multi-agent hops`);
-                await sleep(280);
+                appendLog('INFO', 'Validador', `Estruturando habilidades e tempo de experiência (6+ anos)...`);
+                await sleep(250);
+            } else if (intentKey === 'experiencia') {
+                appendLog('DEBUG', 'Histórico', `Buscando timeline profissional (G30, Arquitech, QFlash, Epigene, Alstra)...`);
+                await sleep(300);
             } else {
-                appendLog('DEBUG', 'agent-core', `Intent classification engine parsed prompt: "${queryText.substring(0, 45)}"`);
-                await sleep(320);
-                appendLog('TRACE', 'intent-classifier', `Matched target intent: ${intentName} (confidence: 0.987)`);
+                appendLog('DEBUG', 'Agente IA', `Mapeando contexto para: "${intentName}"...`);
                 await sleep(280);
-                appendLog('INFO', 'tool-dispatch', `Invoking deterministic tool: get_${intentKey}_metadata(scope="cluster_local")`);
-                await sleep(400);
-                appendLog('DEBUG', 'vector-db', `Cache lookup in Redis memory store: KEY 'bruno:profile:${intentKey}' -> HIT (0.6ms)`);
-                await sleep(300);
-                appendLog('INFO', 'agent-llm', `Validating payload against Pydantic schema [BrunoProfileSchema_v2]...`);
-                await sleep(280);
+                appendLog('INFO', 'Dados', `Recuperando informações correspondentes no banco de dados...`);
+                await sleep(260);
             }
 
-            // Step 4: Finalize Job & Render Output
+            // Etapa 4: Conclusão
             const durationMs = Math.round(performance.now() - startTime);
             newJob.status = 'COMPLETED';
             newJob.duration = `${durationMs}ms`;
             renderQueueTable();
 
-            appendLog('SUCCESS', workerId, `Task finished successfully in ${durationMs}ms. Emitting JSON payload (exit code 0).`);
+            appendLog('SUCCESS', workerId, `Consulta respondida com sucesso em ${durationMs}ms! Dados prontos para visualização.`);
 
-            // Update output JSON
+            // Exibe a resposta
             const responseData = KNOWLEDGE_BASE[intentKey] || KNOWLEDGE_BASE.fallback;
-            displayJsonResponse(responseData, intentKey, durationMs);
+            displayResponse(responseData, intentKey, durationMs);
 
-            // Update stats
+            // Atualiza estatísticas
             totalJobsCount++;
             statJobsCount.textContent = totalJobsCount.toLocaleString();
 
-            activeWorkerIdEl.textContent = `${workerId} (IDLE)`;
-            activeWorkerIdEl.className = "text-cyan-400 font-semibold";
-            workerStateIndicatorEl.textContent = "STATE: LISTENING";
-            workerStateIndicatorEl.className = "text-emerald-400";
+            activeWorkerIdEl.textContent = `${workerId} (Pronto)`;
+            activeWorkerIdEl.className = "text-cyan-400 font-mono font-semibold";
+            workerStateIndicatorEl.textContent = "STATUS: AGUARDANDO COMANDOS";
+            workerStateIndicatorEl.className = "text-emerald-400 font-mono font-medium";
 
             dispatchBtn.disabled = false;
             dispatchBtn.innerHTML = `
-                <span>DISPATCH</span>
+                <span>Enviar</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             `;
 
@@ -1336,16 +1539,404 @@
         }
 
         // -------------------------------------------------------------
-        // 11. JSON SYNTAX HIGHLIGHTER & RENDERER
+        // 11. EXIBIÇÃO DE RESPOSTAS (AMIGÁVEL + JSON)
         // -------------------------------------------------------------
-        function displayJsonResponse(data, intentKey, durationMs) {
+        function displayResponse(data, intentKey, durationMs) {
             currentResponseRaw = data;
-            const highlightedHTML = syntaxHighlight(data);
-            jsonOutputViewer.innerHTML = highlightedHTML;
+            currentIntentKey = intentKey;
 
-            outputStatsText.textContent = `RESOLVED: ${intentKey.toUpperCase()} | LATENCY: ${durationMs}ms | STATUS: 200 OK`;
+            // Renderiza o cartão amigável
+            friendlyOutputViewer.innerHTML = renderFriendlyCard(data, intentKey);
+
+            // Renderiza o JSON syntax highlighted
+            jsonOutputViewer.innerHTML = syntaxHighlight(data);
+
+            outputStatsText.textContent = `Consulta resolvida em ${durationMs}ms | Status: 200 OK`;
         }
 
+        // Construtor do Cartão Amigável (Fácil de ler para qualquer recrutador)
+        function renderFriendlyCard(data, key) {
+            if (key === 'apresentacao') {
+                return `
+                    <div class="space-y-3.5">
+                        <div class="border-b border-obs-border pb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-mono font-bold">DESTAQUE</span>
+                                <h3 class="text-sm font-bold text-zinc-100 font-sans">${data.boas_vindas}</h3>
+                            </div>
+                            <p class="text-xs text-zinc-300 mt-1 font-sans leading-relaxed">${data.resumo_profissional}</p>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] font-bold text-zinc-300 uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                <span>Stacks & Tecnologias Principais:</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+                                ${data.stacks_principais.map(st => `
+                                    <div class="p-2 rounded bg-obs-panelLight/60 border border-obs-border text-zinc-200 text-xs flex items-center gap-2">
+                                        <span class="text-cyan-400 font-bold">✓</span>
+                                        <span>${st}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="p-2.5 rounded bg-purple-950/30 border border-purple-800/40 text-purple-200 text-xs flex items-start gap-2">
+                            <span class="text-base select-none">💡</span>
+                            <div>
+                                <span class="font-bold">Como navegar:</span> ${data.como_navegar}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (key === 'g30') {
+                return `
+                    <div class="space-y-3.5">
+                        <div class="border-b border-obs-border pb-2.5 flex items-start justify-between gap-2 flex-wrap">
+                            <div>
+                                <span class="px-2 py-0.5 rounded text-[10px] bg-purple-500/15 text-purple-300 border border-purple-500/30 font-mono font-bold">EXPERIÊNCIA ATUAL</span>
+                                <h3 class="text-sm font-bold text-zinc-100 mt-1 font-sans">${data.company}</h3>
+                                <p class="text-xs text-cyan-300 font-medium">${data.role} • ${data.period}</p>
+                            </div>
+                            <div class="text-[11px] text-zinc-400 font-mono text-right">
+                                <div>${data.location}</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] font-bold text-zinc-300 uppercase tracking-wide mb-1">Principais Entregas & Atuação:</div>
+                            <ul class="space-y-1.5 text-xs text-zinc-300 mt-1">
+                                ${data.core_responsibilities.map(r => `
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-purple-400 font-bold mt-0.5">•</span>
+                                        <span>${r}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                            <div class="p-2 rounded bg-obs-panelLight/80 border border-obs-border">
+                                <span class="text-[10px] text-zinc-400 uppercase font-mono">Consumo de Tokens</span>
+                                <div class="text-xs font-bold text-emerald-400 mt-0.5">${data.metrics.token_reduction}</div>
+                            </div>
+                            <div class="p-2 rounded bg-obs-panelLight/80 border border-obs-border">
+                                <span class="text-[10px] text-zinc-400 uppercase font-mono">Latência p95</span>
+                                <div class="text-xs font-bold text-cyan-400 mt-0.5">${data.metrics.p95_latency}</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] font-bold text-zinc-400 uppercase font-mono mb-1.5">Stack Tecnológico:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${data.tech_stack.map(t => `<span class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-200 border border-zinc-700 font-mono">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (key === 'skills') {
+                return `
+                    <div class="space-y-3.5">
+                        <div class="border-b border-obs-border pb-2">
+                            <h3 class="text-sm font-bold text-zinc-100 font-sans">${data.developer}</h3>
+                            <p class="text-xs text-cyan-300">${data.headline}</p>
+                            <span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-mono font-medium">${data.experience_years}</span>
+                        </div>
+
+                        <div class="space-y-2.5">
+                            <div>
+                                <div class="text-xs font-bold text-zinc-200 flex items-center gap-1.5 mb-1">
+                                    <span>🐍</span>
+                                    <span>Linguagens & Backend</span>
+                                </div>
+                                <div class="flex flex-wrap gap-1">
+                                    ${data.categories.backend_and_languages.map(s => `<span class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-200 border border-zinc-700">${s}</span>`).join('')}
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-xs font-bold text-purple-300 flex items-center gap-1.5 mb-1">
+                                    <span>🤖</span>
+                                    <span>Inteligência Artificial & Agentes</span>
+                                </div>
+                                <div class="flex flex-wrap gap-1">
+                                    ${data.categories.ai_and_agents.map(s => `<span class="px-2 py-0.5 rounded text-[10px] bg-purple-950/40 text-purple-200 border border-purple-800/50">${s}</span>`).join('')}
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="text-xs font-bold text-cyan-300 flex items-center gap-1.5 mb-1">
+                                    <span>☁️</span>
+                                    <span>Nuvem, Bancos de Dados & Infra</span>
+                                </div>
+                                <div class="flex flex-wrap gap-1">
+                                    ${data.categories.cloud_and_infra.concat(data.categories.databases_and_cache).map(s => `<span class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-300 border border-zinc-700">${s}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (key === 'experiencia') {
+                return `
+                    <div class="space-y-4">
+                        <div class="border-b border-obs-border pb-2">
+                            <h3 class="text-sm font-bold text-zinc-100 font-sans">Histórico Profissional Completo</h3>
+                            <p class="text-xs text-emerald-400 font-mono">${data.total_experience}</p>
+                        </div>
+
+                        <div class="space-y-3.5">
+                            ${data.career_timeline.map((item, idx) => `
+                                <div class="p-3 rounded-lg bg-obs-panelLight/40 border border-obs-border hover:border-obs-borderBright transition-colors">
+                                    <div class="flex items-start justify-between gap-2 flex-wrap">
+                                        <div>
+                                            <div class="text-xs font-bold text-zinc-100">${item.company}</div>
+                                            <div class="text-[11px] text-cyan-300 font-medium">${item.role}</div>
+                                        </div>
+                                        <div class="text-[10px] text-zinc-400 font-mono text-right">
+                                            <div>${item.period}</div>
+                                            <div>${item.location}</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-xs text-zinc-300 space-y-1">
+                                        ${item.highlights.map(h => `<div class="flex items-start gap-1.5"><span class="text-cyan-400">•</span><span>${h}</span></div>`).join('')}
+                                    </div>
+                                    <div class="mt-2 flex flex-wrap gap-1 pt-1 border-t border-obs-border/50">
+                                        ${item.stack.map(st => `<span class="px-1.5 py-0.2 rounded text-[9px] bg-zinc-900 text-zinc-400 border border-zinc-800 font-mono">${st}</span>`).join('')}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (key === 'projetos') {
+                return `
+                    <div class="space-y-3.5">
+                        <div class="border-b border-obs-border pb-2">
+                            <h3 class="text-sm font-bold text-zinc-100 font-sans">Projetos & Portfólio em Produção</h3>
+                            <p class="text-xs text-zinc-400">Total catalogado: ${data.total_projects} sistemas e microsserviços</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-2.5">
+                            ${data.portfolio.map(p => `
+                                <div class="p-3 rounded bg-obs-panelLight/50 border border-obs-border hover:border-obs-borderBright transition-all">
+                                    <div class="flex items-start justify-between gap-2">
+                                        <h4 class="text-xs font-bold text-zinc-100">${p.name}</h4>
+                                        <span class="px-1.5 py-0.5 rounded text-[9px] font-mono ${p.status === 'PRODUÇÃO' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' : 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30'}">${p.status}</span>
+                                    </div>
+                                    <p class="text-xs text-zinc-300 mt-1">${p.description}</p>
+                                    <div class="flex items-center justify-between gap-2 mt-2 pt-1 border-t border-obs-border/50 flex-wrap">
+                                        <div class="flex flex-wrap gap-1">
+                                            ${p.stack.map(s => `<span class="px-1.5 py-0.2 rounded text-[9px] bg-zinc-900 text-zinc-300 font-mono">${s}</span>`).join('')}
+                                        </div>
+                                        ${p.url ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="text-cyan-300 hover:text-cyan-100 text-[11px] underline flex items-center gap-1">Acessar ↗</a>` : ''}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (key === 'contato') {
+                return `
+                    <div class="space-y-3.5">
+                        <div class="border-b border-obs-border pb-2">
+                            <h3 class="text-sm font-bold text-zinc-100 font-sans">Canais de Contato & Redes</h3>
+                            <p class="text-xs text-emerald-400 font-medium">${data.availability}</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <a href="${data.whatsapp_url}" target="_blank" rel="noopener noreferrer"
+                               class="p-2.5 rounded bg-emerald-950/40 hover:bg-emerald-950/70 border border-emerald-800/60 transition-all flex items-center gap-2.5">
+                                <span class="text-emerald-400 text-base">💬</span>
+                                <div>
+                                    <div class="text-[10px] text-zinc-400 uppercase font-mono">WhatsApp Direto</div>
+                                    <div class="text-xs font-bold text-emerald-300">${data.mobile}</div>
+                                </div>
+                            </a>
+
+                            <a href="mailto:${data.email}"
+                               class="p-2.5 rounded bg-obs-panelLight/80 hover:bg-obs-panelLight border border-obs-border transition-all flex items-center gap-2.5">
+                                <span class="text-cyan-400 text-base">✉️</span>
+                                <div>
+                                    <div class="text-[10px] text-zinc-400 uppercase font-mono">E-mail Profissional</div>
+                                    <div class="text-xs font-bold text-zinc-200">${data.email}</div>
+                                </div>
+                            </a>
+
+                            <a href="${data.profiles.linkedin}" target="_blank" rel="noopener noreferrer"
+                               class="p-2.5 rounded bg-sky-950/40 hover:bg-sky-950/70 border border-sky-800/60 transition-all flex items-center gap-2.5">
+                                <span class="text-sky-400 text-base">💼</span>
+                                <div>
+                                    <div class="text-[10px] text-zinc-400 uppercase font-mono">LinkedIn</div>
+                                    <div class="text-xs font-bold text-sky-200">/in/brunorpdev</div>
+                                </div>
+                            </a>
+
+                            <a href="${data.profiles.github}" target="_blank" rel="noopener noreferrer"
+                               class="p-2.5 rounded bg-obs-panelLight/80 hover:bg-obs-panelLight border border-obs-border transition-all flex items-center gap-2.5">
+                                <span class="text-zinc-300 text-base">🐙</span>
+                                <div>
+                                    <div class="text-[10px] text-zinc-400 uppercase font-mono">GitHub</div>
+                                    <div class="text-xs font-bold text-zinc-200">github.com/obrunodev</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="p-2.5 rounded bg-obs-surface border border-obs-border text-xs text-zinc-300">
+                            <span class="font-bold text-cyan-300">Localização:</span> ${data.location}<br>
+                            <span class="font-bold text-purple-300">Comunidade:</span> ${data.community}
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (key === 'sobre') {
+                return `
+                    <div class="space-y-3.5">
+                        <div class="border-b border-obs-border pb-2">
+                            <h3 class="text-sm font-bold text-zinc-100 font-sans">${data.developer}</h3>
+                            <p class="text-xs text-cyan-300">${data.headline}</p>
+                        </div>
+
+                        <p class="text-xs text-zinc-200 leading-relaxed">${data.summary}</p>
+
+                        <div>
+                            <div class="text-xs font-bold text-zinc-300 uppercase tracking-wide mb-1 flex items-center gap-1.5">
+                                <span>🎓</span>
+                                <span>Formação Acadêmica:</span>
+                            </div>
+                            <div class="space-y-1.5">
+                                ${data.education.map(e => `
+                                    <div class="p-2 rounded bg-obs-panelLight/50 border border-obs-border text-xs">
+                                        <div class="font-bold text-zinc-100">${e.institution}</div>
+                                        <div class="text-zinc-300">${e.degree} (${e.period})</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-xs font-bold text-zinc-300 uppercase tracking-wide mb-1 flex items-center gap-1.5">
+                                <span>📜</span>
+                                <span>Certificações:</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                ${data.certifications.map(c => `<span class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-300 border border-zinc-700 font-mono">${c}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (key === 'curriculo') {
+                return `
+                    <div class="space-y-3.5 text-center py-3">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-xl text-emerald-400">
+                            📄
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-zinc-100">${data.document.title}</h3>
+                            <p class="text-xs text-zinc-400 mt-1">${data.document.instructions}</p>
+                        </div>
+                        <div class="pt-2">
+                            <a href="${data.document.download_url}" download="cv-bruno-pianca.pdf" target="_blank"
+                               class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-emerald-600 hover:bg-emerald-500 text-zinc-950 font-bold text-xs transition-all shadow-md">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                <span>Clique aqui para Baixar o Arquivo (PDF)</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Caso seja inspeção de um projeto específico (ex: arquitech, epigene, etc.)
+            if (data.project_name) {
+                return `
+                    <div class="space-y-3.5">
+                        <div class="border-b border-obs-border pb-2.5 flex items-start justify-between gap-2 flex-wrap">
+                            <div>
+                                <span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-mono font-bold">DETALHES DO PROJETO</span>
+                                <h3 class="text-sm font-bold text-zinc-100 mt-1 font-sans">${data.project_name}</h3>
+                                ${data.role ? `<p class="text-xs text-cyan-300 font-medium">${data.role} ${data.period ? `• ${data.period}` : ''}</p>` : ''}
+                            </div>
+                            ${data.url ? `
+                                <a href="${data.url}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-950/70 text-emerald-300 border border-emerald-700/60 text-xs font-sans font-medium flex items-center gap-1">
+                                    <span>Acessar Site</span>
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
+                            ` : ''}
+                        </div>
+
+                        <p class="text-xs text-zinc-200 leading-relaxed">${data.description}</p>
+
+                        ${data.highlights ? `
+                            <div>
+                                <div class="text-[11px] font-bold text-zinc-300 uppercase tracking-wide mb-1">Destaques da Implementação:</div>
+                                <ul class="space-y-1 text-xs text-zinc-300">
+                                    ${data.highlights.map(h => `<li class="flex items-start gap-1.5"><span class="text-cyan-400 font-bold">•</span><span>${h}</span></li>`).join('')}
+                                </ul>
+                            </div>
+                        ` : ''}
+
+                        ${data.tech_stack ? `
+                            <div class="pt-1">
+                                <div class="text-[11px] font-bold text-zinc-400 uppercase font-mono mb-1">Tecnologias:</div>
+                                <div class="flex flex-wrap gap-1">
+                                    ${data.tech_stack.map(st => `<span class="px-2 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-200 border border-zinc-700 font-mono">${st}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            // Fallback genérico amigável
+            return `
+                <div class="space-y-3">
+                    <div class="p-2.5 rounded bg-amber-950/30 border border-amber-800/40 text-amber-200 text-xs">
+                        ${data.agent_notes || "Comando processado com sucesso."}
+                    </div>
+                    <div class="text-xs font-bold text-zinc-300">Você pode experimentar clicar em um dos tópicos abaixo:</div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <button onclick="quickDispatch('g30')" class="px-2.5 py-1 rounded bg-purple-950/70 text-purple-200 border border-purple-700/60 text-xs">⭐ Experiência na G30</button>
+                        <button onclick="quickDispatch('skills')" class="px-2.5 py-1 rounded bg-zinc-800 text-cyan-200 border border-zinc-700 text-xs">⚡ Habilidades</button>
+                        <button onclick="quickDispatch('experiencia')" class="px-2.5 py-1 rounded bg-zinc-800 text-emerald-200 border border-zinc-700 text-xs">💼 Carreira</button>
+                        <button onclick="quickDispatch('projetos')" class="px-2.5 py-1 rounded bg-zinc-800 text-purple-200 border border-zinc-700 text-xs">🚀 Projetos</button>
+                        <button onclick="quickDispatch('contato')" class="px-2.5 py-1 rounded bg-zinc-800 text-sky-200 border border-zinc-700 text-xs">📬 Contato</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Alternância de Modo de Visualização (Amigável vs JSON)
+        function switchOutputView(mode) {
+            currentViewMode = mode;
+            if (mode === 'friendly') {
+                friendlyOutputViewer.classList.remove('hidden');
+                jsonOutputWrapper.classList.add('hidden');
+
+                btnViewFriendly.className = "px-2.5 py-1 rounded text-[11px] font-sans font-bold bg-cyan-600 text-zinc-950 transition-all flex items-center gap-1 shadow-sm";
+                btnViewJson.className = "px-2.5 py-1 rounded text-[11px] font-mono text-zinc-400 hover:text-zinc-200 transition-all flex items-center gap-1";
+            } else {
+                friendlyOutputViewer.classList.add('hidden');
+                jsonOutputWrapper.classList.remove('hidden');
+
+                btnViewFriendly.className = "px-2.5 py-1 rounded text-[11px] font-sans text-zinc-400 hover:text-zinc-200 transition-all flex items-center gap-1";
+                btnViewJson.className = "px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-cyan-600 text-zinc-950 transition-all flex items-center gap-1 shadow-sm";
+            }
+        }
+
+        // Syntax Highlighter para a visão JSON
         function syntaxHighlight(json) {
             if (typeof json !== 'string') {
                 json = JSON.stringify(json, undefined, 2);
@@ -1353,28 +1944,27 @@
             json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
             
             return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-                let cls = 'text-amber-400'; // number
+                let cls = 'text-amber-400';
                 if (/^"/.test(match)) {
                     if (/:$/.test(match)) {
-                        cls = 'text-cyan-400 font-semibold'; // key
+                        cls = 'text-cyan-400 font-semibold';
                     } else {
-                        cls = 'text-emerald-300'; // string
+                        cls = 'text-emerald-300';
                         const cleanStr = match.replace(/^"|"$/g, '');
-                        // Clickable URLs and relative file links
                         if (cleanStr.startsWith('http://') || cleanStr.startsWith('https://') || cleanStr.startsWith('./') || cleanStr.endsWith('.pdf')) {
                             return `"<a href="${cleanStr}" target="_blank" rel="noopener noreferrer" class="underline text-cyan-300 hover:text-cyan-100 transition-colors">${cleanStr}</a>"`;
                         }
                     }
                 } else if (/true|false/.test(match)) {
-                    cls = 'text-purple-400 font-bold'; // boolean
+                    cls = 'text-purple-400 font-bold';
                 } else if (/null/.test(match)) {
-                    cls = 'text-zinc-500 italic'; // null
+                    cls = 'text-zinc-500 italic';
                 }
                 return `<span class="${cls}">${match}</span>`;
             });
         }
 
-        // Copy button handler
+        // Copiar resposta
         function copyJsonResponse() {
             if (!currentResponseRaw) return;
             const jsonText = JSON.stringify(currentResponseRaw, null, 2);
@@ -1382,15 +1972,15 @@
                 const btn = document.getElementById('copy-json-btn');
                 const prev = btn.innerHTML;
                 btn.innerHTML = `
-                    <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    <span class="text-emerald-400 font-bold">COPIED!</span>
+                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span class="text-emerald-400 font-bold">Copiado!</span>
                 `;
                 setTimeout(() => { btn.innerHTML = prev; }, 2000);
             });
         }
 
         // -------------------------------------------------------------
-        // 12. EVENT LISTENERS & SHORTCUTS
+        // 12. LISTENERS DE EVENTOS & ATALHOS
         // -------------------------------------------------------------
         function handleJobSubmit(e) {
             e.preventDefault();
@@ -1406,31 +1996,37 @@
         }
 
         function inspectService(serviceId) {
-            jobInput.value = `inspect service ${serviceId}`;
-            dispatchJob(`inspect service ${serviceId}`);
+            jobInput.value = serviceId;
+            dispatchJob(serviceId);
         }
 
         // -------------------------------------------------------------
-        // 13. LIVE TELEMETRY SIMULATOR (PULSE, LATENCY JITTER, CLOCK)
+        // 13. SIMULADOR DE TELEMETRIA EM TEMPO REAL
         // -------------------------------------------------------------
         function initLiveTelemetry() {
             const clockEl = document.getElementById('live-clock');
             const wsLatencyEl = document.getElementById('ws-latency');
             const redisHeapEl = document.getElementById('redis-heap');
 
-            // Clock updater
+            // Relógio em tempo real
             setInterval(() => {
-                const d = new Date();
-                clockEl.textContent = d.toISOString().substring(11, 19);
+                if (clockEl) {
+                    const d = new Date();
+                    clockEl.textContent = d.toTimeString().substring(0, 8);
+                }
             }, 1000);
 
-            // Subtle realistic jitter on latency and memory
+            // Jitter sutil de latência e consumo de memória
             setInterval(() => {
-                const jitter = Math.floor(Math.random() * 8) + 11; // 11ms - 18ms
-                wsLatencyEl.textContent = `${jitter}ms`;
+                if (wsLatencyEl) {
+                    const jitter = Math.floor(Math.random() * 7) + 11; // 11ms - 17ms
+                    wsLatencyEl.textContent = `${jitter}ms`;
+                }
 
-                const memJitter = (34.2 + (Math.random() * 1.4)).toFixed(1);
-                redisHeapEl.textContent = `${memJitter} MB / 128 MB`;
+                if (redisHeapEl) {
+                    const memJitter = (34.2 + (Math.random() * 1.2)).toFixed(1);
+                    redisHeapEl.textContent = `${memJitter} MB / 128 MB`;
+                }
             }, 3500);
         }
     </script>
